@@ -1,0 +1,399 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "generated": "2024-12",
+    "total_documents_analyzed": 14674,
+    "source": "DOJ FOIA Release - United States v. Jeffrey Epstein"
+  },
+  "persons": [
+    {
+      "id": "epstein",
+      "name": "Jeffrey Epstein",
+      "role": "Principal Defendant",
+      "status": "Deceased",
+      "tags": ["principal", "deceased"],
+      "document_count": 14674,
+      "charges": [
+        "18 U.S.C. § 1591 - Sex Trafficking of Children",
+        "18 U.S.C. § 2423 - Transportation of Minors",
+        "18 U.S.C. § 371 - Conspiracy",
+        "18 U.S.C. § 2422 - Enticement of Minor"
+      ],
+      "verdict": "GUILTY - All Counts",
+      "key_evidence": [
+        {
+          "quote": "The younger, the better.",
+          "source": "FBI Agent Testimony, Grand Jury, May 2007",
+          "document_id": "EFTA00009550",
+          "significance": "Direct evidence of age preference"
+        },
+        {
+          "quote": "[One girl] told Mr. Epstein that she was in high school, and actually told him her true age, which was under 18.",
+          "source": "Grand Jury Transcript",
+          "document_id": "EFTA00009550",
+          "significance": "Proof of age knowledge"
+        }
+      ],
+      "key_documents": [
+        {"id": "EFTA00009550", "title": "Grand Jury Testimony", "type": "testimony"},
+        {"id": "EFTA00009512", "title": "FBI Agent Statement", "type": "testimony"},
+        {"id": "EFTA00028785", "title": "SDNY Detention Memo", "type": "legal"},
+        {"id": "EFTA00009116", "title": "NPA Documents", "type": "legal"},
+        {"id": "EFTA00009586", "title": "Victim Grand Jury Testimony", "type": "testimony"}
+      ],
+      "timeline": {
+        "birth": "1953-01-20",
+        "death": "2019-08-10",
+        "first_arrest": "2006",
+        "npa_signed": "2007-09-24",
+        "state_plea": "2008-06",
+        "sdny_arrest": "2019-07-06"
+      }
+    },
+    {
+      "id": "maxwell",
+      "name": "Ghislaine Maxwell",
+      "role": "Co-Conspirator",
+      "status": "Incarcerated",
+      "tags": ["convicted", "co-conspirator"],
+      "document_count": 11464,
+      "sentence": "20 years",
+      "conviction_date": "2021-12-29",
+      "charges_convicted": [
+        "Conspiracy to entice minor to travel",
+        "Conspiracy to transport minor",
+        "Transportation of minor",
+        "Sex trafficking conspiracy",
+        "Sex trafficking of minor"
+      ],
+      "key_evidence": [
+        {
+          "quote": "MAXWELL played a critical role in the grooming and abuse of minor victims that took place in locations including New York, Florida, and New Mexico.",
+          "source": "SDNY Indictment",
+          "document_id": "EFTA00027850",
+          "significance": "Establishes role in conspiracy"
+        }
+      ],
+      "key_documents": [
+        {"id": "EFTA00027850", "title": "Maxwell Indictment Press Release", "type": "legal"},
+        {"id": "EFTA00020401", "title": "Superseding Indictment", "type": "legal"},
+        {"id": "EFTA00029004", "title": "Case Materials", "type": "legal"}
+      ],
+      "role_in_enterprise": [
+        "Recruited and groomed victims",
+        "Present during abuse",
+        "Participated in sexual abuse",
+        "Coordinated with Epstein",
+        "Normalized abuse for victims"
+      ]
+    },
+    {
+      "id": "acosta",
+      "name": "R. Alexander Acosta",
+      "role": "U.S. Attorney (SDFL 2005-2009)",
+      "status": "Living",
+      "tags": ["prosecutor", "npa_signatory"],
+      "document_count": 150,
+      "key_actions": [
+        "Approved Non-Prosecution Agreement (2007)",
+        "Failed to notify victims (CVRA violation)",
+        "Later served as Secretary of Labor (2017-2019)",
+        "Resigned amid Epstein scrutiny (2019)"
+      ],
+      "key_documents": [
+        {"id": "EFTA00009116", "title": "Acosta OPR Interview", "type": "testimony"},
+        {"id": "NPA", "title": "Non-Prosecution Agreement", "type": "legal"}
+      ]
+    },
+    {
+      "id": "dershowitz",
+      "name": "Alan Dershowitz",
+      "role": "Defense Attorney",
+      "status": "Living",
+      "tags": ["defense_team", "mentioned"],
+      "document_count": 45,
+      "role_in_case": "Legal advisor to Epstein defense team during NPA negotiations",
+      "key_documents": [
+        {"id": "various", "title": "NPA Negotiation Documents", "type": "legal"},
+        {"id": "various", "title": "OPR Investigation References", "type": "legal"}
+      ],
+      "notes": "Has denied any wrongdoing. Involved in related civil litigation."
+    },
+    {
+      "id": "andrew",
+      "name": "Prince Andrew",
+      "full_name": "Prince Andrew, Duke of York",
+      "role": "Associate",
+      "status": "Living",
+      "tags": ["associate", "mentioned"],
+      "document_count": 87,
+      "key_documents": [
+        {"id": "various", "title": "Victim Depositions", "type": "testimony"},
+        {"id": "various", "title": "Flight Records", "type": "evidence"}
+      ],
+      "notes": "Settled civil lawsuit in 2022. Has denied all allegations."
+    },
+    {
+      "id": "clinton",
+      "name": "Bill Clinton",
+      "role": "Former U.S. President",
+      "status": "Living",
+      "tags": ["associate", "mentioned"],
+      "document_count": 66,
+      "context": "Named in flight logs and various documents",
+      "notes": "Spokesperson stated Clinton knew nothing of crimes and has not spoken to Epstein in over a decade."
+    },
+    {
+      "id": "trump",
+      "name": "Donald Trump",
+      "role": "Former U.S. President",
+      "status": "Living",
+      "tags": ["associate", "mentioned"],
+      "document_count": 137,
+      "context": "Named as former social acquaintance",
+      "notes": "Publicly distanced himself from Epstein, stating he 'was not a fan.'"
+    },
+    {
+      "id": "wexner",
+      "name": "Les Wexner",
+      "role": "Billionaire / L Brands Founder",
+      "status": "Living",
+      "tags": ["financial", "mentioned"],
+      "document_count": 11,
+      "significance": "Primary documented source of Epstein's wealth",
+      "key_facts": [
+        "Granted power of attorney to Epstein",
+        "Transferred NYC townhouse to Epstein",
+        "States he severed ties and was unaware of crimes"
+      ]
+    },
+    {
+      "id": "kellen",
+      "name": "Sarah Kellen",
+      "also_known_as": "Sarah Kensington",
+      "role": "Assistant/Scheduler",
+      "status": "Living",
+      "tags": ["staff", "npa_immunity"],
+      "document_count": 50,
+      "role_in_enterprise": [
+        "Scheduled victim appointments",
+        "Coordinated transportation",
+        "Maintained contact databases",
+        "Facilitated property access"
+      ],
+      "notes": "Named in NPA immunity provisions. Not charged."
+    },
+    {
+      "id": "groff",
+      "name": "Lesley Groff",
+      "role": "Assistant",
+      "status": "Living",
+      "tags": ["staff", "npa_immunity"],
+      "document_count": 30,
+      "role_in_enterprise": [
+        "Administrative support",
+        "Travel arrangements",
+        "Property management coordination"
+      ],
+      "notes": "Named in NPA immunity provisions. Not charged."
+    },
+    {
+      "id": "marcinkova",
+      "name": "Nadia Marcinkova",
+      "role": "Associate",
+      "status": "Living",
+      "tags": ["staff", "npa_immunity"],
+      "document_count": 25,
+      "allegations": "Alleged participation in abuse",
+      "notes": "Named in NPA immunity provisions. Not charged."
+    },
+    {
+      "id": "brunel",
+      "name": "Jean-Luc Brunel",
+      "role": "Modeling Agent",
+      "status": "Deceased",
+      "tags": ["associate", "deceased"],
+      "document_count": 22,
+      "death_date": "2022-02",
+      "context": "French modeling agent charged in France with rape of minors",
+      "notes": "Found dead in prison in February 2022 before trial."
+    },
+    {
+      "id": "lefkowitz",
+      "name": "Jay Lefkowitz",
+      "role": "Defense Attorney",
+      "firm": "Kirkland & Ellis",
+      "status": "Living",
+      "tags": ["defense_team", "npa_negotiator"],
+      "document_count": 69,
+      "key_actions": [
+        "Lead negotiator for 2008 NPA",
+        "Primary defense counsel during federal investigation"
+      ]
+    },
+    {
+      "id": "starr",
+      "name": "Ken Starr",
+      "role": "Defense Attorney",
+      "status": "Deceased",
+      "tags": ["defense_team", "deceased"],
+      "document_count": 49,
+      "death_date": "2022-09",
+      "key_actions": [
+        "Appealed to DOJ on behalf of Epstein",
+        "Former Solicitor General"
+      ],
+      "notes": "Known for Clinton-Lewinsky investigation."
+    },
+    {
+      "id": "rodgers",
+      "name": "David Rodgers",
+      "role": "Chief Pilot",
+      "status": "Living",
+      "tags": ["witness", "staff"],
+      "document_count": 72,
+      "testimony": [
+        "Testified to grand jury",
+        "Testified at Maxwell trial"
+      ],
+      "significance": "Maintained flight logs. Key witness on flight operations."
+    },
+    {
+      "id": "visoski",
+      "name": "Larry Visoski",
+      "role": "Pilot",
+      "status": "Living",
+      "tags": ["witness", "staff"],
+      "document_count": 64,
+      "testimony": [
+        "Testified at Maxwell trial"
+      ],
+      "significance": "Long-time pilot. Witness on passengers and operations."
+    },
+    {
+      "id": "richardson",
+      "name": "Bill Richardson",
+      "role": "Former Governor of New Mexico",
+      "status": "Deceased",
+      "tags": ["associate", "deceased"],
+      "document_count": 45,
+      "death_date": "2023-09",
+      "context": "Named in documents and depositions",
+      "notes": "Denied all allegations before his death."
+    },
+    {
+      "id": "black",
+      "name": "Roy Black",
+      "role": "Defense Attorney",
+      "status": "Living",
+      "tags": ["defense_team"],
+      "document_count": 404,
+      "significance": "High-profile criminal defense attorney on Epstein team"
+    },
+    {
+      "id": "strauss",
+      "name": "Audrey Strauss",
+      "role": "Acting U.S. Attorney (SDNY)",
+      "status": "Living",
+      "tags": ["prosecutor"],
+      "significance": "Led 2019 SDNY prosecution and Maxwell prosecution"
+    }
+  ],
+  "document_types": {
+    "grand_jury": ["EFTA00009550", "EFTA00009512", "EFTA00009586"],
+    "indictments": ["EFTA00020401", "EFTA00027850", "EFTA00028785"],
+    "npa_related": ["EFTA00009116"],
+    "flight_records": "Multiple documents in DataSet files",
+    "phone_records": "Multiple documents in DataSet files"
+  },
+  "aircraft": [
+    {
+      "tail_number": "N908JE",
+      "type": "Boeing 727-31",
+      "nickname": "Lolita Express",
+      "owner": "JEGE, Inc.",
+      "routes": ["PBI-TEB", "TEB-STT", "PBI-STT"]
+    },
+    {
+      "tail_number": "N909JE",
+      "type": "Gulfstream IV",
+      "owner": "Hyperion Air, Inc.",
+      "routes": ["PBI-TEB", "TEB-SAF"]
+    },
+    {
+      "tail_number": "N331JE",
+      "owner": "Hyperion Air LLC"
+    },
+    {
+      "tail_number": "N722JE",
+      "owner": "Hyperion Air LLC"
+    },
+    {
+      "tail_number": "N491GM",
+      "owner": "Unknown",
+      "status": "Under investigation"
+    },
+    {
+      "tail_number": "N901RL",
+      "status": "Limited records"
+    }
+  ],
+  "properties": [
+    {
+      "name": "Palm Beach Residence",
+      "address": "358 El Brillo Way, Palm Beach, FL",
+      "value_estimate": 12000000,
+      "role": "Primary abuse location",
+      "search_date": "2005-10"
+    },
+    {
+      "name": "New York Townhouse",
+      "address": "9 East 71st Street, Manhattan, NY",
+      "value_estimate": 56000000,
+      "role": "Secondary abuse location",
+      "search_date": "2019-07-07"
+    },
+    {
+      "name": "Zorro Ranch",
+      "location": "Near Santa Fe, New Mexico",
+      "size": "10,000+ acres",
+      "role": "Isolated abuse location"
+    },
+    {
+      "name": "Little St. James Island",
+      "location": "U.S. Virgin Islands",
+      "size": "70+ acres",
+      "value_estimate": 63000000
+    },
+    {
+      "name": "Great St. James Island",
+      "location": "U.S. Virgin Islands",
+      "purchase_year": 2016,
+      "value_estimate": 18000000
+    }
+  ],
+  "corporate_entities": [
+    {
+      "name": "JEGE, Inc.",
+      "jurisdiction": "Delaware",
+      "asset": "N908JE (Boeing 727)",
+      "purpose": "Aircraft holding"
+    },
+    {
+      "name": "Hyperion Air, Inc.",
+      "jurisdiction": "Delaware",
+      "asset": "N909JE (Gulfstream)",
+      "purpose": "Aircraft operations"
+    },
+    {
+      "name": "Hyperion Air LLC",
+      "assets": ["N331JE", "N722JE"],
+      "purpose": "Aircraft holding"
+    },
+    {
+      "name": "NYSG LLC",
+      "purpose": "Unknown",
+      "status": "Under investigation"
+    }
+  ]
+}
