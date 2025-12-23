@@ -1,0 +1,24 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Source documents (not included in repo)
+/source-documents/
+/raw-pdfs/
+/extracted-images/
+
+# Private notes
+/private/
+*.private.md

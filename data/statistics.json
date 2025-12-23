@@ -1,0 +1,204 @@
+{
+  "analysis_metadata": {
+    "system": "OWL (Objective Witness & Legal) Analysis System",
+    "version": "1.0",
+    "analysis_date": "2024-12",
+    "jurisdiction": "Federal (SDFL, SDNY)",
+    "standard": "Beyond Reasonable Doubt"
+  },
+  "document_corpus": {
+    "total_documents": 14674,
+    "total_images_extracted": 38562,
+    "data_sets": 8,
+    "format": "PDF converted to text"
+  },
+  "evidence_statistics": {
+    "victim_references": {
+      "documents_mentioning_victims": 1255,
+      "identified_victims": "30+",
+      "estimated_total_victims": "100+"
+    },
+    "flight_records": {
+      "documents_mentioning_flights": 333,
+      "identified_aircraft": 6,
+      "tail_numbers": [
+        "N908JE",
+        "N909JE",
+        "N331JE",
+        "N722JE",
+        "N491GM",
+        "N901RL"
+      ]
+    },
+    "phone_records": {
+      "max_contacts_single_victim": 125,
+      "average_contacts_per_victim": "15-20"
+    },
+    "maxwell_references": {
+      "total_mentions": 11464
+    },
+    "corporate_entities": {
+      "identified_shell_companies": 4,
+      "entities": [
+        "JEGE, Inc.",
+        "Hyperion Air, Inc.",
+        "Hyperion Air LLC",
+        "NYSG LLC"
+      ]
+    }
+  },
+  "geographic_scope": {
+    "domestic_locations": [
+      {
+        "location": "Palm Beach, FL",
+        "type": "Primary residence",
+        "address": "358 El Brillo Way"
+      },
+      {
+        "location": "New York, NY",
+        "type": "Townhouse",
+        "address": "9 East 71st Street"
+      },
+      {
+        "location": "Santa Fe, NM",
+        "type": "Ranch",
+        "name": "Zorro Ranch"
+      },
+      {
+        "location": "U.S. Virgin Islands",
+        "type": "Island",
+        "name": "Little St. James"
+      }
+    ],
+    "international_locations": [
+      "London, UK",
+      "Paris, France"
+    ]
+  },
+  "charges_analysis": {
+    "primary_charges": [
+      {
+        "statute": "18 U.S.C. § 1591",
+        "offense": "Sex Trafficking of Children",
+        "evidence_strength": "OVERWHELMING",
+        "verdict": "GUILTY"
+      },
+      {
+        "statute": "18 U.S.C. § 2423",
+        "offense": "Transportation of Minors",
+        "evidence_strength": "OVERWHELMING",
+        "verdict": "GUILTY"
+      },
+      {
+        "statute": "18 U.S.C. § 371",
+        "offense": "Conspiracy",
+        "evidence_strength": "STRONG",
+        "verdict": "GUILTY"
+      },
+      {
+        "statute": "18 U.S.C. § 2422",
+        "offense": "Enticement of Minor",
+        "evidence_strength": "OVERWHELMING",
+        "verdict": "GUILTY"
+      }
+    ]
+  },
+  "payment_structure": {
+    "standard_massage": {
+      "amount": 200,
+      "currency": "USD"
+    },
+    "escalated_activity": {
+      "amount": 300,
+      "currency": "USD"
+    },
+    "recruitment_bonus": {
+      "amount": 200,
+      "currency": "USD"
+    }
+  },
+  "timeline": {
+    "abuse_period": {
+      "start": "1994",
+      "end": "2019",
+      "duration_years": 25
+    },
+    "peak_activity": {
+      "start": "2001",
+      "end": "2006"
+    },
+    "key_dates": {
+      "first_police_report": "2005-03",
+      "search_warrant": "2005-10",
+      "grand_jury": "2007-05",
+      "npa_signed": "2007-09-24",
+      "state_plea": "2008-06",
+      "sdny_arrest": "2019-07-06",
+      "death": "2019-08-10",
+      "maxwell_arrest": "2020-07-02",
+      "maxwell_conviction": "2021-12-29"
+    }
+  },
+  "participants": {
+    "principal": {
+      "name": "Jeffrey Epstein",
+      "status": "Deceased",
+      "finding": "GUILTY"
+    },
+    "convicted_co_conspirators": [
+      {
+        "name": "Ghislaine Maxwell",
+        "conviction_date": "2021-12-29",
+        "sentence_years": 20
+      }
+    ],
+    "named_staff": [
+      {
+        "name": "Sarah Kellen",
+        "role": "Scheduler",
+        "status": "Not charged (NPA immunity)"
+      },
+      {
+        "name": "Lesley Groff",
+        "role": "Assistant",
+        "status": "Not charged (NPA immunity)"
+      },
+      {
+        "name": "Nadia Marcinkova",
+        "role": "Associate",
+        "status": "Not charged (NPA immunity)"
+      }
+    ]
+  },
+  "npa_analysis": {
+    "date_signed": "2007-09-24",
+    "us_attorney": "Alexander Acosta",
+    "cvra_violation": true,
+    "judge_marra_ruling": "2019-02",
+    "defense_attorneys": [
+      "Jay Lefkowitz",
+      "Ken Starr",
+      "Alan Dershowitz"
+    ]
+  },
+  "estate": {
+    "estimated_value": {
+      "low": 450000000,
+      "high": 650000000,
+      "currency": "USD"
+    },
+    "categories": {
+      "real_estate": 180000000,
+      "cash_investments": 200000000,
+      "aircraft": 20000000,
+      "personal_property": 50000000
+    }
+  },
+  "sentencing_recommendation": {
+    "count_1_1591": "Life",
+    "count_2_2423": "20 years consecutive",
+    "count_3_371": "5 years consecutive",
+    "count_4_2422": "20 years consecutive",
+    "total_recommendation": "Life imprisonment without parole"
+  }
+}
