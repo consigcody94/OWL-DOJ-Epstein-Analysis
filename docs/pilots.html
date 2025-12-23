@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilots - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-blue: #3b82f6; --accent-cyan: #06b6d4; --accent-amber: #f59e0b; --text-primary: #f8fafc; --text-secondary: #94a3b8; --text-muted: #64748b; --border: #2d2d3a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .pilot-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; }
+        .pilot-header { background: var(--bg-secondary); padding: 1.5rem; border-bottom: 1px solid var(--border); }
+        .pilot-name { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .pilot-role { color: var(--text-secondary); }
+        .pilot-body { padding: 1.5rem; }
+        .pilot-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .pilot-stat { text-align: center; }
+        .pilot-stat-value { font-family: 'JetBrains Mono', monospace; font-size: 1.25rem; font-weight: 600; color: var(--accent-cyan); }
+        .pilot-stat-label { font-size: 0.75rem; color: var(--text-muted); }
+        .context-note { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%); border: 1px solid var(--accent-blue); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-blue); margin-bottom: 0.5rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Pilots</h1>
+            <p class="person-subtitle">David Rodgers (Chief Pilot) & Larry Visoski</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">136</div>
+                    <div class="stat-label">Combined Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Key</div>
+                    <div class="stat-label">Witness Status</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Flight Logs</div>
+                    <div class="stat-label">Primary Evidence</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>The pilots David Rodgers and Larry Visoski are key witnesses in the Epstein case. They maintained
+            flight logs that became crucial evidence documenting who traveled on Epstein's aircraft. Both
+            testified at the Maxwell trial and in grand jury proceedings. Their logs documented travel by
+            high-profile individuals including Clinton, Trump, Prince Andrew, and numerous victims.</p>
+        </div>
+
+        <h2 class="section-title">Pilot Profiles</h2>
+
+        <div class="pilot-card">
+            <div class="pilot-header">
+                <div class="pilot-name">David Rodgers</div>
+                <div class="pilot-role">Chief Pilot</div>
+            </div>
+            <div class="pilot-body">
+                <div class="pilot-stats">
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">72</div>
+                        <div class="pilot-stat-label">Documents</div>
+                    </div>
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">Grand Jury</div>
+                        <div class="pilot-stat-label">Testified</div>
+                    </div>
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">Maxwell Trial</div>
+                        <div class="pilot-stat-label">Testified</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary);">
+                    David Rodgers served as Epstein's chief pilot and maintained detailed flight logs. He testified
+                    to the grand jury about flight operations and passengers. His logs documented hundreds of
+                    flights over multiple years, providing crucial evidence about who traveled on Epstein's aircraft.
+                </p>
+            </div>
+        </div>
+
+        <div class="pilot-card">
+            <div class="pilot-header">
+                <div class="pilot-name">Larry Visoski</div>
+                <div class="pilot-role">Pilot</div>
+            </div>
+            <div class="pilot-body">
+                <div class="pilot-stats">
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">64</div>
+                        <div class="pilot-stat-label">Documents</div>
+                    </div>
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">Maxwell Trial</div>
+                        <div class="pilot-stat-label">Testified</div>
+                    </div>
+                    <div class="pilot-stat">
+                        <div class="pilot-stat-value">25+ Years</div>
+                        <div class="pilot-stat-label">Employment</div>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary);">
+                    Larry Visoski was a long-time pilot for Epstein, employed for over 25 years. He testified
+                    at the Maxwell trial about his observations during flights and at Epstein's properties.
+                    His testimony provided insight into flight operations and passenger movements.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Key Evidence</h2>
+        <div class="pilot-card">
+            <div class="pilot-body">
+                <h3 style="margin-bottom: 1rem;">Flight Logs - Primary Evidence</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    The flight logs maintained by the pilots became central evidence in the Epstein investigation.
+                    These logs documented:
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);">
+                        Passenger manifests for each flight
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);">
+                        Routes (PBI-TEB, TEB-STT, etc.)
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary);">
+                        Aircraft used (N908JE "Lolita Express", N909JE Gulfstream)
+                    </li>
+                    <li style="padding: 0.5rem 0; color: var(--text-secondary);">
+                        High-profile passengers including political figures and celebrities
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

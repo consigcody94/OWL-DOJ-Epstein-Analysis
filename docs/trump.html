@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donald Trump - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-hover: #22222e;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d2d3a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .back-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .person-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .person-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .stats-row {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .document-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .document-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
+        }
+        .doc-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .doc-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+        .doc-type {
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-red);
+            color: white;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .doc-body {
+            padding: 1.5rem;
+        }
+        .doc-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .doc-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .doc-excerpt {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-amber);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .doc-excerpt .highlight {
+            background: rgba(251, 191, 36, 0.3);
+            color: var(--accent-amber);
+            padding: 0 0.25rem;
+            border-radius: 2px;
+        }
+        .doc-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .context-note {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--accent-red);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .context-note h3 {
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 3rem;
+        }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Donald Trump</h1>
+            <p class="person-subtitle">45th & 47th President of the United States (Current)</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">137</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">Flight Log Entries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1993-1996</div>
+                    <div class="stat-label">Flight Period</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Donald Trump appears in 137 DOJ documents primarily in the context of flight logs, social connections, and media references.
+            Documents indicate Trump flew on Epstein's aircraft at least 8 times between 1993-1996. Trump publicly distanced himself
+            from Epstein in 2019, stating he "was not a fan" and had a "falling out" years earlier. His Labor Secretary Alexander Acosta
+            resigned over the Epstein NPA controversy.</p>
+        </div>
+
+        <h2 class="section-title">Key Document References</h2>
+
+        <!-- EFTA00028716 -->
+        <div class="document-card" id="EFTA00028716">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00028716</span>
+                <span class="doc-type">DOJ INTERNAL MEMO</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Flight Records Analysis - DOJ Situational Awareness Memo</h3>
+                <p class="doc-description">
+                    Internal DOJ memo regarding flight records showing Trump's travel on Epstein's aircraft, including
+                    trips with family members and Maxwell's presence.
+                </p>
+                <div class="doc-excerpt">For your situational awareness, wanted to let you know that the flight records
+we received yesterday reflect that Donald <span class="highlight">Trump</span> traveled on Epstein's
+private jet many more times than previously has been reported (or that we
+were aware), including during the period we would expect to charge in a
+Maxwell case. In particular, he is listed as a passenger on at least eight
+flights between 1993 and 1996, including at least four flights on which
+Maxwell was also present. He is listed as having traveled with, among others
+and at various times, Marla Maples, his daughter Tiffany, and his son Eric.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Internal DOJ Communication</span>
+                    <span>Significance: Documents 8+ flights with Epstein, 4+ with Maxwell present</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00028308 -->
+        <div class="document-card" id="EFTA00028308">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00028308</span>
+                <span class="doc-type">MEDIA REFERENCE</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">2002 New York Magazine Quote</h3>
+                <p class="doc-description">
+                    Document containing Trump's 2002 public statement about Epstein that was widely reported after Epstein's arrest.
+                </p>
+                <div class="doc-excerpt">In 2002, Mr. <span class="highlight">Trump</span> described Mr. Epstein as "a terrific guy."
+
+"He's a lot of fun to be with," Mr. <span class="highlight">Trump</span> told New York Magazine.
+"It is even said that he likes beautiful women as much as I do, and
+many of them are on the younger side."</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Media Documentation</span>
+                    <span>Date: 2002 Quote</span>
+                    <span>Significance: Trump's public characterization of Epstein</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00029524 -->
+        <div class="document-card" id="EFTA00029524">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00029524</span>
+                <span class="doc-type">BACKGROUND DOCUMENT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Maxwell-Trump Pre-Epstein Connection</h3>
+                <p class="doc-description">
+                    Document detailing Maxwell family connections showing Trump's prior relationship with Robert Maxwell.
+                </p>
+                <div class="doc-excerpt">The Maxwells were active in both British and American social circles,
+and the family apparently had ties to <span class="highlight">Trump</span> before even Epstein did:
+a 1989 clipping from the St. Louis Post-Dispatch lists <span class="highlight">Trump</span> as a
+guest on Robert Maxwell's yacht, the aptly named Lady Ghislaine.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Background Investigation</span>
+                    <span>Date: 1989 Reference</span>
+                    <span>Significance: Pre-Epstein Maxwell connection</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00018441 -->
+        <div class="document-card" id="EFTA00018441">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00018441</span>
+                <span class="doc-type">MEDIA COMPILATION</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">News Coverage - Elite Connections</h3>
+                <p class="doc-description">
+                    Compilation of news articles documenting Epstein's high-profile connections and trial updates.
+                </p>
+                <div class="doc-excerpt">Epstein — onetime friend of the rich and powerful, including current
+President Donald <span class="highlight">Trump</span> and past President Bill Clinton — learned
+Wednesday that he will not face trial until at least next June.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: News Coverage</span>
+                    <span>Significance: Media documentation of Trump-Epstein connection</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00032589 -->
+        <div class="document-card" id="EFTA00032589">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00032589</span>
+                <span class="doc-type">ACOSTA SCANDAL</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Labor Secretary Acosta - NPA Controversy</h3>
+                <p class="doc-description">
+                    Documents relating to Trump's Labor Secretary Alexander Acosta and his role in the 2008 Epstein plea deal.
+                </p>
+                <div class="doc-excerpt"><span class="highlight">Trump</span>'s labor secretary Alex Acosta at center of Epstein scandal
+after agreeing to sweetheart deal</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Media Documentation</span>
+                    <span>Significance: Links Trump administration to NPA controversy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00018174 -->
+        <div class="document-card" id="EFTA00018174">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00018174</span>
+                <span class="doc-type">MEDIA ANALYSIS</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Trump Defense of Acosta</h3>
+                <p class="doc-description">
+                    Media coverage documenting Trump's defense of Labor Secretary Acosta during the Epstein scandal.
+                </p>
+                <div class="doc-excerpt">Ever since the Epstein scandal arose, <span class="highlight">Trump</span> has been defending Acosta,
+stressing what an "excellent" job he's doing. After all, the president
+told reporters, "our economy is so good, our unemployment numbers are
+at record lows."</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Media Coverage</span>
+                    <span>Significance: Trump's public defense of Acosta</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Additional Document References</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            The following documents also contain references to Donald Trump. Click to view details.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032947</span></div>
+                <div class="doc-body"><p class="doc-description">Legal news compilation with Trump references</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032976</span></div>
+                <div class="doc-body"><p class="doc-description">DOJ case materials</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032913</span></div>
+                <div class="doc-body"><p class="doc-description">FOIA suit documentation</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032918</span></div>
+                <div class="doc-body"><p class="doc-description">Judicial confirmation references</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032922</span></div>
+                <div class="doc-body"><p class="doc-description">New York cases summary</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;">
+                <div class="doc-header"><span class="doc-id">EFTA00032897</span></div>
+                <div class="doc-body"><p class="doc-description">U.S. Attorney transition documents</p></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

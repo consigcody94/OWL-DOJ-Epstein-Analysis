@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Kellen - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-blue: #3b82f6; --accent-purple: #8b5cf6; --accent-amber: #f59e0b; --accent-cyan: #06b6d4; --accent-red: #ef4444; --text-primary: #f8fafc; --text-secondary: #94a3b8; --text-muted: #64748b; --border: #2d2d3a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .document-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; }
+        .doc-header { background: var(--bg-secondary); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-blue); }
+        .doc-type { padding: 0.25rem 0.75rem; background: var(--accent-red); color: white; border-radius: 9999px; font-size: 0.75rem; }
+        .doc-body { padding: 1.5rem; }
+        .doc-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .doc-description { color: var(--text-secondary); margin-bottom: 1rem; }
+        .context-note { background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border: 1px solid var(--accent-red); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-red); margin-bottom: 0.5rem; }
+        .role-list { list-style: none; padding: 0; }
+        .role-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .role-list li:last-child { border-bottom: none; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Sarah Kellen</h1>
+            <p class="person-subtitle">Assistant/Scheduler (Also known as Sarah Kensington)</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">~50</div>
+                    <div class="stat-label">Document References</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">NPA</div>
+                    <div class="stat-label">Immunity Granted</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Staff</div>
+                    <div class="stat-label">Role Category</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Sarah Kellen (also known as Sarah Kensington after marriage) appears in approximately 50 DOJ documents
+            primarily as Epstein's assistant and scheduler. She was named in the NPA immunity provisions and was
+            not charged. Documents indicate she scheduled victim appointments, coordinated transportation, maintained
+            contact databases, and facilitated property access.</p>
+        </div>
+
+        <h2 class="section-title">Role in Enterprise</h2>
+        <div class="document-card">
+            <div class="doc-body">
+                <h3 class="doc-title">Documented Activities</h3>
+                <ul class="role-list">
+                    <li>Scheduled victim appointments at Epstein properties</li>
+                    <li>Coordinated transportation for victims</li>
+                    <li>Maintained contact databases ("little black book")</li>
+                    <li>Facilitated property access for victims</li>
+                    <li>Present at Palm Beach and other locations</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title">Key Documents</h2>
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">NPA Documentation</span>
+                <span class="doc-type">IMMUNITY</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Non-Prosecution Agreement Immunity</h3>
+                <p class="doc-description">
+                    Sarah Kellen was specifically named in the 2008 Non-Prosecution Agreement, granting her immunity
+                    from federal prosecution. This was one of the controversial aspects of the NPA that was later
+                    scrutinized by the OPR investigation and the Crime Victims' Rights Act lawsuit.
+                </p>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">Multiple Documents</span>
+                <span class="doc-type">VICTIM TESTIMONY</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Victim Depositions and Statements</h3>
+                <p class="doc-description">
+                    Multiple victim depositions reference Kellen's role in scheduling appointments and facilitating
+                    access to Epstein. Victims describe her as the primary point of contact for scheduling "massages."
+                </p>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">Phone Records</span>
+                <span class="doc-type">EVIDENCE</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Phone and Contact Records</h3>
+                <p class="doc-description">
+                    Documents reference Kellen's name appearing extensively in phone records and the "little black book"
+                    as a coordinator of victim contacts.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

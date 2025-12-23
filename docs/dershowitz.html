@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Dershowitz - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d2d3a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .document-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; transition: all 0.3s; }
+        .document-card:hover { border-color: var(--accent-blue); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+        .doc-header { background: var(--bg-secondary); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-blue); }
+        .doc-type { padding: 0.25rem 0.75rem; background: var(--accent-blue); color: white; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .doc-body { padding: 1.5rem; }
+        .doc-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .doc-description { color: var(--text-secondary); margin-bottom: 1rem; }
+        .doc-excerpt { background: var(--bg-secondary); border-left: 4px solid var(--accent-amber); padding: 1rem 1.5rem; margin: 1rem 0; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: var(--text-secondary); white-space: pre-wrap; overflow-x: auto; }
+        .doc-excerpt .highlight { background: rgba(251, 191, 36, 0.3); color: var(--accent-amber); padding: 0 0.25rem; border-radius: 2px; }
+        .doc-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .context-note { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border: 1px solid var(--accent-blue); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-blue); margin-bottom: 0.5rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Alan Dershowitz</h1>
+            <p class="person-subtitle">Harvard Law Professor, Epstein Defense Attorney</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">45</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2006-2008</div>
+                    <div class="stat-label">NPA Negotiations</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Defense Team</div>
+                    <div class="stat-label">Primary Role</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Alan Dershowitz appears in 45 DOJ documents primarily in his capacity as a defense attorney for Jeffrey Epstein
+            during the NPA negotiations. Documents reference him as part of Epstein's "army of legal superstars." He was also
+            mentioned in the OPR investigation regarding public perception of the case. Dershowitz has denied all allegations
+            of wrongdoing and has been involved in related civil litigation.</p>
+        </div>
+
+        <h2 class="section-title">Key Document References</h2>
+
+        <!-- EFTA00009116 - OPR -->
+        <div class="document-card" id="EFTA00009116">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009116</span>
+                <span class="doc-type">OPR INVESTIGATION</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">OPR Discussion - Named with Other Associates</h3>
+                <p class="doc-description">
+                    Office of Professional Responsibility document naming Dershowitz alongside other high-profile individuals
+                    connected to the Epstein case.
+                </p>
+                <div class="doc-excerpt">20   coverage of this matter is, there are references to Prince
+
+21   Andrew, and Alex <span class="highlight">Dershowitz</span> and Governor Richardson and Bill
+
+22   Clinton, and thing happening in London, and the so called
+
+23   Lolita Express where things may have happened on airplanes.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: OPR Interview</span>
+                    <span>Significance: Named in public perception discussion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00009116 - Defense Team -->
+        <div class="document-card" id="EFTA00009116-defense">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009116</span>
+                <span class="doc-type">DEFENSE TEAM</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Epstein's "Legal Superstars" Team</h3>
+                <p class="doc-description">
+                    Document describing Epstein's defense team including Harvard Professor Dershowitz.
+                </p>
+                <div class="doc-excerpt">9    Excuse me. Mr. Epstein hired an army of legal
+
+10   superstars, Harvard Professor <span class="highlight">Dershowitz</span>, former judge and
+
+11   then Pepperdine lodging Ken Starr, former deputy assistant to</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: OPR Transcript</span>
+                    <span>Significance: Characterization of defense team</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00009329 -->
+        <div class="document-card" id="EFTA00009329">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009329</span>
+                <span class="doc-type">DEFENSE TEAM ROSTER</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Defense Team Confirmation</h3>
+                <p class="doc-description">
+                    Document listing Dershowitz as part of Epstein's defense team alongside other attorneys.
+                </p>
+                <div class="doc-excerpt">4    addition to Gerald Lefcourt, Roy Black, and Lillian Sanchez
+
+5    was Alan <span class="highlight">Dershowitz</span>.
+
+6         A     Yeah.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: Testimony/Interview</span>
+                    <span>Significance: Confirms defense team membership</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00007157 -->
+        <div class="document-card" id="EFTA00007157">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00007157</span>
+                <span class="doc-type">POLICE REPORT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Palm Beach Investigation - Dershowitz Correspondence</h3>
+                <p class="doc-description">
+                    Palm Beach Police report documenting correspondence from Dershowitz during the investigation,
+                    including information about potential witnesses.
+                </p>
+                <div class="doc-excerpt">I received a package from Atty. Guy Fronstin, which was hand
+delivered at the police station. Within the package, was a letter
+from Alan <span class="highlight">Dershowitz</span> and two www.myspace.com profiles.
+
+---
+
+The letter Mr. <span class="highlight">Dershowitz</span> sent advised he was looking into the
+allegation that one of the private investigators used by the private
+attorneys of Epstein, attempted to impersonate or state that they were
+police officers from Palm Beach. Mr. <span class="highlight">Dershowitz</span> advised that the
+investigators used to interview [redacted] had "quite a distinct
+speech impediment"</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_4/VOL00004</span>
+                    <span>Type: Police Report</span>
+                    <span>Date: May 2006</span>
+                    <span>Significance: Active defense during investigation</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Additional References</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">NPA Documents</span></div>
+                <div class="doc-body"><p class="doc-description">Multiple NPA negotiation references</p></div>
+            </div>
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">OPR Investigation</span></div>
+                <div class="doc-body"><p class="doc-description">OPR investigation discussion</p></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

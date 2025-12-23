@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defense Attorneys - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-blue: #3b82f6; --accent-cyan: #06b6d4; --accent-amber: #f59e0b; --text-primary: #f8fafc; --text-secondary: #94a3b8; --text-muted: #64748b; --border: #2d2d3a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .attorney-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; }
+        .attorney-header { background: var(--bg-secondary); padding: 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .attorney-name { font-size: 1.25rem; font-weight: 600; }
+        .attorney-role { color: var(--text-secondary); font-size: 0.875rem; }
+        .doc-count { background: var(--accent-blue); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .attorney-body { padding: 1.5rem; }
+        .context-note { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%); border: 1px solid var(--accent-blue); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-blue); margin-bottom: 0.5rem; }
+        .deceased-tag { background: var(--bg-secondary); color: var(--text-muted); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Defense Attorneys</h1>
+            <p class="person-subtitle">Jay Lefkowitz, Ken Starr, Roy Black, and Others</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Epstein assembled what was described as an "army of legal superstars" to negotiate the 2008
+            Non-Prosecution Agreement. This defense team included former government officials, prominent law
+            professors, and high-profile criminal defense attorneys from top firms.</p>
+        </div>
+
+        <h2 class="section-title">Defense Team Members</h2>
+
+        <div class="attorney-card" id="lefkowitz">
+            <div class="attorney-header">
+                <div>
+                    <div class="attorney-name">Jay Lefkowitz</div>
+                    <div class="attorney-role">Kirkland & Ellis | Lead NPA Negotiator</div>
+                </div>
+                <span class="doc-count">69 Documents</span>
+            </div>
+            <div class="attorney-body">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Jay Lefkowitz served as the lead negotiator for the 2008 Non-Prosecution Agreement.
+                    Documents show extensive correspondence between Lefkowitz and DOJ officials during
+                    the NPA negotiations. He was the primary defense counsel during the federal investigation.
+                </p>
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--accent-amber);">Key Role:</strong>
+                    <span style="color: var(--text-secondary);"> Principal architect of the NPA terms</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attorney-card" id="starr">
+            <div class="attorney-header">
+                <div>
+                    <div class="attorney-name">Ken Starr <span class="deceased-tag">DECEASED Sept 2022</span></div>
+                    <div class="attorney-role">Former Solicitor General | Pepperdine Dean</div>
+                </div>
+                <span class="doc-count">49 Documents</span>
+            </div>
+            <div class="attorney-body">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Ken Starr, famous for the Clinton-Lewinsky investigation, joined Epstein's defense team.
+                    Documents show he appealed directly to DOJ officials on Epstein's behalf. His involvement
+                    added significant weight to Epstein's legal representation.
+                </p>
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--accent-amber);">Key Role:</strong>
+                    <span style="color: var(--text-secondary);"> DOJ appeals and high-level advocacy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attorney-card" id="black">
+            <div class="attorney-header">
+                <div>
+                    <div class="attorney-name">Roy Black</div>
+                    <div class="attorney-role">Black, Srebnick, Kornspan & Stumpf | Miami</div>
+                </div>
+                <span class="doc-count">404 Documents</span>
+            </div>
+            <div class="attorney-body">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Roy Black is a renowned Miami criminal defense attorney. He appears in more documents
+                    than any other defense team member, indicating his extensive involvement in the case.
+                    Black handled significant aspects of the Florida proceedings.
+                </p>
+                <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--accent-amber);">Key Role:</strong>
+                    <span style="color: var(--text-secondary);"> Primary Florida defense counsel</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="attorney-card">
+            <div class="attorney-header">
+                <div>
+                    <div class="attorney-name">Gerald Lefcourt</div>
+                    <div class="attorney-role">New York Criminal Defense</div>
+                </div>
+            </div>
+            <div class="attorney-body">
+                <p style="color: var(--text-secondary);">
+                    Gerald Lefcourt was part of the defense team referenced in multiple documents
+                    alongside Dershowitz, Black, and others.
+                </p>
+            </div>
+        </div>
+
+        <div class="attorney-card">
+            <div class="attorney-header">
+                <div>
+                    <div class="attorney-name">Lillian Sanchez</div>
+                    <div class="attorney-role">Defense Team Member</div>
+                </div>
+            </div>
+            <div class="attorney-body">
+                <p style="color: var(--text-secondary);">
+                    Lillian Sanchez was referenced as part of Epstein's defense team in documents
+                    listing the legal representation.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-Luc Brunel - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent-blue: #3b82f6; --accent-purple: #8b5cf6; --accent-amber: #f59e0b; --accent-cyan: #06b6d4; --text-primary: #f8fafc; --text-secondary: #94a3b8; --text-muted: #64748b; --border: #2d2d3a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .document-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; }
+        .doc-header { background: var(--bg-secondary); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-blue); }
+        .doc-type { padding: 0.25rem 0.75rem; background: var(--accent-purple); color: white; border-radius: 9999px; font-size: 0.75rem; }
+        .doc-body { padding: 1.5rem; }
+        .doc-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .doc-description { color: var(--text-secondary); margin-bottom: 1rem; }
+        .context-note { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid var(--accent-purple); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-purple); margin-bottom: 0.5rem; }
+        .deceased-badge { background: var(--bg-secondary); border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 8px; display: inline-block; margin-top: 1rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Jean-Luc Brunel</h1>
+            <p class="person-subtitle">French Modeling Agent</p>
+            <div class="deceased-badge">DECEASED - February 2022 (Found dead in prison before trial)</div>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">22</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">France</div>
+                    <div class="stat-label">Charged In</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Modeling</div>
+                    <div class="stat-label">Industry</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Jean-Luc Brunel appears in 22 DOJ documents as a French modeling agent who allegedly provided
+            models to Epstein. He was charged in France with rape of minors and sexual harassment. Brunel
+            was found dead in his prison cell in February 2022 before his trial concluded. Documents reference
+            his role in the modeling industry and connections to Epstein's recruitment network.</p>
+        </div>
+
+        <h2 class="section-title">Key Document References</h2>
+
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">Flight Records</span>
+                <span class="doc-type">EVIDENCE</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Flight Log Entries</h3>
+                <p class="doc-description">
+                    Brunel appears in flight logs as a passenger on Epstein's aircraft, documented traveling
+                    between various locations associated with Epstein's network.
+                </p>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">MC2 Modeling</span>
+                <span class="doc-type">BUSINESS TIES</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">MC2 Model Management</h3>
+                <p class="doc-description">
+                    Documents reference Brunel's modeling agency MC2, which was partially funded by Epstein.
+                    The agency allegedly served as a pipeline for providing young models access to Epstein.
+                </p>
+            </div>
+        </div>
+
+        <div class="document-card">
+            <div class="doc-header">
+                <span class="doc-id">Victim Statements</span>
+                <span class="doc-type">TESTIMONY</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Victim Depositions</h3>
+                <p class="doc-description">
+                    Multiple victim statements reference Brunel and his role in the modeling industry,
+                    describing how aspiring models were recruited.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

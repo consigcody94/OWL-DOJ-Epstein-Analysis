@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Wexner - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d2d3a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .document-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; transition: all 0.3s; }
+        .document-card:hover { border-color: var(--accent-blue); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+        .doc-header { background: var(--bg-secondary); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-blue); }
+        .doc-type { padding: 0.25rem 0.75rem; background: var(--accent-green); color: white; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .doc-body { padding: 1.5rem; }
+        .doc-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .doc-description { color: var(--text-secondary); margin-bottom: 1rem; }
+        .doc-excerpt { background: var(--bg-secondary); border-left: 4px solid var(--accent-amber); padding: 1rem 1.5rem; margin: 1rem 0; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: var(--text-secondary); white-space: pre-wrap; overflow-x: auto; }
+        .doc-excerpt .highlight { background: rgba(251, 191, 36, 0.3); color: var(--accent-amber); padding: 0 0.25rem; border-radius: 2px; }
+        .doc-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .context-note { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid var(--accent-green); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-green); margin-bottom: 0.5rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Les Wexner</h1>
+            <p class="person-subtitle">Billionaire, L Brands / Victoria's Secret Founder</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">11</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">$46M+</div>
+                    <div class="stat-label">Documented Transfers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Financial</div>
+                    <div class="stat-label">Primary Role</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Les Wexner appears in 11 DOJ documents primarily in the context of financial connections to Epstein.
+            Wexner is the primary documented source of Epstein's wealth, having granted Epstein power of attorney
+            and transferred the NYC townhouse to him. Documents show $46 million in charitable donations from
+            Epstein to Wexner foundations. Wexner states he severed ties and was unaware of crimes.</p>
+        </div>
+
+        <h2 class="section-title">Key Document References</h2>
+
+        <!-- EFTA00007157 -->
+        <div class="document-card" id="EFTA00007157">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00007157</span>
+                <span class="doc-type">POLICE REPORT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Palm Beach Investigation - Wexner Aircraft</h3>
+                <p class="doc-description">
+                    Police report documenting surveillance of Wexner's aircraft in connection with Epstein investigation.
+                </p>
+                <div class="doc-excerpt">On May 10, 2006, information was received that Epstein's associate,
+Leslie <span class="highlight">Wexner</span>, The Limited Inc, CEO's, plane had arrived in West Palm
+Beach, PBIA. The plane, a Gulfstream 4 bearing a [redacted] registration,
+was on the tarmac at Galaxy Aviation. As Epstein had recently
+acquired the services of a new attorney, and the fact that Epstein's</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_4/VOL00004</span>
+                    <span>Type: Police Report</span>
+                    <span>Date: May 2006</span>
+                    <span>Significance: Surveillance of Wexner aircraft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00023292 -->
+        <div class="document-card" id="EFTA00023292">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00023292</span>
+                <span class="doc-type">VICTIM STATEMENT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Victoria's Secret Modeling Lure</h3>
+                <p class="doc-description">
+                    Victim statement documenting how Epstein used his connection to Wexner and Victoria's Secret
+                    to lure victims.
+                </p>
+                <div class="doc-excerpt">39.    Upon meeting Jane Doe, Epstein offered her a position modeling
+with Victoria's Secret, a lingerie retailer. He explained that he was
+friends with Les <span class="highlight">Wexner</span>, the chief executive of</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Victim Statement</span>
+                    <span>Significance: Victoria's Secret used as lure</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00020493 -->
+        <div class="document-card" id="EFTA00020493">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00020493</span>
+                <span class="doc-type">BACKGROUND DOCUMENT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Epstein Background - Wexner Connection</h3>
+                <p class="doc-description">
+                    Background document on Epstein referencing his work with prominent business figures.
+                </p>
+                <div class="doc-excerpt">He provided a background for himself, such as working with prominent
+business figures such as Leslie <span class="highlight">Wexner</span> and Jeffrey Epstein, being
+pardoned by a U.S. President, among several other pieces of information.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Background Investigation</span>
+                    <span>Significance: Wexner-Epstein business relationship</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00026723 -->
+        <div class="document-card" id="EFTA00026723">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00026723</span>
+                <span class="doc-type">FINANCIAL ANALYSIS</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">$46 Million Charitable Donation</h3>
+                <p class="doc-description">
+                    DOJ internal email chain regarding CNBC reporting on Epstein's financial ties to Wexner foundations.
+                </p>
+                <div class="doc-excerpt">Subject: CNBC; Jeffrey Epstein used $46 million charitable donation to keep
+alive his ties with billionaire Les <span class="highlight">Wexner</span>
+
+• Accused child molester JeffEpstein in 2008 essentially bankrolled
+one of Les <span class="highlight">Wexner</span>'s first nonprofit foundations with a contribution of
+more than $40 million in stock and other assets.
+
+• Despite the massive donation, the <span class="highlight">Wexner</span>s tried to distance themselves
+from Epstein.
+
+• While <span class="highlight">Wexner</span> appeared to shun Epstein after his first arrest in Florida,
+many politicians and companies</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Internal DOJ Email</span>
+                    <span>Date: July 2019</span>
+                    <span>Significance: Massive financial connection documented</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Additional References</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">NYC Townhouse</span></div>
+                <div class="doc-body"><p class="doc-description">Property transfer documentation</p></div>
+            </div>
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">Power of Attorney</span></div>
+                <div class="doc-body"><p class="doc-description">POA grant documentation</p></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

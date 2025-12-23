@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Clinton - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-hover: #22222e;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d2d3a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .back-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .person-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .person-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .stats-row {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .document-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .document-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
+        }
+        .doc-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .doc-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+        .doc-type {
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-purple);
+            color: white;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .doc-body {
+            padding: 1.5rem;
+        }
+        .doc-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .doc-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .doc-excerpt {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-amber);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .doc-excerpt .highlight {
+            background: rgba(251, 191, 36, 0.3);
+            color: var(--accent-amber);
+            padding: 0 0.25rem;
+            border-radius: 2px;
+        }
+        .doc-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .context-note {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .context-note h3 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 3rem;
+        }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Bill Clinton</h1>
+            <p class="person-subtitle">42nd President of the United States (1993-2001)</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">66</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">26+</div>
+                    <div class="stat-label">Flight Log Entries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2002-2003</div>
+                    <div class="stat-label">Africa Trips Period</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Bill Clinton appears in 66 DOJ documents primarily in the context of flight logs and media references.
+            The Clinton Foundation has stated he took four trips on Epstein's plane related to AIDS relief work in Africa.
+            Flight logs suggest additional trips. Clinton spokesperson stated he "knew nothing" of Epstein's crimes and
+            had not spoken to Epstein in over a decade prior to his arrest.</p>
+        </div>
+
+        <h2 class="section-title">Document References</h2>
+
+        <!-- EFTA00009116 -->
+        <div class="document-card" id="EFTA00009116">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009116</span>
+                <span class="doc-type">OPR INVESTIGATION</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Office of Professional Responsibility Investigation - Grand Jury Context</h3>
+                <p class="doc-description">
+                    DOJ Office of Professional Responsibility document discussing public perception of the Epstein case
+                    and naming multiple high-profile individuals including Clinton.
+                </p>
+                <div class="doc-excerpt">21   Andrew, and Alex Dershowitz and Governor Richardson and <span class="highlight">Bill</span>
+
+22   <span class="highlight">Clinton</span>, and thing happening in London, and the so called
+
+23   Lolita Express where things may have happened on airplanes.
+
+24   And so, this is viewed from the public as this international</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: OPR Interview Transcript</span>
+                    <span>Significance: Names Clinton alongside other high-profile associates</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00032130 -->
+        <div class="document-card" id="EFTA00032130">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00032130</span>
+                <span class="doc-type">DOJ INTERNAL EMAIL</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Flight Records Timeline Analysis - DOJ Email Chain</h3>
+                <p class="doc-description">
+                    Internal DOJ email from March 2020 discussing the timeline of flight records, specifically
+                    referencing when victim flights occurred relative to President Clinton's documented trips.
+                </p>
+                <div class="doc-excerpt">Yep, the August flights are what I was referring to. I recalled the NM trip
+was sometime after [REDACTED] returned from the Africa trip with Epstein and
+<span class="highlight">President Clinton</span>. I don't have the records in front of me, but I believe
+those August flights are after the <span class="highlight">Pres. Clinton</span> flights.
+
+From: [REDACTED]
+Sent: Sunday, March 29, 2020 1:44 PM
+To: [REDACTED]
+Subject: question re: flight records</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Internal DOJ Communication</span>
+                    <span>Date: March 2020</span>
+                    <span>Significance: DOJ analyzing Clinton flight timeline</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00037126 -->
+        <div class="document-card" id="EFTA00037126">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00037126</span>
+                <span class="doc-type">MEDIA REFERENCE</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Photo Documentation - Clinton Boarding Epstein's Plane</h3>
+                <p class="doc-description">
+                    Document referencing photographs of Clinton and Ghislaine Maxwell boarding Epstein's aircraft.
+                </p>
+                <div class="doc-excerpt"><span class="highlight">Clinton</span> and Ghislaine were pictured posing together as they
+boarded Epstein's plane</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Media Documentation</span>
+                    <span>Significance: Photographic evidence of Clinton on Epstein aircraft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00018441 -->
+        <div class="document-card" id="EFTA00018441">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00018441</span>
+                <span class="doc-type">MEDIA COMPILATION</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">News Article Compilation - Elite Connections</h3>
+                <p class="doc-description">
+                    Compilation of news coverage documenting Epstein's connections to high-profile individuals.
+                </p>
+                <div class="doc-excerpt">Epstein has long been accused of sexually abusing underage girls. He also has
+purported connections to Donald Trump, <span class="highlight">Bill Clinton</span> and Prince Andrew,
+and moved in elite circles, including for several years in a relationship
+with Ghislaine Maxwell, daughter of the late British media tycoon Robert Maxwell.
+
+---
+
+Epstein — onetime friend of the rich and powerful, including current President
+Donald Trump and past President <span class="highlight">Bill Clinton</span> — learned Wednesday that he
+will not face trial until at least next June.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: News Coverage Compilation</span>
+                    <span>Significance: Documents public knowledge of Clinton-Epstein connection</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00029524 -->
+        <div class="document-card" id="EFTA00029524">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00029524</span>
+                <span class="doc-type">BACKGROUND DOCUMENT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Maxwell-Clinton Relationship Background</h3>
+                <p class="doc-description">
+                    Document detailing Ghislaine Maxwell's social connections, including her relationship with the Clinton family.
+                </p>
+                <div class="doc-excerpt">She also continued to cultivate friendships with extremely high-powered
+individuals such as Trump and Prince Andrew, reportedly introducing
+Epstein to the latter in 1997 and former President <span class="highlight">Bill Clinton</span>, even
+appearing as a guest at Chelsea <span class="highlight">Clinton</span>'s wedding in 2010.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Background Investigation</span>
+                    <span>Significance: Maxwell attended Chelsea Clinton's 2010 wedding</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00024032 -->
+        <div class="document-card" id="EFTA00024032">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00024032</span>
+                <span class="doc-type">FOIA REQUEST</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">FOIA Request - Flight Log Records</h3>
+                <p class="doc-description">
+                    Freedom of Information Act request from media outlet regarding Clinton flight log references,
+                    citing previous Fox News reporting.
+                </p>
+                <div class="doc-excerpt">Links: (<span class="highlight">Bill Clinton</span>) http://www.foxnews.com/us/2016/05/13/flight-logs-show-bill-clinton-</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: FOIA Documentation</span>
+                    <span>Date: 2017</span>
+                    <span>Significance: Media FOIA request for flight records</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00013640 -->
+        <div class="document-card" id="EFTA00013640">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00013640</span>
+                <span class="doc-type">REFERENCE DOCUMENT</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Epstein Wealth and Aircraft Access</h3>
+                <p class="doc-description">
+                    Document discussing what attracted various individuals to Epstein, specifically his access to private aircraft.
+                </p>
+                <div class="doc-excerpt">What attracted <span class="highlight">Clinton</span> to Epstein was quite simple: He had a plane
+(he has a couple, in...</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Background Document</span>
+                    <span>Significance: Explains Clinton-Epstein connection rationale</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Additional Document References</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            The following documents also contain references to Bill Clinton. Click to view in context.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00032210 - Internal memo referencing Clinton in case context')">
+                <div class="doc-header"><span class="doc-id">EFTA00032210</span></div>
+                <div class="doc-body"><p class="doc-description">Internal memo with Clinton reference</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00032947 - Case materials compilation')">
+                <div class="doc-header"><span class="doc-id">EFTA00032947</span></div>
+                <div class="doc-body"><p class="doc-description">Case materials compilation</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00032518 - Investigation reference')">
+                <div class="doc-header"><span class="doc-id">EFTA00032518</span></div>
+                <div class="doc-body"><p class="doc-description">Investigation reference document</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00028308 - Case file reference')">
+                <div class="doc-header"><span class="doc-id">EFTA00028308</span></div>
+                <div class="doc-body"><p class="doc-description">Case file reference</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00028732 - Background documentation')">
+                <div class="doc-header"><span class="doc-id">EFTA00028732</span></div>
+                <div class="doc-body"><p class="doc-description">Background documentation</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00019183 - Media reference')">
+                <div class="doc-header"><span class="doc-id">EFTA00019183</span></div>
+                <div class="doc-body"><p class="doc-description">Media reference document</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00019088 - Case materials')">
+                <div class="doc-header"><span class="doc-id">EFTA00019088</span></div>
+                <div class="doc-body"><p class="doc-description">Case materials</p></div>
+            </div>
+            <div class="document-card" style="cursor: pointer;" onclick="alert('Document EFTA00006036 - Early case documentation')">
+                <div class="doc-header"><span class="doc-id">EFTA00006036</span></div>
+                <div class="doc-body"><p class="doc-description">Early case documentation</p></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

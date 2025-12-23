@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Andrew - Document References | OWL Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border: #2d2d3a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; }
+        .header { background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--border); padding: 2rem; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        .back-link { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        .person-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .person-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .stats-row { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .stat { background: var(--bg-card); padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        .main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+        .document-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; transition: all 0.3s; }
+        .document-card:hover { border-color: var(--accent-blue); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1); }
+        .doc-header { background: var(--bg-secondary); padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .doc-id { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-blue); }
+        .doc-type { padding: 0.25rem 0.75rem; background: var(--accent-purple); color: white; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+        .doc-body { padding: 1.5rem; }
+        .doc-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+        .doc-description { color: var(--text-secondary); margin-bottom: 1rem; }
+        .doc-excerpt { background: var(--bg-secondary); border-left: 4px solid var(--accent-amber); padding: 1rem 1.5rem; margin: 1rem 0; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; color: var(--text-secondary); white-space: pre-wrap; overflow-x: auto; }
+        .doc-excerpt .highlight { background: rgba(251, 191, 36, 0.3); color: var(--accent-amber); padding: 0 0.25rem; border-radius: 2px; }
+        .doc-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .context-note { background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid var(--accent-purple); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+        .context-note h3 { color: var(--accent-purple); margin-bottom: 0.5rem; }
+        .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--text-muted); margin-top: 3rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="back-link">← Back to Main Explorer</a>
+            <h1 class="person-title">Prince Andrew</h1>
+            <p class="person-subtitle">Duke of York, Son of Queen Elizabeth II</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">87</div>
+                    <div class="stat-label">Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">2022</div>
+                    <div class="stat-label">Civil Settlement</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">UK Focus</div>
+                    <div class="stat-label">Media Coverage</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="context-note">
+            <h3>Context Note</h3>
+            <p>Prince Andrew appears in 87 DOJ documents, primarily in victim depositions, flight records, and media references.
+            Maxwell allegedly introduced Andrew to Epstein in 1997. Andrew settled a civil lawsuit with Virginia Giuffre in 2022
+            for an undisclosed sum. He has consistently denied all allegations of wrongdoing. DOJ documents show ongoing
+            efforts to obtain cooperation from Andrew in the investigation.</p>
+        </div>
+
+        <h2 class="section-title">Key Document References</h2>
+
+        <!-- EFTA00009550 -->
+        <div class="document-card" id="EFTA00009550">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009550</span>
+                <span class="doc-type">GRAND JURY TESTIMONY</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Grand Jury Reference - Epstein-Andrew Relationship</h3>
+                <p class="doc-description">
+                    Grand jury transcript referencing the public connection between Epstein and Prince Andrew.
+                </p>
+                <div class="doc-excerpt">23   out regarding Mr. Epstein and his connection, or his
+
+24   personal relationship with <span class="highlight">Prince Andrew</span>, and that was a
+
+25   picture that was in that article.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: Grand Jury Transcript</span>
+                    <span>Significance: Documents public knowledge of relationship</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00009116 -->
+        <div class="document-card" id="EFTA00009116">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00009116</span>
+                <span class="doc-type">OPR INVESTIGATION</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">OPR Discussion - Public Perception of Case</h3>
+                <p class="doc-description">
+                    Office of Professional Responsibility document discussing the public perception surrounding
+                    allegations involving Prince Andrew.
+                </p>
+                <div class="doc-excerpt">4    know, was, you know, did Mr. Epstein force a minor to have
+
+5    sexual relations with <span class="highlight">Prince Andrew</span>, is a very different fact
+
+6    pattern both in terms of the public perception of forcing a</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_7/VOL00007</span>
+                    <span>Type: OPR Interview</span>
+                    <span>Significance: DOJ discussion of Andrew allegations</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00032225 -->
+        <div class="document-card" id="EFTA00032225">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00032225</span>
+                <span class="doc-type">DOJ CORRESPONDENCE</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Witness Re: Prince Andrew - DOJ Email Chain</h3>
+                <p class="doc-description">
+                    DOJ internal email chain regarding a witness with information about Prince Andrew's interactions,
+                    coordinated through attorney Lisa Bloom.
+                </p>
+                <div class="doc-excerpt">Subject: Witness re <span class="highlight">Prince Andrew</span>
+
+We have a client who witnessed <span class="highlight">Prince Andrew</span>'s interactions with
+would like to set up a phone or video interview with the appropriate
+party to allow our client to make a statement. Please let me know
+how to proceed.</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Internal DOJ Email</span>
+                    <span>Attorney: Lisa Bloom</span>
+                    <span>Significance: Witness coordination regarding Andrew</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EFTA00028760 -->
+        <div class="document-card" id="EFTA00028760">
+            <div class="doc-header">
+                <span class="doc-id">EFTA00028760</span>
+                <span class="doc-type">UK MEDIA SUMMARY</span>
+            </div>
+            <div class="doc-body">
+                <h3 class="doc-title">Maxwell Arrest - UK Media Coverage Summary</h3>
+                <p class="doc-description">
+                    DOJ summary of UK media reaction to Maxwell arrest and implications for Prince Andrew.
+                </p>
+                <div class="doc-excerpt">Subject: <span class="highlight">Prince Andrew</span>
+
+The Daily Mirror, Daily Telegraph, The Guardian, Daily Mail, Metro,
+and Daily Express all lead with articles on the arrest of Ghislaine
+Maxwell and the implications of this case for <span class="highlight">Prince Andrew</span>.
+
+Daily Mail:
+<span class="highlight">Prince Andrew</span> is 'bewildered' over lack of response from US justice
+officials as he and Royal Family brace for new revelations after
+arrest of Jeffrey Epstein 'pimp' Maxwell</div>
+                <div class="doc-meta">
+                    <span>Source: DataSet_8/VOL00008</span>
+                    <span>Type: Media Summary</span>
+                    <span>Date: July 2020</span>
+                    <span>Significance: UK response to Maxwell arrest</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 3rem;">Additional Document References</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Additional documents containing Prince Andrew references.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">EFTA00029434</span></div>
+                <div class="doc-body"><p class="doc-description">Internal correspondence re: Andrew</p></div>
+            </div>
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">Flight Logs</span></div>
+                <div class="doc-body"><p class="doc-description">Multiple flight log entries with Andrew</p></div>
+            </div>
+            <div class="document-card">
+                <div class="doc-header"><span class="doc-id">Victim Depositions</span></div>
+                <div class="doc-body"><p class="doc-description">Multiple victim statements reference Andrew</p></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <strong>OWL Analysis System</strong> | Document Reference Page<br>
+            <a href="../index.html">Return to Main Explorer</a> |
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis">View on GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
