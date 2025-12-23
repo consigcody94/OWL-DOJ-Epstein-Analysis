@@ -162,9 +162,9 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 | 🔵 **Defense** | [Alan Dershowitz](#alan-dershowitz) | 45 | Attorney |
 | 🔵 **Defense** | [Jay Lefkowitz](#jay-lefkowitz) | 69 | NPA Negotiator |
 | 🔵 **Defense** | [Ken Starr](#ken-starr) | 49 | Deceased |
-| ⚪ **Mentioned** | [Prince Andrew](#prince-andrew) | 87 | Associate |
-| ⚪ **Mentioned** | [Bill Clinton](#bill-clinton) | 66 | Associate |
-| ⚪ **Mentioned** | [Donald Trump](#donald-trump) | 137 | Associate |
+| ⚪ **Mentioned** | [Prince Andrew](./docs/prince-andrew.html) | 87 | Associate |
+| ⚪ **Mentioned** | [Bill Clinton](./docs/clinton.html) | 66 | Associate |
+| ⚪ **Mentioned** | [Donald Trump](./docs/trump.html) | 137 | 45th & 47th President |
 | 🟡 **Staff** | [Sarah Kellen](#sarah-kellen) | ~50 | NPA Immunity |
 | 🟡 **Witness** | [David Rodgers](#pilots) | 72 | Pilot |
 
@@ -261,10 +261,12 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 **Legal Status:** Settled civil lawsuit in 2022. Has denied all allegations.
 
+➡️ [View Document References](./docs/prince-andrew.html)
+
 </details>
 
 <details>
-<summary><b>👤 Bill Clinton - Former President</b></summary>
+<summary><b>👤 Bill Clinton - 42nd President</b></summary>
 
 <br>
 
@@ -278,22 +280,26 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 **Statement:** Spokesperson stated Clinton knew nothing of crimes and has not spoken to Epstein in over a decade.
 
+➡️ [View Document References](./docs/clinton.html)
+
 </details>
 
 <details>
-<summary><b>👤 Donald Trump - Former President</b></summary>
+<summary><b>👤 Donald Trump - 45th & 47th President (Current)</b></summary>
 
 <br>
 
 | Field | Value |
 |-------|-------|
 | **Documents** | 137 |
-| **Status** | Living |
+| **Status** | Living - Current President |
 | **Category** | Associate/Mentioned |
 
-**Context:** Named as former social acquaintance in various documents.
+**Context:** Named as former social acquaintance in various documents. Flight logs indicate travel on Epstein's aircraft.
 
 **Statement:** Publicly distanced himself from Epstein, stating he "was not a fan."
+
+➡️ [View Document References](./docs/trump.html)
 
 </details>
 
