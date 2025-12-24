@@ -63,18 +63,21 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 <div align="center">
 
-### 🌐 [Launch Interactive Explorer →](./interactive/index.html)
+### 🌐 [Launch Interactive Explorer →](./index.html)
 
 *View the full interactive analysis with network visualization, searchable database, and timeline*
 
 </div>
 
 **Features:**
-- 🕸️ **Network Visualization** - D3.js powered conspiracy network graph
-- 🔍 **Search** - Find any person, document, or evidence
-- 📊 **Statistics Dashboard** - Real-time document counts
-- 📅 **Interactive Timeline** - Key events from 1994-2022
-- 👤 **Person Cards** - Detailed profiles with document references
+- 🕸️ **Network Visualization** - Interactive D3.js conspiracy network with tooltips and click-to-explore
+- 🔍 **Advanced Search** - Fuzzy matching search across persons, documents, and evidence
+- 📊 **Statistics Dashboard** - Dynamic document counts loaded from JSON
+- 📅 **Interactive Timeline** - Key events from 1994-2022 with visual highlighting
+- 👤 **Person Cards** - Detailed profiles with document references and filtering
+- 🎨 **Theme Toggle** - Switch between dark and light modes
+- ⌨️ **Accessibility** - Full keyboard navigation and screen reader support
+- 🖨️ **Print Optimized** - Clean print styles for documentation
 
 ---
 
