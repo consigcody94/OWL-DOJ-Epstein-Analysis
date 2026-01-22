@@ -110,6 +110,40 @@ function fuzzyMatch(text, query) {
 }
 
 /**
+ * Escape HTML to prevent XSS
+ */
+function escapeHtml(unsafe) {
+    if (!unsafe) return '';
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/**
+ * Highlight matching text
+ */
+function highlightText(text, query) {
+    if (!query || !text) return escapeHtml(text);
+
+    const lowerText = text.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+
+    // Simple case: exact match (case-insensitive)
+    const index = lowerText.indexOf(lowerQuery);
+    if (index >= 0) {
+        return escapeHtml(text.substring(0, index)) +
+            '<span class="highlight">' + escapeHtml(text.substring(index, index + query.length)) + '</span>' +
+            escapeHtml(text.substring(index + query.length));
+    }
+
+    // If no exact phrase match, we could try word matching, but for now exact phrase or safe return
+    return escapeHtml(text);
+}
+
+/**
  * Format number with commas
  */
 function formatNumber(num) {
@@ -154,7 +188,7 @@ function getTagsHTML(tags) {
     return tags.map(tag => {
         const className = tagClassMap[tag] || 'associate';
         const displayName = tag.replace(/_/g, ' ').toUpperCase();
-        return `<span class="tag ${className}">${displayName}</span>`;
+        return `<span class="tag ${escapeHtml(className)}">${escapeHtml(displayName)}</span>`;
     }).join('');
 }
 
@@ -366,6 +400,9 @@ function renderPersonsGrid() {
 /**
  * Create HTML for a person card
  */
+/**
+ * Create HTML for a person card
+ */
 function createPersonCard(person) {
     const isSpan2 = ['dershowitz', 'andrew', 'clinton', 'trump', 'wexner', 'kellen', 'brunel', 'lefkowitz', 'starr', 'pilots', 'richardson'].includes(person.id);
     const docPageLink = getDocPageLink(person.id);
@@ -387,13 +424,17 @@ function createPersonCard(person) {
     const gradient = headerGradients[person.id] || '';
     const headerStyle = gradient ? `style="background: linear-gradient(135deg, ${gradient} 0%, var(--bg-card) 100%);"` : '';
 
+    // Highlight logic
+    const getName = () => highlightText(person.name, state.searchQuery);
+    const getRole = () => highlightText(person.role, state.searchQuery);
+
     // Build evidence quotes
     let quotesHTML = '';
     if (person.key_evidence && person.key_evidence.length > 0) {
         quotesHTML = person.key_evidence.map(evidence => `
             <div class="quote-block">
-                "${evidence.quote}"
-                <div class="quote-source">- ${evidence.source}${evidence.document_id ? ` (${evidence.document_id})` : ''}</div>
+                "${highlightText(evidence.quote, state.searchQuery)}"
+                <div class="quote-source">- ${escapeHtml(evidence.source)}${evidence.document_id ? ` (${escapeHtml(evidence.document_id)})` : ''}</div>
             </div>
         `).join('');
     }
@@ -402,8 +443,8 @@ function createPersonCard(person) {
     let docsHTML = '';
     if (person.key_documents && person.key_documents.length > 0) {
         docsHTML = person.key_documents.slice(0, 6).map(doc => `
-            <div class="doc-item" data-doc-id="${doc.id}" data-doc-desc="${doc.title}" tabindex="0" role="button" aria-label="View document ${doc.id}">
-                ${doc.id} - ${doc.title}
+            <div class="doc-item" data-doc-id="${escapeHtml(doc.id)}" data-doc-desc="${escapeHtml(doc.title)}" tabindex="0" role="button" aria-label="View document ${escapeHtml(doc.id)}">
+                ${highlightText(doc.id, state.searchQuery)} - ${highlightText(doc.title, state.searchQuery)}
             </div>
         `).join('');
     }
@@ -412,15 +453,15 @@ function createPersonCard(person) {
     let descHTML = '';
     if (person.role_in_enterprise) {
         descHTML = `<p style="color: var(--text-secondary); font-size: 0.875rem; margin: 1rem 0;">
-            <strong>${person.role}:</strong> ${person.role_in_enterprise.join(', ')}
+            <strong>${getRole()}:</strong> ${person.role_in_enterprise.map(r => highlightText(r, state.searchQuery)).join(', ')}
         </p>`;
     } else if (person.key_actions) {
         descHTML = `<p style="color: var(--text-secondary); font-size: 0.875rem; margin: 1rem 0;">
-            ${person.key_actions.join(' ')}
+            ${person.key_actions.map(a => highlightText(a, state.searchQuery)).join(' ')}
         </p>`;
     } else if (person.notes) {
         descHTML = `<p style="color: var(--text-secondary); font-size: 0.875rem; margin: 1rem 0;">
-            ${person.notes}
+            ${highlightText(person.notes, state.searchQuery)}
         </p>`;
     }
 
@@ -438,24 +479,24 @@ function createPersonCard(person) {
 
     const statsHTML = stats.map(stat => `
         <div class="person-stat">
-            <div class="person-stat-value">${stat.value}</div>
-            <div class="person-stat-label">${stat.label}</div>
+            <div class="person-stat-value">${escapeHtml(stat.value.toString())}</div>
+            <div class="person-stat-label">${escapeHtml(stat.label)}</div>
         </div>
     `).join('');
 
     return `
-        <article class="person-card ${isSpan2 ? 'span-2' : ''}" data-name="${person.id}" data-status="${person.status}" data-role="${person.role}" aria-label="${person.name}">
+        <article class="person-card ${isSpan2 ? 'span-2' : ''}" data-name="${escapeHtml(person.id)}" data-status="${escapeHtml(person.status)}" data-role="${escapeHtml(person.role)}" aria-label="${escapeHtml(person.name)}">
             <div class="person-header" ${headerStyle}>
                 <h3 class="person-name">
-                    ${docPageLink ? `<a href="${docPageLink}">${person.name}</a>` : person.name}
+                    ${docPageLink ? `<a href="${docPageLink}">${getName()}</a>` : getName()}
                 </h3>
-                <p class="person-role">${person.role}</p>
+                <p class="person-role">${getRole()}</p>
             </div>
             <div class="person-body">
                 <div class="person-tags">
                     ${getTagsHTML(person.tags)}
                     ${person.status === 'Deceased' ? '<span class="tag deceased">DECEASED</span>' : ''}
-                    ${person.sentence ? `<span class="tag convicted">${person.sentence}</span>` : ''}
+                    ${person.sentence ? `<span class="tag convicted">${escapeHtml(person.sentence)}</span>` : ''}
                 </div>
                 ${statsHTML ? `<div class="person-stats">${statsHTML}</div>` : ''}
                 ${quotesHTML}
@@ -727,6 +768,9 @@ function renderNetwork() {
 /**
  * Handle node click in network
  */
+/**
+ * Handle node click in network
+ */
 function handleNodeClick(nodeData) {
     // Find the person in our data
     const person = state.persons.find(p => p.id === nodeData.id);
@@ -734,20 +778,20 @@ function handleNodeClick(nodeData) {
     if (person) {
         openModal(person.name, `
             <h4>Role</h4>
-            <p>${person.role}</p>
-            ${person.status ? `<h4>Status</h4><p>${person.status}</p>` : ''}
+            <p>${escapeHtml(person.role)}</p>
+            ${person.status ? `<h4>Status</h4><p>${escapeHtml(person.status)}</p>` : ''}
             <h4>Document References</h4>
             <p>${formatNumber(nodeData.docs)} documents</p>
-            ${person.notes ? `<h4>Notes</h4><p>${person.notes}</p>` : ''}
+            ${person.notes ? `<h4>Notes</h4><p>${escapeHtml(person.notes)}</p>` : ''}
             ${person.key_evidence ? `
                 <h4>Key Evidence</h4>
-                <ul>${person.key_evidence.map(e => `<li>"${e.quote}" - ${e.source}</li>`).join('')}</ul>
+                <ul>${person.key_evidence.map(e => `<li>"${escapeHtml(e.quote)}" - ${escapeHtml(e.source)}</li>`).join('')}</ul>
             ` : ''}
         `);
     } else {
         openModal(nodeData.name, `
             <h4>Network Node</h4>
-            <p>Group: ${GROUP_LABELS[nodeData.group]}</p>
+            <p>Group: ${escapeHtml(GROUP_LABELS[nodeData.group])}</p>
             <p>Documents: ${formatNumber(nodeData.docs)}</p>
         `);
     }
@@ -1033,6 +1077,129 @@ function setupEventListeners() {
     window.addEventListener('resize', debounce(() => {
         if (state.networkData) renderNetwork();
     }, 250));
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections and cards
+    document.querySelectorAll('section, .stat-card, .person-card, .network-container, .timeline').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+    });
+}
+
+// ===========================================
+// Intro Sequence
+// ===========================================
+
+/**
+ * Initialize Cinematic Intro
+ */
+function initIntroSequence() {
+    const overlay = document.getElementById('intro-overlay');
+    if (!overlay) return;
+
+    // Check if seen in this session
+    if (sessionStorage.getItem('introSeen')) {
+        overlay.style.display = 'none';
+        return;
+    }
+
+    const terminal = document.getElementById('terminal-output');
+    const progressBar = document.getElementById('intro-progress');
+    const accessText = document.getElementById('access-granted');
+
+    const lines = [
+        "Initializing secure connection...",
+        "Bypassing firewalls...",
+        "Accessing DOJ database...",
+        "Decrypting corpus (14,674 documents)...",
+        "Analyzing metadata...",
+        "Verifying clearance..."
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    function typeLine() {
+        if (lineIndex >= lines.length) {
+            finishIntro();
+            return;
+        }
+
+        const currentLine = lines[lineIndex];
+
+        if (charIndex < currentLine.length) {
+            terminal.textContent += currentLine.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLine, Math.random() * 30 + 10);
+        } else {
+            terminal.textContent += '\n';
+            lineIndex++;
+            charIndex = 0;
+            // Update progress bar
+            const progress = (lineIndex / lines.length) * 100;
+            if (progressBar) progressBar.style.width = `${progress}%`;
+
+            setTimeout(typeLine, 200);
+        }
+
+        // Auto scroll terminal
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function finishIntro() {
+        if (progressBar) progressBar.style.width = '100%';
+
+        setTimeout(() => {
+            if (accessText) accessText.classList.add('visible');
+
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                sessionStorage.setItem('introSeen', 'true');
+
+                // Allow scrolling again (if we locked it)
+                document.body.style.overflow = '';
+
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 1000);
+            }, 1000);
+        }, 500);
+    }
+
+    // Start
+    document.body.style.overflow = 'hidden';
+    setTimeout(typeLine, 500);
 }
 
 // ===========================================
@@ -1044,6 +1211,9 @@ function setupEventListeners() {
  */
 async function init() {
     console.log('OWL Analysis System v2.0 initializing...');
+
+    // Intro Sequence
+    initIntroSequence();
 
     // Initialize theme
     initTheme();

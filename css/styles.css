@@ -1340,3 +1340,213 @@ body {
         border: 1px solid currentColor;
     }
 }
+
+/* Highlight Styles */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.2);
+    color: var(--text-primary);
+    border-radius: 2px;
+    padding: 0 2px;
+}
+
+[data-theme="light"] .highlight {
+    background-color: rgba(255, 255, 0, 0.4);
+    color: black;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--accent-blue);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    z-index: 999;
+    box-shadow: var(--shadow-md);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent-purple);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.back-to-top:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--glow);
+}
+
+/* ===========================================
+   Advanced Visuals & Intro
+   =========================================== */
+
+/* Cinematic Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.intro-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    width: 80%;
+    max-width: 600px;
+}
+
+.intro-terminal {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid #333;
+    padding: 1.5rem;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.terminal-output {
+    color: #0f0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: #0f0;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 4px;
+    background: #111;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background: #0f0;
+    box-shadow: 0 0 10px #0f0;
+    transition: width 0.1s linear;
+}
+
+.access-text {
+    text-align: center;
+    color: #0f0;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.access-text.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Glassmorphism Overrides */
+.header {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav {
+    background: rgba(18, 18, 26, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card, 
+.person-card, 
+.network-container,
+.timeline,
+.search-input,
+.filter-select,
+.sort-select {
+    background: rgba(26, 26, 36, 0.5); /* More transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card:hover,
+.person-card:hover {
+    background: rgba(34, 34, 46, 0.7);
+    border-color: var(--accent-blue);
+}
+
+/* Scroll Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animated Background Mesh (Subtle) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.03), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.03), transparent 25%);
+    pointer-events: none;
+    z-index: -1;
+}

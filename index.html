@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OWL Analysis System - Interactive explorer for DOJ Epstein Files analysis with 14,674 documents reviewed">
+    <meta name="description"
+        content="OWL Analysis System - Interactive explorer for DOJ Epstein Files analysis with 14,674 documents reviewed">
     <meta name="keywords" content="DOJ, Epstein, legal analysis, documents, OWL">
     <meta name="theme-color" content="#0a0a0f">
     <title>OWL Analysis | DOJ Epstein Files Interactive Explorer</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OWL Analysis | DOJ Epstein Files Interactive Explorer">
+    <meta property="og:description"
+        content="Interactive explorer for DOJ Epstein Files analysis with 14,674 documents reviewed. Visualize the network, timeline, and evidence.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/consigcody94/OWL-DOJ-Epstein-Analysis/main/docs/assets/owl-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- External Libraries -->
     <script src="https://d3js.org/d3.v7.min.js" defer></script>
@@ -21,7 +34,22 @@
     <!-- Application Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+    <!-- Cinematic Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-terminal">
+                <div id="terminal-output" class="terminal-output"></div>
+                <div class="typing-cursor">_</div>
+            </div>
+            <div class="loading-bar-container">
+                <div id="intro-progress" class="loading-bar"></div>
+            </div>
+            <div id="access-granted" class="access-text">ACCESS GRANTED</div>
+        </div>
+    </div>
+
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -113,14 +141,9 @@
         <div class="search-filter-container" role="search" aria-label="Search and filter persons">
             <div class="search-container">
                 <span class="search-icon" aria-hidden="true">🔍</span>
-                <input
-                    type="search"
-                    class="search-input"
-                    id="searchInput"
-                    placeholder="Search persons, documents, evidence..."
-                    aria-label="Search persons of interest"
-                    autocomplete="off"
-                >
+                <input type="search" class="search-input" id="searchInput"
+                    placeholder="Search persons, documents, evidence..." aria-label="Search persons of interest"
+                    autocomplete="off">
             </div>
             <div id="resultsCount" class="search-results-count" aria-live="polite"></div>
             <div class="filter-controls">
@@ -213,9 +236,11 @@
                         </button>
                     </div>
                 </div>
-                <svg id="network-svg" role="img" aria-label="Interactive conspiracy network diagram showing connections between persons of interest">
+                <svg id="network-svg" role="img"
+                    aria-label="Interactive conspiracy network diagram showing connections between persons of interest">
                     <title>Conspiracy Network Visualization</title>
-                    <desc>Force-directed graph showing relationships between Jeffrey Epstein and associated persons including co-conspirators, staff, defense attorneys, and associates.</desc>
+                    <desc>Force-directed graph showing relationships between Jeffrey Epstein and associated persons
+                        including co-conspirators, staff, defense attorneys, and associates.</desc>
                 </svg>
             </div>
         </section>
@@ -231,57 +256,68 @@
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="1994">1994-1997</time>
                         <h3 class="timeline-title">Enterprise Established</h3>
-                        <p class="timeline-desc">Maxwell involvement begins. Initial grooming and abuse activities. New York operations established.</p>
+                        <p class="timeline-desc">Maxwell involvement begins. Initial grooming and abuse activities. New
+                            York operations established.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2001">2001-2006</time>
                         <h3 class="timeline-title">Peak Activity Period</h3>
-                        <p class="timeline-desc">Highest volume of documented abuse. Multiple victims per month. Systematic scheduling operational across all properties.</p>
+                        <p class="timeline-desc">Highest volume of documented abuse. Multiple victims per month.
+                            Systematic scheduling operational across all properties.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2005-03">March 2005</time>
                         <h3 class="timeline-title">First Police Report</h3>
-                        <p class="timeline-desc">Palm Beach Police Department receives complaint from victim's mother. Investigation begins.</p>
+                        <p class="timeline-desc">Palm Beach Police Department receives complaint from victim's mother.
+                            Investigation begins.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2005-10">October 2005</time>
                         <h3 class="timeline-title">Search Warrant Executed</h3>
-                        <p class="timeline-desc">358 El Brillo Way searched. Massage equipment, photographs, contact books seized.</p>
+                        <p class="timeline-desc">358 El Brillo Way searched. Massage equipment, photographs, contact
+                            books seized.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2007-05">May 2007</time>
                         <h3 class="timeline-title">Grand Jury Testimony</h3>
-                        <p class="timeline-desc">FBI agent testifies. "Younger, the better" statement documented. 53+ count indictment drafted.</p>
+                        <p class="timeline-desc">FBI agent testifies. "Younger, the better" statement documented. 53+
+                            count indictment drafted.</p>
                     </article>
                     <article class="timeline-item highlight" role="listitem">
                         <time class="timeline-date" datetime="2007-09-24">September 24, 2007</time>
                         <h3 class="timeline-title highlight">NPA Signed</h3>
-                        <p class="timeline-desc">Non-Prosecution Agreement signed. Federal charges declined. Victims not notified (CVRA violation).</p>
+                        <p class="timeline-desc">Non-Prosecution Agreement signed. Federal charges declined. Victims not
+                            notified (CVRA violation).</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2008-06">June 2008</time>
                         <h3 class="timeline-title">State Guilty Plea</h3>
-                        <p class="timeline-desc">Pleads to state charges. 18-month sentence with work release. Serves 13 months.</p>
+                        <p class="timeline-desc">Pleads to state charges. 18-month sentence with work release. Serves 13
+                            months.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2018-11">November 2018</time>
                         <h3 class="timeline-title">Miami Herald Investigation</h3>
-                        <p class="timeline-desc">Julie K. Brown's reporting exposes NPA terms. Public outcry intensifies.</p>
+                        <p class="timeline-desc">Julie K. Brown's reporting exposes NPA terms. Public outcry
+                            intensifies.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2019-02">February 2019</time>
                         <h3 class="timeline-title">Judge Marra Ruling</h3>
-                        <p class="timeline-desc">Federal judge rules government violated Crime Victims' Rights Act in NPA process.</p>
+                        <p class="timeline-desc">Federal judge rules government violated Crime Victims' Rights Act in
+                            NPA process.</p>
                     </article>
                     <article class="timeline-item success" role="listitem">
                         <time class="timeline-date" datetime="2019-07-06">July 6, 2019</time>
                         <h3 class="timeline-title success">SDNY Arrest</h3>
-                        <p class="timeline-desc">Arrested at Teterboro Airport. Federal charges filed in SDNY. "Vast trove" of photos found in NYC search.</p>
+                        <p class="timeline-desc">Arrested at Teterboro Airport. Federal charges filed in SDNY. "Vast
+                            trove" of photos found in NYC search.</p>
                     </article>
                     <article class="timeline-item highlight" role="listitem">
                         <time class="timeline-date" datetime="2019-08-10">August 10, 2019</time>
                         <h3 class="timeline-title highlight">Death in Custody</h3>
-                        <p class="timeline-desc">Found dead at Metropolitan Correctional Center. Official ruling: suicide.</p>
+                        <p class="timeline-desc">Found dead at Metropolitan Correctional Center. Official ruling:
+                            suicide.</p>
                     </article>
                     <article class="timeline-item" role="listitem">
                         <time class="timeline-date" datetime="2020-07-02">July 2, 2020</time>
@@ -291,7 +327,8 @@
                     <article class="timeline-item success" role="listitem">
                         <time class="timeline-date" datetime="2021-12-29">December 29, 2021</time>
                         <h3 class="timeline-title success">Maxwell Convicted</h3>
-                        <p class="timeline-desc">Found guilty on 5 of 6 counts. Validates prosecution theory. Sentenced to 20 years.</p>
+                        <p class="timeline-desc">Found guilty on 5 of 6 counts. Validates prosecution theory. Sentenced
+                            to 20 years.</p>
                     </article>
                 </div>
             </div>
@@ -328,7 +365,8 @@
             </blockquote>
 
             <blockquote class="quote-block" style="margin: 2rem 0;">
-                "[One girl] told Mr. Epstein that she was in high school, and actually told him her true age, which was under 18."
+                "[One girl] told Mr. Epstein that she was in high school, and actually told him her true age, which was
+                under 18."
                 <footer class="quote-source">— Grand Jury Transcript (EFTA00009550)</footer>
             </blockquote>
 
@@ -383,7 +421,8 @@
         <p>
             <strong>OWL Analysis System v2.0</strong> | December 2024<br>
             Analysis of publicly available DOJ documents | Educational &amp; Research Purposes Only<br>
-            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis" rel="noopener noreferrer">View on GitHub</a>
+            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis" rel="noopener noreferrer">View on
+                GitHub</a>
         </p>
     </footer>
 
@@ -399,6 +438,7 @@
     </div>
 
     <!-- Application JavaScript -->
+    <script src="js/intro.js"></script>
     <script src="js/app.js"></script>
 
     <!-- Visually Hidden Styles for Screen Readers -->
@@ -415,5 +455,9 @@
             border: 0;
         }
     </style>
+    <button id="backToTop" class="backToTop" aria-label="Back to top">
+        ↑
+    </button>
 </body>
+
 </html>
