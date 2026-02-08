@@ -19,8 +19,10 @@ function initIntroSequence() {
     const lines = [
         "Initializing secure connection...",
         "Bypassing firewalls...",
-        "Accessing DOJ database...",
-        "Decrypting corpus (14,674 documents)...",
+        "Accessing DOJ Epstein Library...",
+        "Decrypting corpus (3.5 million pages)...",
+        "Processing 180,000 images...",
+        "Indexing 2,000+ videos...",
         "Analyzing metadata...",
         "Verifying clearance..."
     ];

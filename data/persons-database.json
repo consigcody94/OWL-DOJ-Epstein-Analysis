@@ -1,9 +1,11 @@
 {
   "metadata": {
-    "version": "1.0",
-    "generated": "2024-12",
-    "total_documents_analyzed": 14674,
-    "source": "DOJ FOIA Release - United States v. Jeffrey Epstein"
+    "version": "2.0",
+    "generated": "2026-02",
+    "total_pages_analyzed": 3500000,
+    "total_images": 180000,
+    "total_videos": 2000,
+    "source": "DOJ Epstein Files Transparency Act Release (Jan 2026)"
   },
   "persons": [
     {
@@ -12,7 +14,7 @@
       "role": "Principal Defendant",
       "status": "Deceased",
       "tags": ["principal", "deceased"],
-      "document_count": 14674,
+      "page_count": 3500000,
       "charges": [
         "18 U.S.C. § 1591 - Sex Trafficking of Children",
         "18 U.S.C. § 2423 - Transportation of Minors",

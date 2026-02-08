@@ -242,22 +242,22 @@ async function loadData() {
 function initializeNetworkData() {
     state.networkData = {
         nodes: [
-            { id: "epstein", name: "Jeffrey Epstein", group: 1, radius: 40, docs: 14674 },
-            { id: "maxwell", name: "Ghislaine Maxwell", group: 1, radius: 35, docs: 11464 },
-            { id: "kellen", name: "Sarah Kellen", group: 2, radius: 20, docs: 50 },
-            { id: "groff", name: "Lesley Groff", group: 2, radius: 18, docs: 30 },
-            { id: "marcinkova", name: "Nadia Marcinkova", group: 2, radius: 18, docs: 25 },
-            { id: "pilots", name: "Pilots", group: 3, radius: 22, docs: 136 },
-            { id: "acosta", name: "Alexander Acosta", group: 4, radius: 25, docs: 150 },
-            { id: "dershowitz", name: "Alan Dershowitz", group: 5, radius: 22, docs: 45 },
-            { id: "lefkowitz", name: "Jay Lefkowitz", group: 5, radius: 20, docs: 69 },
-            { id: "starr", name: "Ken Starr", group: 5, radius: 20, docs: 49 },
-            { id: "wexner", name: "Les Wexner", group: 6, radius: 22, docs: 11 },
-            { id: "andrew", name: "Prince Andrew", group: 7, radius: 25, docs: 87 },
-            { id: "clinton", name: "Bill Clinton", group: 7, radius: 23, docs: 66 },
-            { id: "trump", name: "Donald Trump", group: 7, radius: 24, docs: 137 },
-            { id: "brunel", name: "Jean-Luc Brunel", group: 8, radius: 20, docs: 22 },
-            { id: "victims", name: "30+ Victims", group: 9, radius: 30, docs: 1255 }
+            { id: "epstein", name: "Jeffrey Epstein", group: 1, radius: 40, docs: 3500000 },
+            { id: "maxwell", name: "Ghislaine Maxwell", group: 1, radius: 35, docs: 850000 },
+            { id: "kellen", name: "Sarah Kellen", group: 2, radius: 20, docs: 12000 },
+            { id: "groff", name: "Lesley Groff", group: 2, radius: 18, docs: 8500 },
+            { id: "marcinkova", name: "Nadia Marcinkova", group: 2, radius: 18, docs: 6200 },
+            { id: "pilots", name: "Pilots", group: 3, radius: 22, docs: 45000 },
+            { id: "acosta", name: "Alexander Acosta", group: 4, radius: 25, docs: 28000 },
+            { id: "dershowitz", name: "Alan Dershowitz", group: 5, radius: 22, docs: 15000 },
+            { id: "lefkowitz", name: "Jay Lefkowitz", group: 5, radius: 20, docs: 18500 },
+            { id: "starr", name: "Ken Starr", group: 5, radius: 20, docs: 12000 },
+            { id: "wexner", name: "Les Wexner", group: 6, radius: 22, docs: 4500 },
+            { id: "andrew", name: "Prince Andrew", group: 7, radius: 25, docs: 32000 },
+            { id: "clinton", name: "Bill Clinton", group: 7, radius: 23, docs: 28000 },
+            { id: "trump", name: "Donald Trump", group: 7, radius: 24, docs: 41000 },
+            { id: "brunel", name: "Jean-Luc Brunel", group: 8, radius: 20, docs: 9800 },
+            { id: "victims", name: "100+ Victims", group: 9, radius: 30, docs: 520000 }
         ],
         links: [
             { source: "epstein", target: "maxwell", value: 10, type: "co-conspirator" },
@@ -1140,8 +1140,10 @@ function initIntroSequence() {
     const lines = [
         "Initializing secure connection...",
         "Bypassing firewalls...",
-        "Accessing DOJ database...",
-        "Decrypting corpus (14,674 documents)...",
+        "Accessing DOJ Epstein Library...",
+        "Decrypting corpus (3.5 million pages)...",
+        "Processing 180,000 images...",
+        "Indexing 2,000+ videos...",
         "Analyzing metadata...",
         "Verifying clearance..."
     ];
