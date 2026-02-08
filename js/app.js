@@ -257,7 +257,9 @@ function initializeNetworkData() {
             { id: "clinton", name: "Bill Clinton", group: 7, radius: 23, docs: 28000 },
             { id: "trump", name: "Donald Trump", group: 7, radius: 24, docs: 41000 },
             { id: "brunel", name: "Jean-Luc Brunel", group: 8, radius: 20, docs: 9800 },
-            { id: "victims", name: "100+ Victims", group: 9, radius: 30, docs: 520000 }
+            { id: "victims", name: "100+ Victims", group: 9, radius: 30, docs: 520000 },
+            { id: "shuliak", name: "Karyna Shuliak", group: 7, radius: 22, docs: 15000 },
+            { id: "dubin_eva", name: "Eva Andersson Dubin", group: 7, radius: 20, docs: 8500 }
         ],
         links: [
             { source: "epstein", target: "maxwell", value: 10, type: "co-conspirator" },
@@ -279,7 +281,9 @@ function initializeNetworkData() {
             { source: "trump", target: "epstein", value: 2, type: "associate" },
             { source: "brunel", target: "epstein", value: 3, type: "recruitment" },
             { source: "brunel", target: "maxwell", value: 2, type: "recruitment" },
-            { source: "kellen", target: "victims", value: 4, type: "scheduling" }
+            { source: "kellen", target: "victims", value: 4, type: "scheduling" },
+            { source: "shuliak", target: "epstein", value: 7, type: "girlfriend" },
+            { source: "dubin_eva", target: "epstein", value: 4, type: "ex-girlfriend" }
         ]
     };
 }

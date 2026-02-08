@@ -299,6 +299,66 @@
       "status": "Living",
       "tags": ["prosecutor"],
       "significance": "Led 2019 SDNY prosecution and Maxwell prosecution"
+    },
+    {
+      "id": "shuliak",
+      "name": "Karyna Shuliak",
+      "role": "Last Girlfriend / Fiancée",
+      "status": "Living",
+      "tags": ["associate", "beneficiary"],
+      "document_count": 15000,
+      "origin": "Belarus",
+      "profession": "Dentist",
+      "relationship_period": "2010-2019",
+      "key_facts": [
+        "Last person outside MCC to speak with Epstein (20-min call evening before death)",
+        "Named largest beneficiary in The 1953 Trust",
+        "Received 32.73-carat diamond ring 'in contemplation of marriage'",
+        "Stood to inherit $100 million and all properties (Manhattan, Paris, NM ranch, Virgin Islands)"
+      ],
+      "key_documents": [
+        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"},
+        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+      ],
+      "notes": "Relationship began circa 2010 when she was a dental student. Epstein funded her education. No allegations of wrongdoing."
+    },
+    {
+      "id": "dubin_eva",
+      "name": "Eva Andersson Dubin",
+      "role": "Ex-Girlfriend",
+      "status": "Living",
+      "tags": ["associate", "ex-girlfriend"],
+      "document_count": 8500,
+      "profession": "Physician, former Miss Sweden",
+      "spouse": "Glenn Dubin (hedge fund billionaire)",
+      "key_facts": [
+        "Dated Epstein before marrying Glenn Dubin",
+        "Named as backup trustee in The 1953 Trust",
+        "Children called Epstein 'Uncle Jeff'",
+        "Family says they were 'horrified' by his conduct"
+      ],
+      "key_documents": [
+        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"}
+      ],
+      "notes": "No allegations of wrongdoing. Family has publicly condemned Epstein's behavior."
+    },
+    {
+      "id": "dubin_celina",
+      "name": "Celina Dubin",
+      "role": "Associate (Dubin daughter)",
+      "status": "Living",
+      "tags": ["associate", "beneficiary"],
+      "document_count": 4200,
+      "key_facts": [
+        "Eldest daughter of Eva Andersson Dubin and Glenn Dubin",
+        "Originally named as major beneficiary in January 2019 trust",
+        "Would have inherited Zorro Ranch and Virgin Islands estate",
+        "Superseded by Karyna Shuliak in August 2019 trust"
+      ],
+      "key_documents": [
+        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+      ],
+      "notes": "No allegations of wrongdoing."
     }
   ],
   "document_types": {
