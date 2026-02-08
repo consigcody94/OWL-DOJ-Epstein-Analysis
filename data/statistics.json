@@ -8,8 +8,8 @@
     "source": "DOJ Epstein Files Transparency Act Release"
   },
   "document_corpus": {
-    "total_pages": 3500000,
-    "total_images": 180000,
+    "total_documents": 3500000,
+    "total_images_extracted": 180000,
     "total_videos": 2000,
     "data_sources": 5,
     "source_breakdown": {
@@ -38,7 +38,7 @@
       ]
     },
     "maxwell_references": {
-      "total_mentions": "Extensive - convicted co-conspirator"
+      "total_mentions": 850000
     },
     "corporate_entities": {
       "identified_shell_companies": 4,
