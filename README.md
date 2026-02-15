@@ -72,21 +72,27 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 <div align="center">
 
-### 🌐 [Launch Interactive Explorer →](./index.html)
+### 🌐 [Launch Interactive Explorer →](https://owl.phosphor-os.org)
 
-*View the full interactive analysis with network visualization, searchable database, and timeline*
+*JARVIS-class investigation command center with 3D network visualization, classified dossiers, and interactive flight maps*
 
 </div>
 
 **Features:**
-- 🕸️ **Network Visualization** - Interactive D3.js conspiracy network with tooltips and click-to-explore
-- 🔍 **Advanced Search** - Fuzzy matching search across persons, documents, and evidence
-- 📊 **Statistics Dashboard** - Dynamic document counts loaded from JSON
+- 🕸️ **Conspiracy Network** - Interactive D3.js force-directed graph with tooltips and click-to-explore
+- 🔍 **Command Palette** - Press `Cmd+K` or `/` for instant fuzzy search across persons, documents, statutes, and evidence
+- 📁 **Classified Dossiers** - Click any person for a full-screen TOP SECRET dossier with tabs (Overview, Documents, Connections, Timeline)
+- ✈️ **Interactive Flight Map** - Leaflet.js dark map with animated flight paths between all known Epstein properties and airports
+- 🏛️ **Evidence Vault** - Browse categorized classified documents with redaction-reveal animations
+- ⚖️ **Statute Library** - Hover any statute for plain-English tooltips linked to Cornell Law
+- 📖 **Glossary** - Press `G` for a side panel defining all legal terms (NPA, CVRA, SDFL, etc.)
+- 📊 **HUD Dashboard** - Animated stat counters, particle background, scan lines, glassmorphism panels
 - 📅 **Interactive Timeline** - Key events from 1994-2022 with visual highlighting
-- 👤 **Person Cards** - Detailed profiles with document references and filtering
-- 🎨 **Theme Toggle** - Switch between dark and light modes
-- ⌨️ **Accessibility** - Full keyboard navigation and screen reader support
-- 🖨️ **Print Optimized** - Clean print styles for documentation
+- ⌨️ **Keyboard Shortcuts** - `/` search, `G` glossary, `j/k` scroll, `Escape` close
+- 🔖 **Bookmarks** - Save persons of interest to localStorage
+- 🔗 **Deep Linking** - URL hash updates for every section
+- 🎨 **Theme Toggle** - Dark (default) and light modes
+- ♿ **Accessibility** - Full keyboard navigation, ARIA labels, reduced motion support
 
 ---
 
@@ -476,9 +482,20 @@ OWL-DOJ-Epstein-Analysis/
 ├── 📄 README.md                      # You are here
 ├── ⚖️ VERDICT.md                     # Final legal verdict
 ├── 📜 LICENSE                        # CC BY-NC 4.0
+├── 🌐 index.html                     # Interactive Explorer (main entry)
 │
-├── 📊 interactive/
-│   └── index.html                    # 🌐 Interactive Explorer
+├── 🎨 css/
+│   └── styles.css                    # Full stylesheet (HUD + glassmorphism)
+│
+├── ⚡ js/
+│   ├── app.js                        # Core application logic
+│   ├── intro.js                      # Cinematic boot sequence
+│   ├── dossier.js                    # Classified dossier overlays
+│   ├── command-palette.js            # Cmd+K global search
+│   ├── map.js                        # Leaflet flight map
+│   ├── vault.js                      # Evidence vault UI
+│   ├── hud.js                        # Particles, counters, scan lines
+│   └── glossary.js                   # Legal term definitions
 │
 ├── 📁 evidence/
 │   ├── flight-records.md             # ✈️ Aircraft analysis
@@ -607,9 +624,11 @@ OWL-DOJ-Epstein-Analysis/
 
 ---
 
-**OWL Analysis System v1.0** | December 2024
+**OWL Analysis System v3.0** | February 2026
 
 *Analysis of 3.5M DOJ documents • 180,000 images extracted • Verdict: GUILTY on all counts*
+
+**🌐 Live:** [owl.phosphor-os.org](https://owl.phosphor-os.org) — Auto-deployed from this repo via Netlify
 
 <br>
 
