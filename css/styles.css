@@ -190,10 +190,25 @@ select:focus-visible {
 }
 
 .hero-logo {
-  font-size: 5rem;
   margin-bottom: var(--spacing-md);
-  filter: drop-shadow(var(--glow-cyan));
   animation: float 6s ease-in-out infinite;
+}
+
+.owl-seal {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
+  transition: all 0.4s ease;
+  object-fit: cover;
+}
+
+.owl-seal:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.5), 0 0 80px rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.7);
 }
 
 @keyframes float {
@@ -1636,8 +1651,9 @@ select:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .hero-logo {
-    font-size: 3rem;
+  .owl-seal {
+    width: 120px;
+    height: 120px;
   }
   
   .hero-title {

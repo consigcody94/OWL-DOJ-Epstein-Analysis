@@ -915,6 +915,133 @@
         }
       ],
       "notes": "No allegations of wrongdoing."
+    },
+    {
+      "id": "kotick",
+      "name": "Bobby Kotick",
+      "role": "Activision CEO",
+      "status": "Living",
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
+      "document_count": 56,
+      "key_evidence": [
+        {
+          "quote": "I'm all for indoctrinating kids into an economy",
+          "source": "Email from Epstein to Kotick",
+          "document_id": "EFTA[Feb-2026]",
+          "significance": "Discussion about children and economic indoctrination"
+        },
+        {
+          "quote": "The girls and I are going to see Elon Musk at SpaceX tomorrow. Are you around?",
+          "source": "Email from Epstein to Kotick",
+          "document_id": "EFTA[Feb-2026]",
+          "significance": "Epstein coordinating with Kotick involving 'girls'"
+        }
+      ],
+      "2026_revelations": [
+        "Multiple email exchanges with Epstein",
+        "Epstein to Kotick: 'I'm all for indoctrinating kids into an economy'",
+        "Discussion about real-world rewards for children: cell phone minutes, iPhone credits, virtual items",
+        "Email: 'The girls and I are going to see Elon Musk at SpaceX tomorrow. Are you around?'",
+        "Kotick response: 'Thanks, but rather see you. Taking girls after to Bair.'"
+      ],
+      "context": "Extensive email correspondence discussing children, gaming economics, and coordinating meetings with Epstein",
+      "notes": "No public comment from Kotick on disclosed emails. Nature of 'girls' references unclear but concerning given Epstein's activities."
+    },
+    {
+      "id": "attia",
+      "name": "Peter Attia",
+      "role": "Doctor / Longevity Expert",
+      "status": "Living",
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
+      "document_count": 78,
+      "profession": "Physician specializing in longevity medicine",
+      "key_evidence": [
+        {
+          "quote": "Got a fresh shipment",
+          "source": "Email subject line to Epstein",
+          "document_id": "EFTA[Feb-2026]",
+          "significance": "Ambiguous communication with concerning context"
+        },
+        {
+          "quote": "I go into Jeffrey Epstein withdrawal when I don't see him",
+          "source": "Email from Attia to Epstein",
+          "document_id": "EFTA[Feb-2026]",
+          "significance": "Shows close relationship despite Epstein's conviction"
+        }
+      ],
+      "2026_revelations": [
+        "Subject: 'Got a fresh shipment' → Epstein responds 'me too' with redacted image",
+        "Attia: 'Please tell me you found that picture online.' Epstein: 'Afraid not.'",
+        "Attia: 'You know the biggest problem with becoming friends with you. The life you lead is so outrageous yet I can't tell a soul.'",
+        "Attia: 'I go into Jeffrey Epstein withdrawal when I don't see him'",
+        "Attia: 'I think you might have a more interesting life than the Dos Equis guy'",
+        "July 11, 2017: Infant son had medical emergency; wife called from ambulance",
+        "Stayed in NY for 'important work' instead of going home",
+        "2 days later (July 13): coordinating with Epstein: 'Sure. What time?' '9:30' 'Sure, I can come earlier.'",
+        "Stayed in NY 10 days instead of going to family — some of that time with Epstein",
+        "December 2018 emails show Attia asking 'What's the fallout from the recent story?' after Miami Herald exposé"
+      ],
+      "attia_response": {
+        "claims": [
+          "Not involved in any criminal activity",
+          "Claims 'fresh shipment' was about metformin bottles",
+          "Says Epstein responded with 'a photograph of an adult woman'",
+          "Claims he confronted Epstein after Nov 2018 Miami Herald article"
+        ],
+        "contradictions": [
+          "December 2018 emails show casual inquiry about 'fallout' rather than confrontation",
+          "Continued contact after claimed awareness of crimes"
+        ]
+      },
+      "book_incident": "Author of 'Outlive' — July 2017 incident where he stayed in NY with Epstein rather than return to family during medical emergency documented in book",
+      "context": "Longevity medicine doctor who maintained close relationship with Epstein despite 2008 conviction",
+      "notes": "Attia's explanations for email content disputed by context and timing of communications."
+    },
+    {
+      "id": "poole",
+      "name": "Christopher Poole",
+      "also_known_as": "Moot",
+      "role": "4chan Creator",
+      "status": "Living",
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
+      "document_count": 23,
+      "key_evidence": [
+        {
+          "quote": "There's a cool guy kid that you should meet, Christopher P. He is only 23.",
+          "source": "Email from Epstein",
+          "document_id": "EFTA 01992938",
+          "significance": "Epstein expressing interest in meeting 4chan creator"
+        },
+        {
+          "quote": "I like Moot a lot. I drove him home. He is very bright.",
+          "source": "Email from Epstein",
+          "document_id": "EFTA 01992938",
+          "significance": "Epstein's follow-up after meeting Poole"
+        }
+      ],
+      "2026_revelations": [
+        "EFTA 01992938: Epstein email Oct 20, 2011: 'Last night and this morning fun. Also met some cool people. There's a cool guy kid that you should meet, Christopher P. He is only 23.'",
+        "Meeting date: October 20, 2011",
+        "/pol/ (Politically Incorrect board) created: October 23, 2011 — 3 DAYS LATER",
+        "Boris to Jeffrey: 'Yes, he is great. I had no clue who he was when we met. He'll be a friend.'",
+        "Jeffrey: 'I like Moot a lot. I drove him home. He is very bright.'",
+        "Defcon organizer (DarkTangent) clarified: Epstein approached for free badges, was warned away"
+      ],
+      "timeline_significance": "Meeting with Epstein occurred 3 days before creation of /pol/, one of the internet's most influential political discussion boards",
+      "context": "Creator of 4chan met with Epstein in October 2011. Epstein expressed admiration and drove him home.",
+      "notes": "No allegations of wrongdoing. Meeting context suggests networking/tech interest. Timing with /pol/ creation is coincidental but notable."
     }
   ],
   "document_types": {
