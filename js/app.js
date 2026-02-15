@@ -419,6 +419,34 @@ function setupEventListeners() {
             toggleGlossary();
         }
     });
+
+    // Accordion cards
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.closest('.accordion-card');
+            const isActive = card.classList.contains('active');
+            
+            // Close all other accordions in the same section
+            const section = card.closest('.secret-societies-grid, .coded-terms-grid');
+            if (section) {
+                section.querySelectorAll('.accordion-card.active').forEach(activeCard => {
+                    if (activeCard !== card) {
+                        activeCard.classList.remove('active');
+                        const icon = activeCard.querySelector('.accordion-icon');
+                        if (icon) icon.textContent = '+';
+                    }
+                });
+            }
+            
+            // Toggle current accordion
+            card.classList.toggle('active');
+            const icon = header.querySelector('.accordion-icon');
+            if (icon) {
+                icon.textContent = isActive ? '+' : '−';
+            }
+        });
+    });
 }
 
 // ===========================================
@@ -593,6 +621,23 @@ function capitalize(str) {
 }
 
 // ===========================================
+// SUB-ACCORDION TOGGLE
+// ===========================================
+function toggleSubAccordion(header) {
+    const body = header.nextElementSibling;
+    const icon = header.querySelector('.sub-accordion-icon');
+    const isOpen = body.classList.contains('active');
+    
+    if (isOpen) {
+        body.classList.remove('active');
+        icon.textContent = '▼';
+    } else {
+        body.classList.add('active');
+        icon.textContent = '▲';
+    }
+}
+
+// ===========================================
 // GLOBAL FUNCTIONS (for inline event handlers)
 // ===========================================
 window.openDossier = openDossier;
@@ -600,3 +645,4 @@ window.closeDossier = closeDossier;
 window.openCommandPalette = openCommandPalette;
 window.closeCommandPalette = closeCommandPalette;
 window.toggleGlossary = toggleGlossary;
+window.toggleSubAccordion = toggleSubAccordion;

@@ -2010,6 +2010,65 @@ select:focus-visible {
   padding: 0 var(--spacing-md) var(--spacing-md);
 }
 
+/* Sub-Accordion Styles */
+.sub-accordion {
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  border-radius: var(--radius-sm);
+  background: rgba(138, 43, 226, 0.03);
+  overflow: hidden;
+}
+
+.sub-accordion-header {
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(138, 43, 226, 0.05);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.sub-accordion-header:hover {
+  background: rgba(138, 43, 226, 0.1);
+}
+
+.sub-accordion-header strong {
+  color: var(--purple);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.sub-accordion-icon {
+  color: var(--purple);
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  margin-left: var(--spacing-sm);
+}
+
+.sub-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 var(--spacing-md);
+}
+
+.sub-accordion-body.active {
+  max-height: 2000px;
+  padding: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+.sub-accordion-body ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.sub-accordion-body li {
+  margin-bottom: 0.5rem;
+}
+
 .accordion-item {
   margin-bottom: var(--spacing-md);
   padding: var(--spacing-md);
