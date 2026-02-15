@@ -47,27 +47,8 @@ function filterCodedTerms(query) {
 // ACCORDIONS (Secret Societies)
 // ==========================================
 function setupAccordions() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const accordion = header.parentElement;
-            const isActive = accordion.classList.contains('active');
-            
-            // Close all accordions in the same section
-            const section = accordion.closest('.secret-societies-grid') || accordion.closest('.cross-scandal-grid');
-            if (section) {
-                section.querySelectorAll('.accordion-card.active').forEach(card => {
-                    if (card !== accordion) {
-                        card.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Toggle current accordion
-            accordion.classList.toggle('active');
-        });
-    });
+    // Accordion click handling is in app.js — avoid double-binding
+    // deep-dive.js only handles sub-accordions and search/filters
 }
 
 // ==========================================
