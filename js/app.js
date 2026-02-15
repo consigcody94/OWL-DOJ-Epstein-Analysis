@@ -1225,7 +1225,7 @@ function initIntroSequence() {
  * Initialize the application
  */
 async function init() {
-    console.log('OWL Analysis System v3.0 initializing...');
+    console.log('OWL Analysis System v3.0 initializing...', new Date().toISOString());
 
     // Start data loading IMMEDIATELY (don't wait for intro)
     const dataPromise = loadData();

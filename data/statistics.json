@@ -40,6 +40,10 @@
     "maxwell_references": {
       "total_mentions": 850000
     },
+    "phone_records": {
+      "max_contacts_single_victim": 125,
+      "total_phone_documents": 333
+    },
     "corporate_entities": {
       "identified_shell_companies": 4,
       "entities": [
