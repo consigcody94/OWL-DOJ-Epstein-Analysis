@@ -22,12 +22,15 @@ class HUDEnhancer {
     }
 
     initializeHUD() {
-        this.createParticleBackground();
-        this.addScanLines();
-        this.initCounterAnimations();
-        this.enhanceCards();
-        this.initScrollEffects();
-        this.initKeyboardShortcuts();
+        // Delay heavy visual effects until after main content renders
+        requestAnimationFrame(() => {
+            this.createParticleBackground();
+            this.addScanLines();
+            this.initCounterAnimations();
+            this.enhanceCards();
+            this.initScrollEffects();
+            this.initKeyboardShortcuts();
+        });
         this.initBreadcrumbs();
         this.initDeepLinking();
     }

@@ -199,18 +199,27 @@ function getTagsHTML(tags) {
 /**
  * Load all data from JSON files
  */
+async function fetchWithRetry(url, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const response = await fetch(url, { cache: 'no-cache' });
+            if (response.ok) return response;
+        } catch (e) {
+            if (i === retries - 1) throw e;
+        }
+        await new Promise(r => setTimeout(r, 500 * (i + 1)));
+    }
+    throw new Error(`Failed to fetch ${url} after ${retries} retries`);
+}
+
 async function loadData() {
     showLoading();
 
     try {
         const [personsResponse, statsResponse] = await Promise.all([
-            fetch('data/persons-database.json'),
-            fetch('data/statistics.json')
+            fetchWithRetry('data/persons-database.json'),
+            fetchWithRetry('data/statistics.json')
         ]);
-
-        if (!personsResponse.ok || !statsResponse.ok) {
-            throw new Error('Failed to load data files');
-        }
 
         const personsData = await personsResponse.json();
         const statsData = await statsResponse.json();
@@ -1216,9 +1225,12 @@ function initIntroSequence() {
  * Initialize the application
  */
 async function init() {
-    console.log('OWL Analysis System v2.0 initializing...');
+    console.log('OWL Analysis System v3.0 initializing...');
 
-    // Intro Sequence
+    // Start data loading IMMEDIATELY (don't wait for intro)
+    const dataPromise = loadData();
+
+    // Intro Sequence (runs in parallel with data fetch)
     initIntroSequence();
 
     // Initialize theme
@@ -1230,8 +1242,8 @@ async function init() {
     // Setup event listeners
     setupEventListeners();
 
-    // Load data
-    await loadData();
+    // Ensure data is loaded
+    await dataPromise;
 
     console.log('OWL Analysis System initialized successfully');
 }

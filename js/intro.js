@@ -92,6 +92,13 @@ function initIntroSequence() {
         }, delay);
     }
 
+    // Click anywhere to skip (once)
+    overlay.addEventListener('click', (e) => {
+        if (e.target !== skipBtn && !skipBtn.contains(e.target)) {
+            finishIntro(true);
+        }
+    });
+
     // Start
     document.body.style.overflow = 'hidden';
     setTimeout(typeLine, 500);
