@@ -1,16 +1,26 @@
 
 /**
- * Initialize Cinematic Intro
+ * Initialize Cinematic Intro with Skip Option
  */
 function initIntroSequence() {
     const overlay = document.getElementById('intro-overlay');
     if (!overlay) return;
 
-    // Check if seen in this session
-    if (sessionStorage.getItem('introSeen')) {
+    // Check localStorage preference or session
+    if (localStorage.getItem('skipIntro') === 'true' || sessionStorage.getItem('introSeen')) {
         overlay.style.display = 'none';
         return;
     }
+
+    // Add skip button
+    const skipBtn = document.createElement('button');
+    skipBtn.className = 'intro-skip-btn';
+    skipBtn.innerHTML = 'Skip Intro <span style="font-size: 0.75em;">(always)</span>';
+    skipBtn.onclick = () => {
+        localStorage.setItem('skipIntro', 'true');
+        finishIntro(true);
+    };
+    overlay.querySelector('.intro-content').appendChild(skipBtn);
 
     const terminal = document.getElementById('terminal-output');
     const progressBar = document.getElementById('intro-progress');
@@ -57,11 +67,15 @@ function initIntroSequence() {
         terminal.scrollTop = terminal.scrollHeight;
     }
 
-    function finishIntro() {
+    function finishIntro(instant = false) {
         if (progressBar) progressBar.style.width = '100%';
 
+        const delay = instant ? 0 : 500;
+        const accessDelay = instant ? 0 : 1000;
+        const removeDelay = instant ? 100 : 1000;
+
         setTimeout(() => {
-            if (accessText) accessText.classList.add('visible');
+            if (accessText && !instant) accessText.classList.add('visible');
 
             setTimeout(() => {
                 overlay.classList.add('hidden');
@@ -73,9 +87,9 @@ function initIntroSequence() {
                 // Remove from DOM after transition
                 setTimeout(() => {
                     overlay.style.display = 'none';
-                }, 1000);
-            }, 1000);
-        }, 500);
+                }, removeDelay);
+            }, instant ? 0 : accessDelay);
+        }, delay);
     }
 
     // Start

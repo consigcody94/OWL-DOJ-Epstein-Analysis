@@ -489,7 +489,7 @@ function createPersonCard(person) {
     `).join('');
 
     return `
-        <article class="person-card ${isSpan2 ? 'span-2' : ''}" data-name="${escapeHtml(person.id)}" data-status="${escapeHtml(person.status)}" data-role="${escapeHtml(person.role)}" aria-label="${escapeHtml(person.name)}">
+        <article class="person-card ${isSpan2 ? 'span-2' : ''}" data-name="${escapeHtml(person.id)}" data-person-id="${escapeHtml(person.id)}" data-status="${escapeHtml(person.status)}" data-role="${escapeHtml(person.role)}" aria-label="${escapeHtml(person.name)}">
             <div class="person-header" ${headerStyle}>
                 <h3 class="person-name">
                     ${docPageLink ? `<a href="${docPageLink}">${getName()}</a>` : getName()}
