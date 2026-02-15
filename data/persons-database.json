@@ -1,13 +1,15 @@
 {
   "metadata": {
-    "version": "3.5",
+    "version": "3.6",
     "generated": "2026-02-15",
     "total_pages_analyzed": 3500000,
     "total_images": 180000,
     "total_videos": 2000,
-    "source": "DOJ Epstein Files Transparency Act Release - Final (Jan 30, 2026)",
+    "total_persons": 43,
+    "source": "DOJ Epstein Files Transparency Act Release - Final (Jan 30, 2026) + Feb 2026 Wave 3 Additions",
     "act_signed": "2025-11-19",
-    "final_release_date": "2026-01-30"
+    "final_release_date": "2026-01-30",
+    "wave_3_additions": "2026-02-15"
   },
   "persons": [
     {
