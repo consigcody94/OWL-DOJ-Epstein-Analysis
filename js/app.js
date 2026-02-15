@@ -230,7 +230,9 @@ function getRoleCategory(role) {
 
 function getStatusBadge(status) {
     const statusLower = status.toLowerCase();
-    if (statusLower.includes('deceased')) {
+    if (status === 'Deceased?') {
+        return '<span class="badge badge-deceased">Deceased?</span>';
+    } else if (statusLower.includes('deceased')) {
         return '<span class="badge badge-deceased">Deceased</span>';
     } else if (statusLower.includes('incarcerated')) {
         return '<span class="badge badge-incarcerated">Incarcerated</span>';
@@ -265,18 +267,27 @@ function filterPersons(category) {
 }
 
 function applySearch() {
-    if (!state.searchQuery) {
-        renderPersons();
-        return;
+    // First apply category filter
+    if (state.currentFilter === 'all') {
+        state.filteredPersons = [...state.persons];
+    } else {
+        state.filteredPersons = state.persons.filter(person => {
+            const roleCategory = getRoleCategory(person.role);
+            const tags = person.tags || [];
+            return roleCategory === state.currentFilter || tags.includes(state.currentFilter);
+        });
     }
 
-    const query = state.searchQuery.toLowerCase();
-    state.filteredPersons = state.filteredPersons.filter(person => {
-        return person.name.toLowerCase().includes(query) ||
-               person.role.toLowerCase().includes(query) ||
-               (person.key_evidence && person.key_evidence.some(e => e.quote.toLowerCase().includes(query))) ||
-               (person['2026_revelations'] && person['2026_revelations'].some(r => r.toLowerCase().includes(query)));
-    });
+    // Then apply search query
+    if (state.searchQuery) {
+        const query = state.searchQuery.toLowerCase();
+        state.filteredPersons = state.filteredPersons.filter(person => {
+            return person.name.toLowerCase().includes(query) ||
+                   (person.role && person.role.toLowerCase().includes(query)) ||
+                   (person.key_evidence && person.key_evidence.some(e => e.quote && e.quote.toLowerCase().includes(query))) ||
+                   (person['2026_revelations'] && person['2026_revelations'].some(r => r.toLowerCase().includes(query)));
+        });
+    }
 
     renderPersons();
 }

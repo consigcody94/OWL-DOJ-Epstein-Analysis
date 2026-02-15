@@ -7,7 +7,7 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "/Users/cody/.openclaw/workspace/owl-v4"
+publish = "/private/tmp/owl-check"
 publishOrigin = "default"
 
 [build.environment]
