@@ -15,13 +15,16 @@
       "name": "Jeffrey Epstein",
       "role": "Principal Defendant",
       "status": "Deceased",
-      "tags": ["principal", "deceased"],
+      "tags": [
+        "principal",
+        "deceased"
+      ],
       "document_count": 3500000,
       "charges": [
-        "18 U.S.C. § 1591 - Sex Trafficking of Children",
-        "18 U.S.C. § 2423 - Transportation of Minors",
-        "18 U.S.C. § 371 - Conspiracy",
-        "18 U.S.C. § 2422 - Enticement of Minor"
+        "18 U.S.C. \u00a7 1591 - Sex Trafficking of Children",
+        "18 U.S.C. \u00a7 2423 - Transportation of Minors",
+        "18 U.S.C. \u00a7 371 - Conspiracy",
+        "18 U.S.C. \u00a7 2422 - Enticement of Minor"
       ],
       "verdict": "GUILTY - All Counts",
       "key_evidence": [
@@ -39,11 +42,31 @@
         }
       ],
       "key_documents": [
-        {"id": "EFTA00009550", "title": "Grand Jury Testimony", "type": "testimony"},
-        {"id": "EFTA00009512", "title": "FBI Agent Statement", "type": "testimony"},
-        {"id": "EFTA00028785", "title": "SDNY Detention Memo", "type": "legal"},
-        {"id": "EFTA00009116", "title": "NPA Documents", "type": "legal"},
-        {"id": "EFTA00009586", "title": "Victim Grand Jury Testimony", "type": "testimony"}
+        {
+          "id": "EFTA00009550",
+          "title": "Grand Jury Testimony",
+          "type": "testimony"
+        },
+        {
+          "id": "EFTA00009512",
+          "title": "FBI Agent Statement",
+          "type": "testimony"
+        },
+        {
+          "id": "EFTA00028785",
+          "title": "SDNY Detention Memo",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00009116",
+          "title": "NPA Documents",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00009586",
+          "title": "Victim Grand Jury Testimony",
+          "type": "testimony"
+        }
       ],
       "timeline": {
         "birth": "1953-01-20",
@@ -59,14 +82,18 @@
         "Donated to Friends of IDF, Jewish National Fund, National Council of Jewish Women",
         "Invested $1.5M in Israeli company Carbyne",
         "Anonymous FBI source alleged Mossad connections"
-      ]
+      ],
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Jeffrey_Epstein_mug_shot.jpg/330px-Jeffrey_Epstein_mug_shot.jpg"
     },
     {
       "id": "maxwell",
       "name": "Ghislaine Maxwell",
       "role": "Co-Conspirator",
       "status": "Incarcerated",
-      "tags": ["convicted", "co-conspirator"],
+      "tags": [
+        "convicted",
+        "co-conspirator"
+      ],
       "document_count": 850000,
       "sentence": "20 years",
       "conviction_date": "2021-12-29",
@@ -86,9 +113,21 @@
         }
       ],
       "key_documents": [
-        {"id": "EFTA00027850", "title": "Maxwell Indictment Press Release", "type": "legal"},
-        {"id": "EFTA00020401", "title": "Superseding Indictment", "type": "legal"},
-        {"id": "EFTA00029004", "title": "Case Materials", "type": "legal"}
+        {
+          "id": "EFTA00027850",
+          "title": "Maxwell Indictment Press Release",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00020401",
+          "title": "Superseding Indictment",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00029004",
+          "title": "Case Materials",
+          "type": "legal"
+        }
       ],
       "role_in_enterprise": [
         "Recruited and groomed victims",
@@ -100,14 +139,19 @@
       "2026_revelations": [
         "2020 mugshot publicly released",
         "Inappropriate email exchanges with Casey Wasserman (2003)"
-      ]
+      ],
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ghislaine_Maxwell_MDC_mug_shot_%28cropped%29.webp/330px-Ghislaine_Maxwell_MDC_mug_shot_%28cropped%29.webp.png"
     },
     {
       "id": "musk",
       "name": "Elon Musk",
       "role": "Tech Billionaire / Tesla & SpaceX CEO",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 45,
       "key_evidence": [
         {
@@ -118,14 +162,19 @@
         }
       ],
       "context": "Email correspondence between Musk and Epstein revealed in Jan 30, 2026 release",
-      "notes": "Musk has not publicly commented on the email. Context and tone of relationship unclear from limited correspondence."
+      "notes": "Musk has not publicly commented on the email. Context and tone of relationship unclear from limited correspondence.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Elon_Musk_-_54820081119_%28cropped%29.jpg/330px-Elon_Musk_-_54820081119_%28cropped%29.jpg"
     },
     {
       "id": "gates",
       "name": "Bill Gates",
       "role": "Microsoft Founder / Billionaire",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 187,
       "key_evidence": [
         {
@@ -141,14 +190,19 @@
         "Multiple photographs with Epstein released"
       ],
       "context": "Gates previously acknowledged 'meetings' with Epstein for philanthropic discussions, expressed regret",
-      "notes": "Allegations in emails are unverified self-correspondence from Epstein."
+      "notes": "Allegations in emails are unverified self-correspondence from Epstein.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bill_Gates_at_the_European_Commission_-_2025_-_P067383-987995_%28cropped%29.jpg/330px-Bill_Gates_at_the_European_Commission_-_2025_-_P067383-987995_%28cropped%29.jpg"
     },
     {
       "id": "barak",
       "name": "Ehud Barak",
       "role": "Former Prime Minister of Israel",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 93,
       "spouse": "Nili Priel",
       "2026_revelations": [
@@ -156,14 +210,19 @@
         "Photographs with Epstein released"
       ],
       "context": "Barak has previously acknowledged knowing Epstein through business/political contexts",
-      "notes": "No allegations of wrongdoing. Relationship appears political/business in nature."
+      "notes": "No allegations of wrongdoing. Relationship appears political/business in nature.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Ehud_Barak_1999.jpg/330px-Ehud_Barak_1999.jpg"
     },
     {
       "id": "ambani",
       "name": "Anil Ambani",
       "role": "Indian Billionaire / Reliance Group",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 68,
       "2026_revelations": [
         "Regular contact with Epstein from 2017-2019",
@@ -172,14 +231,19 @@
         "Received invitation to Epstein's private Caribbean island"
       ],
       "context": "Communications appear focused on political access and business connections",
-      "notes": "No allegations of wrongdoing. Relationship appears transactional/networking in nature."
+      "notes": "No allegations of wrongdoing. Relationship appears transactional/networking in nature.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Anil_Ambani%2C_2012_%28cropped%29.jpg"
     },
     {
       "id": "branson",
       "name": "Richard Branson",
       "role": "Virgin Group Founder / Billionaire",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 52,
       "key_evidence": [
         {
@@ -190,14 +254,18 @@
         }
       ],
       "context": "Branson has not publicly commented on this email",
-      "notes": "The phrase 'bring your harem' raises serious questions about Branson's awareness."
+      "notes": "The phrase 'bring your harem' raises serious questions about Branson's awareness.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Richard_Branson_Addresses_the_Our_Ocean_Conference_2015_in_Valpara%C3%ADso_%2821783214958%29_%28cropped%29.jpg/330px-Richard_Branson_Addresses_the_Our_Ocean_Conference_2015_in_Valpara%C3%ADso_%2821783214958%29_%28cropped%29.jpg"
     },
     {
       "id": "clinton",
       "name": "Bill Clinton",
       "role": "Former U.S. President",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 212,
       "2026_revelations": [
         "Photographs in private plane and hot-tub released Dec 19, 2025",
@@ -206,14 +274,18 @@
         "December releases 'focused heavily on Clinton' per NYT"
       ],
       "context": "Named in flight logs and various documents. Flights primarily during humanitarian work period.",
-      "notes": "Spokesperson stated Clinton knew nothing of crimes and has not spoken to Epstein in over a decade. Being in photos/documents does not imply wrongdoing."
+      "notes": "Spokesperson stated Clinton knew nothing of crimes and has not spoken to Epstein in over a decade. Being in photos/documents does not imply wrongdoing.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/330px-Bill_Clinton.jpg"
     },
     {
       "id": "trump",
       "name": "Donald Trump",
       "role": "U.S. President (2025-present)",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 274,
       "2026_revelations": [
         "Photo with Epstein and Maxwell (EFTA00000468) briefly removed from DOJ website Dec 19-21, 2025",
@@ -226,14 +298,19 @@
         "DOJ statement Dec 23: 'untrue and sensationalist claims made against President Trump...submitted to FBI right before 2020 election. To be clear: the claims are unfounded and false'"
       ],
       "context": "Signed Epstein Files Transparency Act Nov 19, 2025. Has stated he 'was not a fan' of Epstein and banned him from Mar-a-Lago.",
-      "notes": "Trump-related allegations in 2026 releases appear in unverified FBI tips with major credibility issues. DOJ specifically flagged multiple items as false/fake."
+      "notes": "Trump-related allegations in 2026 releases appear in unverified FBI tips with major credibility issues. DOJ specifically flagged multiple items as false/fake.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/330px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg"
     },
     {
       "id": "modi",
       "name": "Narendra Modi",
       "role": "Prime Minister of India",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 12,
       "key_evidence": [
         {
@@ -244,14 +321,19 @@
         }
       ],
       "context": "2017 email suggests Epstein advised Modi to visit Israel for political purposes",
-      "notes": "Email is Epstein's claim; no evidence Modi solicited or acted on advice. May be Epstein self-aggrandizement."
+      "notes": "Email is Epstein's claim; no evidence Modi solicited or acted on advice. May be Epstein self-aggrandizement.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg/330px-The_official_portrait_of_Shri_Narendra_Modi%2C_the_Prime_Minister_of_the_Republic_of_India.jpg"
     },
     {
       "id": "jagland",
-      "name": "Thorbjørn Jagland",
+      "name": "Thorbj\u00f8rn Jagland",
       "role": "Former Prime Minister of Norway",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 18,
       "2026_revelations": [
         "Planned family vacation on Epstein's private island",
@@ -265,7 +347,11 @@
       "name": "Mette-Marit, Crown Princess of Norway",
       "role": "Norwegian Royalty",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 34,
       "2026_revelations": [
         "Email exchanges with Epstein from 2011-2014",
@@ -276,13 +362,17 @@
     },
     {
       "id": "lajcak",
-      "name": "Miroslav Lajčák",
+      "name": "Miroslav Laj\u010d\u00e1k",
       "role": "Slovak Politician / Former Foreign Minister",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 41,
       "2026_revelations": [
-        "Emails between Epstein and Lajčák discussing 'young women'",
+        "Emails between Epstein and Laj\u010d\u00e1k discussing 'young women'",
         "Resigned following release of emails"
       ],
       "context": "Resignation suggests damaging content in emails",
@@ -293,49 +383,68 @@
       "name": "Howard Lutnick",
       "role": "Cantor Fitzgerald CEO",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 29,
       "2026_revelations": [
         "Invited to lunch with Epstein in 2012",
         "Previously stated he severed ties with Epstein in 2005"
       ],
       "context": "2012 invitation contradicts claimed 2005 severance of ties",
-      "notes": "Unclear if lunch occurred. Timeline discrepancy noted."
+      "notes": "Unclear if lunch occurred. Timeline discrepancy noted.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Howard_Lutnick_2025.jpg/330px-Howard_Lutnick_2025.jpg"
     },
     {
       "id": "mandelson",
       "name": "Peter Mandelson",
       "role": "UK Politician / Former EU Commissioner",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 67,
       "2026_revelations": [
         "Documents show Epstein sent Mandelson money between 2003-2004",
         "Photographs with Epstein released"
       ],
       "context": "Nature and purpose of payments unclear",
-      "notes": "Mandelson has not publicly commented on payments revealed in files."
+      "notes": "Mandelson has not publicly commented on payments revealed in files.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Lord_Mandelson_official_headshot_1_%2854367603918%29_%28cropped%29.jpg/330px-Lord_Mandelson_official_headshot_1_%2854367603918%29_%28cropped%29.jpg"
     },
     {
       "id": "mitchell",
       "name": "George J. Mitchell",
       "role": "Former U.S. Senator / Senate Majority Leader",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 38,
       "2026_revelations": [
         "Email communication with Epstein in 2013",
         "Previously accused in 2019 of having sex with Epstein victim (denied)"
       ],
       "context": "Mitchell has strongly denied all allegations",
-      "notes": "2013 emails suggest ongoing contact despite accusations."
+      "notes": "2013 emails suggest ongoing contact despite accusations.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/George_John_Mitchell.jpg/330px-George_John_Mitchell.jpg"
     },
     {
       "id": "wasserman",
       "name": "Casey Wasserman",
       "role": "Entertainment Executive / Philanthropist",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 56,
       "key_evidence": [
         {
@@ -358,7 +467,11 @@
       "name": "Ariane de Rothschild",
       "role": "Edmond de Rothschild Group CEO",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 142,
       "2026_revelations": [
         "Extensive email contact with Epstein",
@@ -367,27 +480,37 @@
         "Payment for 'introductions and strategic/tax-risk advice' re: Swiss banking investigations"
       ],
       "context": "Relationship appears business/advisory in nature focused on Swiss banking issues",
-      "notes": "No allegations of wrongdoing. $25M consulting contract reported by WSJ and Le Monde."
+      "notes": "No allegations of wrongdoing. $25M consulting contract reported by WSJ and Le Monde.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ariane_de_Rothschild.jpg/330px-Ariane_de_Rothschild.jpg"
     },
     {
       "id": "kamen",
       "name": "Dean Kamen",
       "role": "Inventor / Entrepreneur (Segway)",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 22,
       "2026_revelations": [
         "2013 email detailing plans to spend a night on Epstein's island"
       ],
       "context": "Unclear if visit occurred or was merely discussed",
-      "notes": "No allegations of wrongdoing. Kamen has not publicly commented."
+      "notes": "No allegations of wrongdoing. Kamen has not publicly commented.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Dean_Kamen_at_MAGNET_in_Cleveland_-_2025_%28cropped%29.jpg/330px-Dean_Kamen_at_MAGNET_in_Cleveland_-_2025_%28cropped%29.jpg"
     },
     {
       "id": "sinofsky",
       "name": "Steven Sinofsky",
       "role": "Former Microsoft Executive",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 31,
       "2026_revelations": [
         "Email communication with Epstein",
@@ -401,7 +524,11 @@
       "name": "Steve Tisch",
       "role": "NY Giants Owner / Film Producer",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 47,
       "2026_revelations": [
         "Email correspondence with Epstein discussing 'introducing women' to Tisch"
@@ -414,7 +541,11 @@
       "name": "Dan Ariely",
       "role": "Israeli-American Professor / Behavioral Economist",
       "status": "Living",
-      "tags": ["associate", "mentioned", "2026_revelation"],
+      "tags": [
+        "associate",
+        "mentioned",
+        "2026_revelation"
+      ],
       "document_count": 38,
       "2026_revelations": [
         "Email correspondence with Epstein",
@@ -428,7 +559,10 @@
       "name": "Les Wexner",
       "role": "Billionaire / L Brands Founder",
       "status": "Living",
-      "tags": ["financial", "mentioned"],
+      "tags": [
+        "financial",
+        "mentioned"
+      ],
       "document_count": 89,
       "significance": "Primary documented source of Epstein's wealth",
       "key_facts": [
@@ -439,14 +573,18 @@
       "2026_revelations": [
         "Documents covering attempts to hire criminal defense attorney",
         "FBI efforts to serve 2019 subpoena due to Epstein ties"
-      ]
+      ],
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Leslie_Wexner_receives_woodrow_wilson_award_%28cropped%29_%282%29.JPG/330px-Leslie_Wexner_receives_woodrow_wilson_award_%28cropped%29_%282%29.JPG"
     },
     {
       "id": "acosta",
       "name": "R. Alexander Acosta",
       "role": "U.S. Attorney (SDFL 2005-2009)",
       "status": "Living",
-      "tags": ["prosecutor", "npa_signatory"],
+      "tags": [
+        "prosecutor",
+        "npa_signatory"
+      ],
       "document_count": 150,
       "key_actions": [
         "Approved Non-Prosecution Agreement (2007)",
@@ -455,23 +593,44 @@
         "Resigned amid Epstein scrutiny (2019)"
       ],
       "key_documents": [
-        {"id": "EFTA00009116", "title": "Acosta OPR Interview", "type": "testimony"},
-        {"id": "NPA", "title": "Non-Prosecution Agreement", "type": "legal"}
-      ]
+        {
+          "id": "EFTA00009116",
+          "title": "Acosta OPR Interview",
+          "type": "testimony"
+        },
+        {
+          "id": "NPA",
+          "title": "Non-Prosecution Agreement",
+          "type": "legal"
+        }
+      ],
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Alexander_Acosta_official_portrait.jpg/330px-Alexander_Acosta_official_portrait.jpg"
     },
     {
       "id": "dershowitz",
       "name": "Alan Dershowitz",
       "role": "Defense Attorney",
       "status": "Living",
-      "tags": ["defense_team", "mentioned"],
+      "tags": [
+        "defense_team",
+        "mentioned"
+      ],
       "document_count": 45,
       "role_in_case": "Legal advisor to Epstein defense team during NPA negotiations",
       "key_documents": [
-        {"id": "various", "title": "NPA Negotiation Documents", "type": "legal"},
-        {"id": "various", "title": "OPR Investigation References", "type": "legal"}
+        {
+          "id": "various",
+          "title": "NPA Negotiation Documents",
+          "type": "legal"
+        },
+        {
+          "id": "various",
+          "title": "OPR Investigation References",
+          "type": "legal"
+        }
       ],
-      "notes": "Has denied any wrongdoing. Involved in related civil litigation."
+      "notes": "Has denied any wrongdoing. Involved in related civil litigation.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Alan_dershowitz_2009_retouched_cropped.jpg/330px-Alan_dershowitz_2009_retouched_cropped.jpg"
     },
     {
       "id": "andrew",
@@ -479,24 +638,39 @@
       "full_name": "Andrew Mountbatten-Windsor, Duke of York",
       "role": "British Royalty",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 127,
       "2026_revelations": [
         "Photograph appearing to show him kneeling over woman lying on ground",
         "Additional photographs with Epstein released"
       ],
       "key_documents": [
-        {"id": "various", "title": "Victim Depositions", "type": "testimony"},
-        {"id": "various", "title": "Flight Records", "type": "evidence"}
+        {
+          "id": "various",
+          "title": "Victim Depositions",
+          "type": "testimony"
+        },
+        {
+          "id": "various",
+          "title": "Flight Records",
+          "type": "evidence"
+        }
       ],
-      "notes": "Settled civil lawsuit in 2022. Has denied all allegations."
+      "notes": "Settled civil lawsuit in 2022. Has denied all allegations.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Prince_Andrew%2C_Duke_of_York_%28cropped%29.jpg/330px-Prince_Andrew%2C_Duke_of_York_%28cropped%29.jpg"
     },
     {
       "id": "richardson",
       "name": "Bill Richardson",
       "role": "Former Governor of New Mexico / U.S. Secretary of Energy",
       "status": "Deceased",
-      "tags": ["associate", "deceased"],
+      "tags": [
+        "associate",
+        "deceased"
+      ],
       "document_count": 89,
       "death_date": "2023-09",
       "2026_revelations": [
@@ -512,7 +686,10 @@
       "also_known_as": "Sarah Kensington",
       "role": "Assistant/Scheduler",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 50,
       "role_in_enterprise": [
         "Scheduled victim appointments",
@@ -527,7 +704,10 @@
       "name": "Lesley Groff",
       "role": "Assistant",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 30,
       "role_in_enterprise": [
         "Administrative support",
@@ -541,7 +721,10 @@
       "name": "Nadia Marcinkova",
       "role": "Associate",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 25,
       "allegations": "Alleged participation in abuse",
       "notes": "Named in NPA immunity provisions. Not charged."
@@ -551,11 +734,15 @@
       "name": "Jean-Luc Brunel",
       "role": "Modeling Agent",
       "status": "Deceased",
-      "tags": ["associate", "deceased"],
+      "tags": [
+        "associate",
+        "deceased"
+      ],
       "document_count": 22,
       "death_date": "2022-02",
       "context": "French modeling agent charged in France with rape of minors",
-      "notes": "Found dead in prison in February 2022 before trial."
+      "notes": "Found dead in prison in February 2022 before trial.",
+      "photo": "https://upload.wikimedia.org/wikipedia/en/0/03/Jean-Luc_Brunel_2001.jpg"
     },
     {
       "id": "lefkowitz",
@@ -563,7 +750,10 @@
       "role": "Defense Attorney",
       "firm": "Kirkland & Ellis",
       "status": "Living",
-      "tags": ["defense_team", "npa_negotiator"],
+      "tags": [
+        "defense_team",
+        "npa_negotiator"
+      ],
       "document_count": 69,
       "key_actions": [
         "Lead negotiator for 2008 NPA",
@@ -575,21 +765,28 @@
       "name": "Ken Starr",
       "role": "Defense Attorney",
       "status": "Deceased",
-      "tags": ["defense_team", "deceased"],
+      "tags": [
+        "defense_team",
+        "deceased"
+      ],
       "document_count": 49,
       "death_date": "2022-09",
       "key_actions": [
         "Appealed to DOJ on behalf of Epstein",
         "Former Solicitor General"
       ],
-      "notes": "Known for Clinton-Lewinsky investigation."
+      "notes": "Known for Clinton-Lewinsky investigation.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Kenneth_W._Starr.jpg/330px-Kenneth_W._Starr.jpg"
     },
     {
       "id": "rodgers",
       "name": "David Rodgers",
       "role": "Chief Pilot",
       "status": "Living",
-      "tags": ["witness", "staff"],
+      "tags": [
+        "witness",
+        "staff"
+      ],
       "document_count": 72,
       "testimony": [
         "Testified to grand jury",
@@ -602,7 +799,10 @@
       "name": "Larry Visoski",
       "role": "Pilot",
       "status": "Living",
-      "tags": ["witness", "staff"],
+      "tags": [
+        "witness",
+        "staff"
+      ],
       "document_count": 64,
       "testimony": [
         "Testified at Maxwell trial"
@@ -614,7 +814,9 @@
       "name": "Roy Black",
       "role": "Defense Attorney",
       "status": "Living",
-      "tags": ["defense_team"],
+      "tags": [
+        "defense_team"
+      ],
       "document_count": 404,
       "significance": "High-profile criminal defense attorney on Epstein team"
     },
@@ -623,15 +825,20 @@
       "name": "Audrey Strauss",
       "role": "Acting U.S. Attorney (SDNY)",
       "status": "Living",
-      "tags": ["prosecutor"],
+      "tags": [
+        "prosecutor"
+      ],
       "significance": "Led 2019 SDNY prosecution and Maxwell prosecution"
     },
     {
       "id": "shuliak",
       "name": "Karyna Shuliak",
-      "role": "Last Girlfriend / Fiancée",
+      "role": "Last Girlfriend / Fianc\u00e9e",
       "status": "Living",
-      "tags": ["associate", "beneficiary"],
+      "tags": [
+        "associate",
+        "beneficiary"
+      ],
       "document_count": 15000,
       "origin": "Belarus",
       "profession": "Dentist",
@@ -643,8 +850,16 @@
         "Stood to inherit $100 million and all properties (Manhattan, Paris, NM ranch, Virgin Islands)"
       ],
       "key_documents": [
-        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"},
-        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+        {
+          "id": "EFTA00099303",
+          "title": "The 1953 Trust",
+          "type": "financial"
+        },
+        {
+          "id": "EFTA00098341",
+          "title": "Jeffrey E. Epstein 2019 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "Relationship began circa 2010 when she was a dental student. Epstein funded her education. No allegations of wrongdoing."
     },
@@ -653,7 +868,10 @@
       "name": "Eva Andersson Dubin",
       "role": "Ex-Girlfriend",
       "status": "Living",
-      "tags": ["associate", "ex-girlfriend"],
+      "tags": [
+        "associate",
+        "ex-girlfriend"
+      ],
       "document_count": 8500,
       "profession": "Physician, former Miss Sweden",
       "spouse": "Glenn Dubin (hedge fund billionaire)",
@@ -664,7 +882,11 @@
         "Family says they were 'horrified' by his conduct"
       ],
       "key_documents": [
-        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"}
+        {
+          "id": "EFTA00099303",
+          "title": "The 1953 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "No allegations of wrongdoing. Family has publicly condemned Epstein's behavior."
     },
@@ -673,7 +895,10 @@
       "name": "Celina Dubin",
       "role": "Associate (Dubin daughter)",
       "status": "Living",
-      "tags": ["associate", "beneficiary"],
+      "tags": [
+        "associate",
+        "beneficiary"
+      ],
       "document_count": 4200,
       "key_facts": [
         "Eldest daughter of Eva Andersson Dubin and Glenn Dubin",
@@ -682,15 +907,29 @@
         "Superseded by Karyna Shuliak in August 2019 trust"
       ],
       "key_documents": [
-        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+        {
+          "id": "EFTA00098341",
+          "title": "Jeffrey E. Epstein 2019 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "No allegations of wrongdoing."
     }
   ],
   "document_types": {
-    "grand_jury": ["EFTA00009550", "EFTA00009512", "EFTA00009586"],
-    "indictments": ["EFTA00020401", "EFTA00027850", "EFTA00028785"],
-    "npa_related": ["EFTA00009116"],
+    "grand_jury": [
+      "EFTA00009550",
+      "EFTA00009512",
+      "EFTA00009586"
+    ],
+    "indictments": [
+      "EFTA00020401",
+      "EFTA00027850",
+      "EFTA00028785"
+    ],
+    "npa_related": [
+      "EFTA00009116"
+    ],
     "flight_records": "Multiple documents in DataSet files",
     "phone_records": "Multiple documents in DataSet files (333 total documents)",
     "2026_releases": {
@@ -707,13 +946,20 @@
       "type": "Boeing 727-31",
       "nickname": "Lolita Express",
       "owner": "JEGE, Inc.",
-      "routes": ["PBI-TEB", "TEB-STT", "PBI-STT"]
+      "routes": [
+        "PBI-TEB",
+        "TEB-STT",
+        "PBI-STT"
+      ]
     },
     {
       "tail_number": "N909JE",
       "type": "Gulfstream IV",
       "owner": "Hyperion Air, Inc.",
-      "routes": ["PBI-TEB", "TEB-SAF"]
+      "routes": [
+        "PBI-TEB",
+        "TEB-SAF"
+      ]
     },
     {
       "tail_number": "N331JE",
@@ -784,7 +1030,10 @@
     },
     {
       "name": "Hyperion Air LLC",
-      "assets": ["N331JE", "N722JE"],
+      "assets": [
+        "N331JE",
+        "N722JE"
+      ],
       "purpose": "Aircraft holding"
     },
     {

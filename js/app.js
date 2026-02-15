@@ -500,6 +500,7 @@ function createPersonCard(person) {
     return `
         <article class="person-card ${isSpan2 ? 'span-2' : ''}" data-name="${escapeHtml(person.id)}" data-person-id="${escapeHtml(person.id)}" data-status="${escapeHtml(person.status)}" data-role="${escapeHtml(person.role)}" aria-label="${escapeHtml(person.name)}">
             <div class="person-header" ${headerStyle}>
+                ${person.photo ? `<img class="person-photo" src="${escapeHtml(person.photo)}" alt="${escapeHtml(person.name)}" loading="lazy" onerror="this.style.display='none'">` : ''}
                 <h3 class="person-name">
                     ${docPageLink ? `<a href="${docPageLink}">${getName()}</a>` : getName()}
                 </h3>
