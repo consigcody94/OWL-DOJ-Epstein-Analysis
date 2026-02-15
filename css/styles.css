@@ -979,43 +979,40 @@ select:focus-visible {
 }
 
 .timeline-container {
-  max-width: 100%;
-  overflow-x: auto;
+  max-width: 800px;
+  margin: 0 auto;
   padding: var(--spacing-xl) 0;
 }
 
 .timeline {
   position: relative;
-  display: flex;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-2xl) var(--spacing-md);
-  min-width: max-content;
+  padding-left: 40px;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--border-glass);
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
+  left: 18px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--purple, #a855f7), var(--red));
 }
 
 .timeline-event {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 200px;
+  margin-bottom: var(--spacing-lg);
+  opacity: 1;
 }
 
-.timeline-event:nth-child(even) {
-  flex-direction: column-reverse;
+.timeline-event:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-marker {
+  position: absolute;
+  left: -30px;
+  top: 16px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -1027,38 +1024,41 @@ select:focus-visible {
 
 .timeline-event.arrest .timeline-marker { background: var(--red); box-shadow: 0 0 20px var(--red-glow); }
 .timeline-event.conviction .timeline-marker { background: var(--green); box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
-.timeline-event.death .timeline-marker { background: #6b7280; }
+.timeline-event.death .timeline-marker { background: #6b7280; box-shadow: 0 0 20px rgba(107, 114, 128, 0.3); }
 
 .timeline-card {
   background: var(--bg-glass);
   backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  margin: var(--spacing-md) 0;
-  min-width: 200px;
-  max-width: 300px;
+  padding: var(--spacing-md) var(--spacing-lg);
   transition: all var(--transition);
 }
 
 .timeline-card:hover {
-  transform: scale(1.05);
+  transform: translateX(4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--cyan);
 }
 
 .timeline-year {
   font-family: var(--font-mono);
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--cyan);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
 }
 
 .timeline-title {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 4px;
 }
+
+.timeline-event.arrest .timeline-title { color: var(--red); }
+.timeline-event.conviction .timeline-title { color: var(--green); }
+.timeline-event.death .timeline-title { color: #9ca3af; }
 
 .timeline-description {
   font-size: 0.875rem;

@@ -300,19 +300,23 @@ function renderTimeline() {
     if (!container) return;
 
     const events = [
-        { year: '1994', title: 'Abuse Period Begins', description: 'Pattern of trafficking minors starts', type: 'event' },
-        { year: '2001-2006', title: 'Peak Activity', description: 'Highest documented flight activity and abuse', type: 'event' },
-        { year: '2005-03', title: 'First Police Report', description: 'Palm Beach Police receive complaint', type: 'event' },
-        { year: '2006', title: 'First Arrest', description: 'Epstein arrested in Florida', type: 'arrest' },
-        { year: '2007-09-24', title: 'NPA Signed', description: 'Non-Prosecution Agreement finalized', type: 'event' },
-        { year: '2008-06', title: 'State Plea Deal', description: '13-month sentence, work release', type: 'conviction' },
-        { year: '2019-02', title: 'Judge Marra Ruling', description: 'NPA violated Crime Victims\' Rights Act', type: 'event' },
-        { year: '2019-07-06', title: 'SDNY Arrest', description: 'Arrested on federal sex trafficking charges', type: 'arrest' },
-        { year: '2019-08-10', title: 'Death in Custody', description: 'Found dead in MCC New York', type: 'death' },
-        { year: '2020-07-02', title: 'Maxwell Arrested', description: 'Ghislaine Maxwell arrested in New Hampshire', type: 'arrest' },
-        { year: '2021-12-29', title: 'Maxwell Convicted', description: 'Guilty on 5 of 6 counts, 20 year sentence', type: 'conviction' },
-        { year: '2025-11-19', title: 'Transparency Act Signed', description: 'Epstein Files Transparency Act becomes law', type: 'event' },
-        { year: '2026-01-30', title: 'Final DOJ Release', description: '3.5M pages released to public', type: 'event' }
+        { year: '1994', title: 'Enterprise Established', description: 'Maxwell involvement begins. Initial grooming and abuse activities. New York and Palm Beach operations established.', type: 'event' },
+        { year: '2001–2006', title: 'Peak Activity Period', description: 'Highest volume of documented abuse. Multiple victims per month. Systematic scheduling across all properties. Flight logs show hundreds of trips.', type: 'event' },
+        { year: 'Mar 2005', title: 'First Police Report', description: 'Palm Beach Police Department receives complaint from victim\'s mother. Investigation begins.', type: 'event' },
+        { year: 'Oct 2005', title: 'Search Warrant Executed', description: '358 El Brillo Way searched. Massage equipment, photographs, and contact books seized.', type: 'arrest' },
+        { year: 'May 2007', title: 'Grand Jury Testimony', description: 'FBI agent testifies. "Younger, the better" statement documented. 53+ count indictment drafted but never filed.', type: 'event' },
+        { year: 'Sep 24, 2007', title: 'Non-Prosecution Agreement Signed', description: 'Federal charges declined in exchange for state guilty plea. Victims not notified — a violation of the Crime Victims\' Rights Act.', type: 'death' },
+        { year: 'Jun 2008', title: 'State Plea Deal', description: 'Pleads to state prostitution charges. 18-month sentence with work release. Serves only 13 months.', type: 'conviction' },
+        { year: 'Nov 2018', title: 'Miami Herald Investigation', description: 'Julie K. Brown\'s "Perversion of Justice" series exposes NPA terms and scope of abuse. Public outcry intensifies.', type: 'event' },
+        { year: 'Feb 2019', title: 'Judge Marra Ruling', description: 'Federal judge rules government violated Crime Victims\' Rights Act in NPA process.', type: 'event' },
+        { year: 'Jul 6, 2019', title: 'SDNY Arrest', description: 'Arrested at Teterboro Airport on federal sex trafficking charges. "Vast trove" of photos and CDs found in Manhattan townhouse.', type: 'arrest' },
+        { year: 'Aug 10, 2019', title: 'Death in Custody', description: 'Found dead at Metropolitan Correctional Center. Official ruling: suicide. Both cameras outside cell malfunctioned. Guards falsified logs.', type: 'death' },
+        { year: 'Jul 2, 2020', title: 'Maxwell Arrested', description: 'Ghislaine Maxwell arrested in Bradford, New Hampshire after months in hiding.', type: 'arrest' },
+        { year: 'Dec 29, 2021', title: 'Maxwell Convicted', description: 'Guilty on 5 of 6 federal counts including sex trafficking of a minor. Sentenced to 20 years.', type: 'conviction' },
+        { year: 'Nov 19, 2025', title: 'Transparency Act Signed', description: 'Epstein Files Transparency Act becomes law, mandating release of all DOJ documents within 90 days.', type: 'event' },
+        { year: 'Dec–Jan 2026', title: 'DOJ Document Releases', description: '5 waves of releases: Dec 19, 20, 22, 23, and final release Jan 30. Total: 3.5 million pages, 180,000 images, 2,000+ videos.', type: 'event' },
+        { year: 'Feb 2026', title: '6 Names Unredacted', description: 'Congressional pressure forces unredaction of 6 previously hidden names. FBI labels Wexner "co-conspirator." Bin Sulayem resigns from DP World.', type: 'arrest' },
+        { year: 'Feb 18, 2026', title: 'Wexner Deposition', description: 'Leslie Wexner deposed. FBI labeled him co-conspirator at least 4 times. Gave Epstein power of attorney and $77M NYC townhouse.', type: 'arrest' }
     ];
 
     container.innerHTML = '';
