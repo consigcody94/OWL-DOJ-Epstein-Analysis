@@ -51,7 +51,7 @@ function initIntroSequence() {
         if (charIndex < currentLine.length) {
             terminal.textContent += currentLine.charAt(charIndex);
             charIndex++;
-            setTimeout(typeLine, Math.random() * 30 + 10);
+            setTimeout(typeLine, Math.random() * 15 + 5); // Faster typing (was 30+10)
         } else {
             terminal.textContent += '\n';
             lineIndex++;
@@ -60,7 +60,7 @@ function initIntroSequence() {
             const progress = (lineIndex / lines.length) * 100;
             if (progressBar) progressBar.style.width = `${progress}%`;
 
-            setTimeout(typeLine, 200);
+            setTimeout(typeLine, 100); // Faster line delay (was 200)
         }
 
         // Auto scroll terminal
@@ -70,9 +70,9 @@ function initIntroSequence() {
     function finishIntro(instant = false) {
         if (progressBar) progressBar.style.width = '100%';
 
-        const delay = instant ? 0 : 500;
-        const accessDelay = instant ? 0 : 1000;
-        const removeDelay = instant ? 100 : 1000;
+        const delay = instant ? 0 : 300; // Faster (was 500)
+        const accessDelay = instant ? 0 : 600; // Faster (was 1000)
+        const removeDelay = instant ? 100 : 800; // Faster (was 1000)
 
         setTimeout(() => {
             if (accessText && !instant) accessText.classList.add('visible');

@@ -1,11 +1,11 @@
 {
   "analysis_metadata": {
     "system": "OWL (Objective Witness & Legal) Analysis System",
-    "version": "2.0",
-    "analysis_date": "2026-02",
+    "version": "3.5",
+    "analysis_date": "2026-02-15",
     "jurisdiction": "Federal (SDFL, SDNY)",
     "standard": "Beyond Reasonable Doubt",
-    "source": "DOJ Epstein Files Transparency Act Release"
+    "source": "DOJ Epstein Files Transparency Act Release - Final (Jan 30, 2026)"
   },
   "document_corpus": {
     "total_documents": 3500000,
@@ -14,12 +14,23 @@
     "data_sources": 5,
     "source_breakdown": {
       "florida_ny_epstein_cases": "Primary investigation files",
-      "ny_maxwell_case": "Maxwell prosecution materials",
+      "ny_maxwell_case": "Maxwell prosecution materials (850,000 references)",
       "death_investigations": "NY cases investigating Epstein's death",
       "fbi_investigations": "Multiple FBI investigations",
       "oig_investigation": "Office of Inspector General - Epstein death"
     },
-    "format": "PDF converted to text, images, video"
+    "format": "PDF converted to text, images, video",
+    "transparency_act": {
+      "signed": "2025-11-19",
+      "releases": {
+        "dec_19_2025": "3,965 files (3 GB)",
+        "dec_20_2025": "Grand jury + flight logs",
+        "dec_22_2025": "11,034 documents",
+        "dec_23_2025": "~30,000 files",
+        "jan_30_2026": "3.5M pages (final)"
+      },
+      "review_effort": "500+ attorneys, 4,737 overtime hours, $851,000+ cost"
+    }
   },
   "evidence_statistics": {
     "victim_references": {
@@ -45,13 +56,22 @@
       "total_phone_documents": 333
     },
     "corporate_entities": {
-      "identified_shell_companies": 4,
+      "identified_shell_companies": 5,
       "entities": [
         "JEGE, Inc.",
         "Hyperion Air, Inc.",
         "Hyperion Air LLC",
-        "NYSG LLC"
+        "NYSG LLC",
+        "Southern Trust Company"
       ]
+    },
+    "persons_of_interest": {
+      "total_named": 40,
+      "principals": 2,
+      "convicted": 1,
+      "deceased": 5,
+      "living": 33,
+      "2026_new_revelations": 19
     }
   },
   "geographic_scope": {
@@ -73,8 +93,8 @@
       },
       {
         "location": "U.S. Virgin Islands",
-        "type": "Island",
-        "name": "Little St. James"
+        "type": "Islands",
+        "name": "Little St. James & Great St. James"
       }
     ],
     "international_locations": [
@@ -131,6 +151,7 @@
       "maxwell_arrest": "2020-07-02",
       "maxwell_conviction": "2021-12-29",
       "transparency_act_signed": "2025-11-19",
+      "first_release": "2025-12-19",
       "final_doj_release": "2026-01-30"
     }
   },
@@ -144,7 +165,8 @@
       {
         "name": "Ghislaine Maxwell",
         "conviction_date": "2021-12-29",
-        "sentence_years": 20
+        "sentence_years": 20,
+        "references": 850000
       }
     ],
     "named_staff": [
@@ -163,6 +185,21 @@
         "role": "Associate",
         "status": "Not charged (NPA immunity)"
       }
+    ],
+    "high_profile_associates_2026": [
+      "Elon Musk",
+      "Bill Gates",
+      "Ehud Barak",
+      "Anil Ambani",
+      "Richard Branson",
+      "Prince Andrew",
+      "Bill Clinton",
+      "Donald Trump",
+      "Ariane de Rothschild",
+      "Narendra Modi",
+      "Crown Princess Mette-Marit",
+      "Peter Mandelson",
+      "Casey Wasserman"
     ]
   },
   "npa_analysis": {
@@ -173,7 +210,8 @@
     "defense_attorneys": [
       "Jay Lefkowitz",
       "Ken Starr",
-      "Alan Dershowitz"
+      "Alan Dershowitz",
+      "Roy Black"
     ]
   },
   "estate": {
@@ -195,5 +233,37 @@
     "count_3_371": "5 years consecutive",
     "count_4_2422": "20 years consecutive",
     "total_recommendation": "Life imprisonment without parole"
+  },
+  "notable_2026_revelations": {
+    "epstein": [
+      "Xbox Live ban (Dec 2013)",
+      "Libya asset seizure scheme ($80B)",
+      "Mossad allegations (unverified)",
+      "Donations to Israeli organizations"
+    ],
+    "tech_billionaires": [
+      "Musk: 'wildest party' email (2012)",
+      "Gates: STI allegations, Bezos visit (2009)"
+    ],
+    "political_figures": [
+      "Modi: Israel visit advice",
+      "Barak: Used Epstein's apartment",
+      "Ambani: 2017-2019 regular contact",
+      "Jagland: Planned island vacation",
+      "Mette-Marit: 2011-2014 emails",
+      "Lajčák: Resigned over 'young women' emails"
+    ],
+    "business_elite": [
+      "Rothschild: $25M consulting contract",
+      "Wasserman: Inappropriate Maxwell emails",
+      "Branson: 'bring your harem' email",
+      "Wexner: FBI subpoena attempts"
+    ],
+    "controversial_releases": [
+      "Trump-Epstein-Maxwell photo briefly removed",
+      "Fake Nassar postcard (DOJ confirmed fake)",
+      "Unverified FBI tips with timeline issues",
+      "Redactions bypassable via Photoshop (Dec 22)"
+    ]
   }
 }

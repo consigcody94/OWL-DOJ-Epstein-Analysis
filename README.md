@@ -1,9 +1,10 @@
 <div align="center">
 
-# 🦉 OWL Analysis of DOJ Epstein Files
+# 🦉 OWL Analysis of DOJ Epstein Files v3.5
 
 ### Objective Witness & Legal System
 **Comprehensive Analysis of United States v. Jeffrey Epstein**
+**Updated February 15, 2026 with Final Release Data**
 
 <br>
 

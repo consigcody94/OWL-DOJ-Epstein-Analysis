@@ -10,6 +10,9 @@
     <meta name="theme-color" content="#0a0a0f">
     <title>OWL Analysis | DOJ Epstein Files Interactive Explorer</title>
 
+    <!-- Favicon (OWL emoji as SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🦉</text></svg>">
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="OWL Analysis | DOJ Epstein Files Interactive Explorer">
@@ -33,6 +36,7 @@
 
     <!-- Application Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhancements-v3.5.css">
 </head>
 
 <body>
@@ -193,6 +197,9 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Network Visualization -->
         <section id="network" aria-labelledby="network-heading">
             <div class="section-header">
@@ -245,6 +252,9 @@
                 </svg>
             </div>
         </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true"></div>
 
         <!-- Timeline -->
         <section id="timeline" aria-labelledby="timeline-heading">
@@ -345,6 +355,9 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true"></div>
+
         <!-- Evidence Section -->
         <section id="evidence" aria-labelledby="evidence-heading">
             <div class="section-header">
@@ -429,13 +442,29 @@
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-        <p>
-            <strong>OWL Analysis System v2.0</strong> | February 2026<br>
-            Analysis of DOJ Epstein Files Transparency Act Release | Educational &amp; Research Purposes Only<br>
-            <a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis" rel="noopener noreferrer">View on
-                GitHub</a> |
-            <a href="https://www.justice.gov/epstein" rel="noopener noreferrer">Official DOJ Epstein Library</a>
-        </p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>OWL Analysis System v3.5</h4>
+                <p>Interactive explorer for the DOJ Epstein Files Transparency Act release</p>
+                <p class="footer-date">Last Updated: February 15, 2026</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.justice.gov/epstein" rel="noopener noreferrer" target="_blank">Official DOJ Epstein Library</a></li>
+                    <li><a href="https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis" rel="noopener noreferrer" target="_blank">GitHub Repository</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Epstein_Files_Transparency_Act" rel="noopener noreferrer" target="_blank">Transparency Act (Wikipedia)</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>This site provides objective analysis of publicly released DOJ documents.</p>
+                <p class="footer-disclaimer"><strong>Disclaimer:</strong> For educational and research purposes only. Appearance in documents does not imply wrongdoing.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 OWL Analysis Project | Built with transparency in mind</p>
+        </div>
     </footer>
 
     <!-- Modal for document details -->
