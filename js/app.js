@@ -95,6 +95,7 @@ function animateCounter(element, target) {
 }
 
 function formatNumber(num) {
+    if (num == null || isNaN(num)) return '0';
     if (num >= 1000000) {
         return (num / 1000000).toFixed(1) + 'M';
     } else if (num >= 1000) {
@@ -242,7 +243,9 @@ function getStatusBadge(status) {
 }
 
 function getDocCountPercentage(count) {
-    const maxCount = Math.max(...state.persons.map(p => p.document_count));
+    if (!count) return 0;
+    const maxCount = Math.max(...state.persons.map(p => p.document_count || 0));
+    if (!maxCount) return 0;
     return Math.min((count / maxCount) * 100, 100);
 }
 

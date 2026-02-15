@@ -7,7 +7,7 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "/private/tmp/owl-check"
+publish = "/private/tmp/owl-doj-build"
 publishOrigin = "default"
 
 [build.environment]
