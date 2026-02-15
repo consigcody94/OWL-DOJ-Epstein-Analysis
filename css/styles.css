@@ -751,11 +751,17 @@ select:focus-visible {
   background-size: 40px 40px;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  border: 1px solid var(--border-glass);
 }
 
-#network-graph {
+#networkGraph {
   width: 100%;
   height: 600px;
+  cursor: grab;
+}
+
+#networkGraph:active {
+  cursor: grabbing;
 }
 
 .network-controls {
@@ -765,6 +771,7 @@ select:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+  z-index: 10;
 }
 
 .network-btn {
@@ -775,14 +782,45 @@ select:focus-visible {
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   font-size: 0.875rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all var(--transition);
+  min-width: 80px;
+  text-align: center;
 }
 
 .network-btn:hover {
   background: var(--cyan);
   color: var(--bg-primary);
   border-color: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--cyan-glow);
+}
+
+/* Network nodes */
+.network-node {
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.network-node circle {
+  transition: all var(--transition);
+}
+
+.network-node:hover circle {
+  stroke-width: 4;
+  filter: drop-shadow(0 0 16px rgba(6, 182, 212, 0.6));
+}
+
+/* Network links */
+.network-link {
+  transition: all var(--transition);
+}
+
+/* Network legend */
+.network-legend {
+  pointer-events: none;
+  user-select: none;
 }
 
 /* ============================================

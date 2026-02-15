@@ -557,9 +557,11 @@ function closeGlossary() {
 // NETWORK VISUALIZATION
 // ===========================================
 function initializeNetwork() {
-    // This will be populated by a separate network visualization script
-    // For now, just log that it's ready
-    console.log('Network visualization ready');
+    // Network is initialized by network.js
+    // Make persons data available globally for network.js
+    if (window.state) {
+        window.state.persons = state.persons;
+    }
 }
 
 // ===========================================
