@@ -93,6 +93,10 @@ function observeDeepDiveSections() {
     // Observe sections
     const sections = document.querySelectorAll('.coded-language-section, .secret-societies-section, .cross-scandal-section');
     sections.forEach(section => observer.observe(section));
+    
+    // Observe new sections (recruitment, pr-machine, cipher-diary, death-coverup)
+    const newSections = document.querySelectorAll('#recruitment-pipeline, #pr-machine, #cipher-diary, #death-coverup');
+    newSections.forEach(section => observer.observe(section));
 }
 
 // ==========================================

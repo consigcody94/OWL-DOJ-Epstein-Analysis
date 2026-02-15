@@ -2165,6 +2165,83 @@ select:focus-visible {
 }
 
 /* ============================================
+   CUSTOM QUOTE BLOCKS (New Sections)
+   ============================================ */
+.victim-quote {
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid var(--red);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.victim-quote p {
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.victim-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.pr-quote {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 4px solid var(--amber);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.pr-quote p {
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.pr-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.fbi-quote {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid var(--blue);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.fbi-quote p {
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.fbi-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.accountability-gap {
+  background: rgba(168, 85, 247, 0.1);
+  border-left: 4px solid var(--purple);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+/* ============================================
    RESPONSIVE - DEEP DIVE SECTIONS
    ============================================ */
 @media (max-width: 768px) {
@@ -2183,5 +2260,13 @@ select:focus-visible {
   .category-filter-btn {
     font-size: 0.8125rem;
     padding: 0.4rem 0.75rem;
+  }
+  
+  .victim-quote,
+  .pr-quote,
+  .fbi-quote,
+  .accountability-gap {
+    font-size: 0.8rem;
+    padding: var(--spacing-sm);
   }
 }
