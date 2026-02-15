@@ -838,7 +838,7 @@ select:focus-visible {
   box-shadow: var(--shadow-lg);
 }
 
-#flight-map {
+#flightMap {
   width: 100%;
   height: 100%;
 }
