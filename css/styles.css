@@ -190,6 +190,9 @@ select:focus-visible {
 }
 
 .hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: var(--spacing-md);
   animation: float 6s ease-in-out infinite;
 }
@@ -198,17 +201,15 @@ select:focus-visible {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 3px solid rgba(6, 182, 212, 0.4);
-  box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.3);
-  filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
+  border: none;
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.2));
   transition: all 0.4s ease;
   object-fit: cover;
 }
 
 .owl-seal:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(6, 182, 212, 0.5), 0 0 80px rgba(6, 182, 212, 0.2);
-  border-color: rgba(6, 182, 212, 0.7);
+  filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.7)) drop-shadow(0 0 70px rgba(212, 175, 55, 0.3));
 }
 
 @keyframes float {
@@ -1652,8 +1653,8 @@ select:focus-visible {
 
 @media (max-width: 640px) {
   .owl-seal {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
   
   .hero-title {
