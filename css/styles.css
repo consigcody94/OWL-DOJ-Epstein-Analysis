@@ -1687,3 +1687,501 @@ select:focus-visible {
     break-inside: avoid;
   }
 }
+
+/* ============================================
+   CODED LANGUAGE SECTION
+   ============================================ */
+.coded-language-section {
+  padding: var(--spacing-2xl) 0;
+  background: var(--bg-secondary);
+}
+
+.coded-language-disclaimer {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--amber);
+  border-radius: var(--radius-md);
+  color: var(--amber);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.coded-terms-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.coded-term-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.coded-term-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coded-term-card:hover {
+  border-color: var(--cyan);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+.coded-term-card[data-category="food"]:hover {
+  border-color: var(--red);
+  box-shadow: var(--glow-red);
+}
+
+.coded-term-card[data-category="hierarchy"]:hover {
+  border-color: var(--amber);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.term-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.term-word {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+}
+
+.term-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.frequency-badge {
+  background: rgba(6, 182, 212, 0.2);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+}
+
+.hierarchy-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid var(--amber);
+  color: var(--amber);
+}
+
+.term-meaning {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.term-examples {
+  margin: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.term-example {
+  padding: 0.75rem;
+  background: rgba(6, 182, 212, 0.05);
+  border-left: 3px solid var(--cyan);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.efta-source {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid var(--cyan);
+  border-radius: 6px;
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.efta-source:hover {
+  background: var(--cyan);
+  color: var(--bg-primary);
+}
+
+.category-filter-btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 0.875rem;
+}
+
+.category-filter-btn.active,
+.category-filter-btn:hover {
+  background: var(--cyan);
+  color: var(--bg-primary);
+  border-color: var(--cyan);
+}
+
+/* ============================================
+   SECRET SOCIETIES SECTION
+   ============================================ */
+.secret-societies-section {
+  padding: var(--spacing-2xl) 0;
+  background: var(--bg-primary);
+}
+
+.secret-societies-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.accordion-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.accordion-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-card[data-theme="cyan"] .accordion-header h3 {
+  color: var(--cyan);
+}
+
+.accordion-card[data-theme="purple"] .accordion-header h3 {
+  color: var(--purple);
+}
+
+.accordion-card[data-theme="blue"] .accordion-header h3 {
+  color: var(--blue);
+}
+
+.accordion-card[data-theme="amber"] .accordion-header h3 {
+  color: var(--amber);
+}
+
+.accordion-card[data-theme="red"] .accordion-header h3 {
+  color: var(--red);
+}
+
+.accordion-card[data-theme="cyan"]:hover {
+  border-color: var(--cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.accordion-card[data-theme="purple"]:hover {
+  border-color: var(--purple);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.accordion-card[data-theme="blue"]:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.accordion-card[data-theme="amber"]:hover {
+  border-color: var(--amber);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.accordion-card[data-theme="red"]:hover {
+  border-color: var(--red);
+  box-shadow: var(--glow-red);
+}
+
+.accordion-header {
+  padding: var(--spacing-md);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: all var(--transition);
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.accordion-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform var(--transition);
+  color: var(--text-secondary);
+}
+
+.accordion-card.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.accordion-card.active .accordion-body {
+  max-height: 3000px;
+  padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.accordion-item {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--cyan);
+}
+
+.accordion-card[data-theme="purple"] .accordion-item {
+  border-left-color: var(--purple);
+}
+
+.accordion-card[data-theme="blue"] .accordion-item {
+  border-left-color: var(--blue);
+}
+
+.accordion-card[data-theme="amber"] .accordion-item {
+  border-left-color: var(--amber);
+}
+
+.accordion-card[data-theme="red"] .accordion-item {
+  border-left-color: var(--red);
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.accordion-item p {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.accordion-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.accordion-item li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.accordion-item li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+}
+
+.accordion-item li strong {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   CROSS-SCANDAL CONNECTIONS SECTION
+   ============================================ */
+.cross-scandal-section {
+  padding: var(--spacing-2xl) 0;
+  background: var(--bg-secondary);
+}
+
+.cross-scandal-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.scandal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scandal-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scandal-card[data-theme="pink"]:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  transform: translateY(-4px);
+}
+
+.scandal-card[data-theme="amber"]:hover {
+  border-color: var(--amber);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  transform: translateY(-4px);
+}
+
+.scandal-card[data-theme="red"]:hover {
+  border-color: var(--red);
+  box-shadow: var(--glow-red);
+  transform: translateY(-4px);
+}
+
+.scandal-card[data-theme="blue"]:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transform: translateY(-4px);
+}
+
+.scandal-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.scandal-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.scandal-card[data-theme="pink"] h3 {
+  color: var(--pink);
+}
+
+.scandal-card[data-theme="amber"] h3 {
+  color: var(--amber);
+}
+
+.scandal-card[data-theme="red"] h3 {
+  color: var(--red);
+}
+
+.scandal-card[data-theme="blue"] h3 {
+  color: var(--blue);
+}
+
+.scandal-details {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.scandal-details ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.scandal-details li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+.scandal-details li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.scandal-card[data-theme="pink"] .scandal-details li::before {
+  color: var(--pink);
+}
+
+.scandal-card[data-theme="amber"] .scandal-details li::before {
+  color: var(--amber);
+}
+
+.scandal-card[data-theme="red"] .scandal-details li::before {
+  color: var(--red);
+}
+
+.scandal-card[data-theme="blue"] .scandal-details li::before {
+  color: var(--blue);
+}
+
+/* ============================================
+   RESPONSIVE - DEEP DIVE SECTIONS
+   ============================================ */
+@media (max-width: 768px) {
+  .coded-terms-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cross-scandal-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .category-filter-btn {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.75rem;
+  }
+}

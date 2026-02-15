@@ -112,9 +112,9 @@ async function searchCommands(query, resultsContainer) {
     const filtered = persons.filter(person => {
         if (!query) return true; // Show all if no query
         
-        const name = person.name.toLowerCase();
-        const role = person.role.toLowerCase();
-        const evidence = person.key_evidence?.map(e => e.quote.toLowerCase()).join(' ') || '';
+        const name = (person.name || '').toLowerCase();
+        const role = (person.role || '').toLowerCase();
+        const evidence = person.key_evidence?.map(e => (e.quote || '').toLowerCase()).join(' ') || '';
         
         return name.includes(query) || role.includes(query) || evidence.includes(query);
     }).slice(0, 10); // Limit to 10 results

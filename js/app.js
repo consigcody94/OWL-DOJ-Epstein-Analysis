@@ -219,6 +219,7 @@ function createPersonCard(person) {
 }
 
 function getRoleCategory(role) {
+    if (!role) return 'associate';
     const roleLower = role.toLowerCase();
     if (roleLower.includes('principal') || roleLower.includes('defendant')) return 'principal';
     if (roleLower.includes('convicted') || roleLower.includes('co-conspirator')) return 'convicted';
@@ -230,6 +231,7 @@ function getRoleCategory(role) {
 }
 
 function getStatusBadge(status) {
+    if (!status) return '<span class="badge badge-living">Unknown</span>';
     const statusLower = status.toLowerCase();
     if (status === 'Deceased?') {
         return '<span class="badge badge-deceased">Deceased?</span>';
@@ -243,9 +245,10 @@ function getStatusBadge(status) {
 }
 
 function getDocCountPercentage(count) {
-    if (!count) return 0;
+    if (!count || count == null) return 0;
+    if (!state.persons || state.persons.length === 0) return 0;
     const maxCount = Math.max(...state.persons.map(p => p.document_count || 0));
-    if (!maxCount) return 0;
+    if (!maxCount || maxCount === 0) return 0;
     return Math.min((count / maxCount) * 100, 100);
 }
 
@@ -285,10 +288,10 @@ function applySearch() {
     if (state.searchQuery) {
         const query = state.searchQuery.toLowerCase();
         state.filteredPersons = state.filteredPersons.filter(person => {
-            return person.name.toLowerCase().includes(query) ||
+            return (person.name || '').toLowerCase().includes(query) ||
                    (person.role && person.role.toLowerCase().includes(query)) ||
                    (person.key_evidence && person.key_evidence.some(e => e.quote && e.quote.toLowerCase().includes(query))) ||
-                   (person['2026_revelations'] && person['2026_revelations'].some(r => r.toLowerCase().includes(query)));
+                   (person['2026_revelations'] && person['2026_revelations'].some(r => r && r.toLowerCase().includes(query)));
         });
     }
 

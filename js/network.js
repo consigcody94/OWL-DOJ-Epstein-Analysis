@@ -105,7 +105,7 @@ function generateRelationships(persons) {
     persons.forEach(person => {
         if (person.id === 'epstein' || person.id === 'maxwell') return;
         
-        const roleLower = person.role.toLowerCase();
+        const roleLower = (person.role || '').toLowerCase();
         
         // Determine relationship type based on role
         let type = 'social';
@@ -144,7 +144,7 @@ function generateRelationships(persons) {
     });
 
     // Add some inter-connections (defense attorneys, staff, etc.)
-    const staff = persons.filter(p => p.role.toLowerCase().includes('staff') || p.role.toLowerCase().includes('assistant'));
+    const staff = persons.filter(p => (p.role || '').toLowerCase().includes('staff') || (p.role || '').toLowerCase().includes('assistant'));
     if (staff.length > 1) {
         for (let i = 0; i < staff.length - 1; i++) {
             links.push({
@@ -157,7 +157,7 @@ function generateRelationships(persons) {
         }
     }
 
-    const defense = persons.filter(p => p.role.toLowerCase().includes('defense'));
+    const defense = persons.filter(p => (p.role || '').toLowerCase().includes('defense'));
     if (defense.length > 1) {
         for (let i = 0; i < defense.length - 1; i++) {
             links.push({
