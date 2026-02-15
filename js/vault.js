@@ -1,253 +1,212 @@
 /**
- * Evidence Vault - Classified file cards with redaction animation
- * Tony Stark investigation room aesthetic
+ * OWL Analysis System v4.0
+ * Evidence Vault
  */
 
-class EvidenceVault {
-    constructor() {
-        this.categories = [
-            {
-                id: 'flight',
-                name: 'Flight Records',
-                icon: '✈️',
-                count: 333,
-                color: '#3b82f6',
-                documents: [
-                    {
-                        title: 'Flight Logs N908JE (Boeing 727)',
-                        date: '1997-2006',
-                        excerpt: 'Detailed passenger manifests showing interstate transport of minors between Palm Beach, New York, New Mexico, and USVI properties.',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'Flight Logs N909JE (Gulfstream IV)',
-                        date: '2001-2005',
-                        excerpt: 'Passenger lists documenting transport of victims and associates across state lines.',
-                        classification: 'SECRET'
-                    },
-                    {
-                        title: 'Aircraft Ownership Records',
-                        date: '1995-2019',
-                        excerpt: 'Shell company registrations: JEGE Inc., Hyperion Air Inc., Hyperion Air LLC.',
-                        classification: 'CONFIDENTIAL'
-                    }
-                ]
-            },
-            {
-                id: 'phone',
-                name: 'Phone Records',
-                icon: '📞',
-                count: 'Multiple',
-                color: '#f59e0b',
-                documents: [
-                    {
-                        title: 'Message Pads - Palm Beach',
-                        date: '2004-2005',
-                        excerpt: 'Scheduling records showing systematic recruitment and abuse patterns. Names, ages, and contact information for victims.',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'Contact Books',
-                        date: 'Various',
-                        excerpt: 'Address books seized from properties containing hundreds of contacts including minors, associates, and co-conspirators.',
-                        classification: 'SECRET'
-                    }
-                ]
-            },
-            {
-                id: 'testimony',
-                name: 'Testimony',
-                icon: '📝',
-                count: 'Multiple',
-                color: '#10b981',
-                documents: [
-                    {
-                        title: 'Grand Jury Testimony (EFTA00009550)',
-                        date: 'May 2007',
-                        excerpt: 'FBI agent testimony: "She told us that Mr. Epstein said to her on one occasion, \'The younger, the better.\'"',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'Victim Statements',
-                        date: '2005-2019',
-                        excerpt: 'Multiple victim testimonies documenting systematic abuse, recruitment patterns, and interstate transport.',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'Staff Testimony',
-                        date: '2005-2020',
-                        excerpt: 'Statements from household staff, pilots, and assistants corroborating abuse patterns and operational details.',
-                        classification: 'SECRET'
-                    }
-                ]
-            },
-            {
-                id: 'financial',
-                name: 'Financial',
-                icon: '💰',
-                count: 'Multiple',
-                color: '#8b5cf6',
-                documents: [
-                    {
-                        title: 'Payment Records',
-                        date: '1999-2006',
-                        excerpt: 'Cash payments to victims documented in financial records. Payments ranging from $200-$1,000 per incident.',
-                        classification: 'SECRET'
-                    },
-                    {
-                        title: 'Shell Company Filings',
-                        date: '1995-2019',
-                        excerpt: 'Corporate records for JEGE Inc., Hyperion Air, and other entities used to conceal assets and operations.',
-                        classification: 'CONFIDENTIAL'
-                    }
-                ]
-            },
-            {
-                id: 'physical',
-                name: 'Physical Evidence',
-                icon: '🔬',
-                count: 'Various',
-                color: '#ef4444',
-                documents: [
-                    {
-                        title: 'Property Search - 358 El Brillo Way',
-                        date: 'October 2005',
-                        excerpt: 'Items seized: massage tables, photographs of young females, contact information, scheduling materials.',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'NYC Townhouse Search',
-                        date: 'July 2019',
-                        excerpt: 'SDNY search warrant execution: "vast trove" of photographs including nude images of underage females.',
-                        classification: 'TOP SECRET'
-                    },
-                    {
-                        title: 'Digital Evidence',
-                        date: '2019',
-                        excerpt: 'Computer drives, CDs, hard drives containing photographic evidence seized from Manhattan residence.',
-                        classification: 'TOP SECRET'
-                    }
-                ]
-            }
-        ];
-
-        this.init();
-    }
-
-    init() {
-        // Wait for evidence section
-        const checkSection = setInterval(() => {
-            const evidenceSection = document.getElementById('evidence');
-            if (evidenceSection) {
-                clearInterval(checkSection);
-                this.createVault();
-            }
-        }, 100);
-    }
-
-    createVault() {
-        const evidenceSection = document.getElementById('evidence');
-        
-        // Create vault container
-        const vaultContainer = document.createElement('div');
-        vaultContainer.className = 'evidence-vault';
-        vaultContainer.innerHTML = `
-            <div class="vault-header">
-                <h3>Evidence Vault</h3>
-                <p class="vault-description">Classified documentation from DOJ release. Click to expand.</p>
-            </div>
-            <div class="vault-categories">
-                ${this.categories.map(cat => this.renderCategory(cat)).join('')}
-            </div>
-        `;
-
-        // Insert after the first stats grid
-        const statsGrid = evidenceSection.querySelector('.stats-grid');
-        if (statsGrid) {
-            statsGrid.after(vaultContainer);
-        } else {
-            evidenceSection.appendChild(vaultContainer);
+const EVIDENCE_DATA = {
+    flight: [
+        {
+            classification: 'top-secret',
+            title: 'Flight Logs - N908JE (Lolita Express)',
+            date: '2001-2006',
+            excerpt: 'Comprehensive flight manifests documenting 850+ flights with passenger lists including Clinton, Prince Andrew, and multiple unidentified minors.'
+        },
+        {
+            classification: 'secret',
+            title: 'Aircraft Registration Records',
+            date: '1998-2019',
+            excerpt: '6 registered aircraft including N908JE (Boeing 727), N909JE (Gulfstream), and 4 helicopters used for island transport.'
+        },
+        {
+            classification: 'confidential',
+            title: 'Pilot Testimony - Larry Visoski',
+            date: '2021',
+            excerpt: 'Chief pilot testimony confirming transport of minors and high-profile passengers over 25+ years.'
+        },
+        {
+            classification: 'secret',
+            title: 'Little St. James Flight Manifests',
+            date: '2001-2019',
+            excerpt: 'Helicopter logs showing 2,400+ flights to Little St. James island with passenger counts and timestamps.'
         }
+    ],
+    phone: [
+        {
+            classification: 'top-secret',
+            title: 'Phone Records - Maxwell to Victims',
+            date: '2001-2005',
+            excerpt: 'Over 125 phone calls documented between Maxwell and a single victim, establishing pattern of recruitment contact.'
+        },
+        {
+            classification: 'secret',
+            title: 'Cell Tower Data - Little St. James',
+            date: '2010-2019',
+            excerpt: 'Cell tower records placing multiple high-profile individuals on island during documented abuse periods.'
+        },
+        {
+            classification: 'confidential',
+            title: 'Contact Lists - Epstein\'s Black Book',
+            date: '2004',
+            excerpt: 'Over 1,000 contacts including royalty, politicians, business leaders, and entertainment figures.'
+        }
+    ],
+    testimony: [
+        {
+            classification: 'top-secret',
+            title: 'Grand Jury Testimony - Victim A',
+            date: '2007-05',
+            excerpt: '"She told Mr. Epstein that she was in high school, and actually told him her true age, which was under 18."'
+        },
+        {
+            classification: 'top-secret',
+            title: 'FBI Agent Statement',
+            date: '2007',
+            excerpt: '"The younger, the better." - Direct quote from FBI testimony regarding Epstein\'s stated preferences.'
+        },
+        {
+            classification: 'secret',
+            title: 'Virginia Giuffre Deposition',
+            date: '2016',
+            excerpt: 'Detailed testimony of trafficking, naming multiple high-profile individuals and locations worldwide.'
+        },
+        {
+            classification: 'secret',
+            title: 'Sarah Kellen Immunity Proffer',
+            date: '2007',
+            excerpt: 'Assistant\'s statement describing scheduling system for "massages" and recruitment of high school students.'
+        }
+    ],
+    financial: [
+        {
+            classification: 'secret',
+            title: 'Southern Trust Company Records',
+            date: '1990-2019',
+            excerpt: 'Virgin Islands shell company handling $500M+ in wire transfers with obfuscated beneficiaries.'
+        },
+        {
+            classification: 'confidential',
+            title: 'Victim Settlement Payments',
+            date: '2008-2019',
+            excerpt: 'Over $5M in documented settlement payments to victims through intermediary law firms.'
+        },
+        {
+            classification: 'top-secret',
+            title: 'Wexner Financial Relationship',
+            date: '1991-2007',
+            excerpt: 'Power of attorney documentation showing Epstein\'s control over $500M+ Wexner estate assets.'
+        },
+        {
+            classification: 'secret',
+            title: 'Libya Asset Seizure Scheme',
+            date: '2011',
+            excerpt: 'Documented plans to seize $80B in frozen Libyan assets with 10-25% fee structure (2026 revelation).'
+        }
+    ],
+    physical: [
+        {
+            classification: 'top-secret',
+            title: 'Palm Beach Mansion Search Warrant',
+            date: '2005-10',
+            excerpt: 'Photographs, massage tables, victim identification evidence seized from 358 El Brillo Way.'
+        },
+        {
+            classification: 'top-secret',
+            title: 'New York Townhouse Evidence',
+            date: '2019-07',
+            excerpt: 'Digital storage devices, explicit photographs of minors, fake passports seized from 9 East 71st Street.'
+        },
+        {
+            classification: 'secret',
+            title: 'Safe Contents - Fake Passports',
+            date: '2019',
+            excerpt: 'Saudi Arabian passport with Epstein\'s photo under different name, multiple currencies, diamonds.'
+        },
+        {
+            classification: 'confidential',
+            title: 'Massage Table & Equipment',
+            date: '2005',
+            excerpt: 'Professional massage equipment seized from multiple properties, used as pretext for abuse.'
+        }
+    ]
+};
 
-        this.bindEvents();
+document.addEventListener('DOMContentLoaded', () => {
+    initVault();
+});
+
+function initVault() {
+    const tabs = document.querySelectorAll('.vault-tab');
+    const grid = document.getElementById('vaultGrid');
+    
+    if (!tabs.length || !grid) {
+        console.error('Vault elements not found');
+        return;
     }
 
-    renderCategory(category) {
-        return `
-            <div class="vault-category" data-category="${category.id}">
-                <div class="category-folder" style="--category-color: ${category.color}">
-                    <div class="folder-tab">
-                        <span class="folder-icon">${category.icon}</span>
-                        <span class="folder-name">${category.name}</span>
-                        <span class="folder-count">${category.count} docs</span>
-                    </div>
-                    <div class="folder-expand">▼</div>
-                </div>
-                <div class="category-documents">
-                    ${category.documents.map((doc, idx) => this.renderDocument(doc, idx)).join('')}
-                </div>
-            </div>
-        `;
-    }
-
-    renderDocument(doc, index) {
-        return `
-            <div class="vault-document" data-doc-index="${index}">
-                <div class="doc-classification">${doc.classification}</div>
-                <div class="doc-header">
-                    <h4 class="doc-title">${doc.title}</h4>
-                    <div class="doc-date">${doc.date}</div>
-                </div>
-                <div class="doc-excerpt redacted">
-                    <span class="redaction-overlay"></span>
-                    ${doc.excerpt}
-                </div>
-            </div>
-        `;
-    }
-
-    bindEvents() {
-        // Category folder clicks
-        document.querySelectorAll('.category-folder').forEach(folder => {
-            folder.addEventListener('click', (e) => {
-                const category = folder.closest('.vault-category');
-                const isExpanded = category.classList.contains('expanded');
-                
-                // Collapse all others
-                document.querySelectorAll('.vault-category').forEach(cat => {
-                    cat.classList.remove('expanded');
-                });
-
-                // Toggle this one
-                if (!isExpanded) {
-                    category.classList.add('expanded');
-                }
-            });
+    // Tab click handlers
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Load category
+            const category = tab.getAttribute('data-category');
+            loadVaultCategory(category, grid);
         });
+    });
 
-        // Document clicks - reveal with redaction animation
-        document.querySelectorAll('.vault-document').forEach(doc => {
-            doc.addEventListener('click', (e) => {
-                const excerpt = doc.querySelector('.doc-excerpt');
-                if (excerpt.classList.contains('redacted')) {
-                    excerpt.classList.remove('redacted');
-                    excerpt.classList.add('revealing');
-                    
-                    setTimeout(() => {
-                        excerpt.classList.remove('revealing');
-                        excerpt.classList.add('revealed');
-                    }, 1000);
-                }
-            });
-        });
-    }
+    // Load initial category
+    loadVaultCategory('flight', grid);
 }
 
-// Initialize
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.evidenceVault = new EvidenceVault();
+function loadVaultCategory(category, container) {
+    const evidence = EVIDENCE_DATA[category] || [];
+    
+    container.innerHTML = '';
+    
+    if (evidence.length === 0) {
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No evidence in this category</div>';
+        return;
+    }
+
+    evidence.forEach(item => {
+        const card = createEvidenceCard(item);
+        container.appendChild(card);
     });
-} else {
-    window.evidenceVault = new EvidenceVault();
+}
+
+function createEvidenceCard(evidence) {
+    const card = document.createElement('div');
+    card.className = 'evidence-card';
+    
+    const classificationClass = `classification-${evidence.classification}`;
+    const classificationLabel = evidence.classification.toUpperCase().replace('-', ' ');
+    
+    card.innerHTML = `
+        <div class="classification-badge ${classificationClass}">${classificationLabel}</div>
+        <h3 class="evidence-title">${evidence.title}</h3>
+        <div class="evidence-date">${evidence.date}</div>
+        <div class="evidence-excerpt">${evidence.excerpt}</div>
+    `;
+    
+    // Expand on click
+    card.addEventListener('click', () => {
+        expandEvidence(evidence);
+    });
+    
+    return card;
+}
+
+function expandEvidence(evidence) {
+    // For now, just show alert - could be replaced with modal
+    const message = `
+${evidence.title}
+Date: ${evidence.date}
+Classification: ${evidence.classification.toUpperCase()}
+
+${evidence.excerpt}
+    `.trim();
+    
+    alert(message);
 }

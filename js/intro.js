@@ -1,105 +1,87 @@
-
 /**
- * Initialize Cinematic Intro with Skip Option
+ * OWL Analysis System v4.0
+ * Intro Animation
  */
-function initIntroSequence() {
-    const overlay = document.getElementById('intro-overlay');
-    if (!overlay) return;
 
-    // Check localStorage preference or session
-    if (localStorage.getItem('skipIntro') === 'true' || sessionStorage.getItem('introSeen')) {
-        overlay.style.display = 'none';
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if user has skipped intro before
+    const skipIntro = localStorage.getItem('owl-skip-intro');
+    
+    if (skipIntro === 'true') {
+        hideIntro();
+        return;
+    }
+    
+    initIntro();
+});
+
+function initIntro() {
+    const overlay = document.getElementById('introOverlay');
+    const terminalOutput = document.getElementById('terminalOutput');
+    const progressBar = document.getElementById('introProgress');
+    const accessText = document.getElementById('accessGranted');
+    const skipButton = document.getElementById('skipIntro');
+    
+    if (!overlay || !terminalOutput || !progressBar || !accessText) {
+        console.error('Intro elements not found');
         return;
     }
 
-    // Add skip button
-    const skipBtn = document.createElement('button');
-    skipBtn.className = 'intro-skip-btn';
-    skipBtn.innerHTML = 'Skip Intro <span style="font-size: 0.75em;">(always)</span>';
-    skipBtn.onclick = () => {
-        localStorage.setItem('skipIntro', 'true');
-        finishIntro(true);
-    };
-    overlay.querySelector('.intro-content').appendChild(skipBtn);
-
-    const terminal = document.getElementById('terminal-output');
-    const progressBar = document.getElementById('intro-progress');
-    const accessText = document.getElementById('access-granted');
-
-    const lines = [
-        "Initializing secure connection...",
-        "Bypassing firewalls...",
-        "Accessing DOJ Epstein Library...",
-        "Decrypting corpus (3.5 million pages)...",
-        "Processing 180,000 images...",
-        "Indexing 2,000+ videos...",
-        "Analyzing metadata...",
-        "Verifying clearance..."
+    const messages = [
+        'INITIALIZING OWL ANALYSIS SYSTEM...',
+        'CONNECTING TO DOJ DATABASE...',
+        'LOADING 3.5M DOCUMENTS...',
+        'PROCESSING EVIDENCE FILES...',
+        'DECRYPTING CLASSIFIED RECORDS...',
+        'BUILDING NETWORK GRAPH...',
+        'ANALYZING FLIGHT RECORDS...',
+        'CROSS-REFERENCING TESTIMONY...',
+        'SYSTEM READY.'
     ];
 
-    let lineIndex = 0;
-    let charIndex = 0;
+    let messageIndex = 0;
+    let progress = 0;
 
-    function typeLine() {
-        if (lineIndex >= lines.length) {
-            finishIntro();
-            return;
-        }
-
-        const currentLine = lines[lineIndex];
-
-        if (charIndex < currentLine.length) {
-            terminal.textContent += currentLine.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeLine, Math.random() * 15 + 5); // Faster typing (was 30+10)
-        } else {
-            terminal.textContent += '\n';
-            lineIndex++;
-            charIndex = 0;
-            // Update progress bar
-            const progress = (lineIndex / lines.length) * 100;
-            if (progressBar) progressBar.style.width = `${progress}%`;
-
-            setTimeout(typeLine, 100); // Faster line delay (was 200)
-        }
-
-        // Auto scroll terminal
-        terminal.scrollTop = terminal.scrollHeight;
-    }
-
-    function finishIntro(instant = false) {
-        if (progressBar) progressBar.style.width = '100%';
-
-        const delay = instant ? 0 : 300; // Faster (was 500)
-        const accessDelay = instant ? 0 : 600; // Faster (was 1000)
-        const removeDelay = instant ? 100 : 800; // Faster (was 1000)
-
-        setTimeout(() => {
-            if (accessText && !instant) accessText.classList.add('visible');
-
+    const interval = setInterval(() => {
+        if (messageIndex < messages.length) {
+            const line = document.createElement('div');
+            line.textContent = '> ' + messages[messageIndex];
+            line.style.opacity = '0';
+            line.style.transition = 'opacity 0.3s ease';
+            terminalOutput.appendChild(line);
+            
             setTimeout(() => {
-                overlay.classList.add('hidden');
-                sessionStorage.setItem('introSeen', 'true');
-
-                // Allow scrolling again (if we locked it)
-                document.body.style.overflow = '';
-
-                // Remove from DOM after transition
+                line.style.opacity = '1';
+            }, 10);
+            
+            messageIndex++;
+            progress = (messageIndex / messages.length) * 100;
+            progressBar.style.width = progress + '%';
+        } else {
+            clearInterval(interval);
+            setTimeout(() => {
+                accessText.classList.add('show');
                 setTimeout(() => {
-                    overlay.style.display = 'none';
-                }, removeDelay);
-            }, instant ? 0 : accessDelay);
-        }, delay);
-    }
-
-    // Click anywhere to skip (once)
-    overlay.addEventListener('click', (e) => {
-        if (e.target !== skipBtn && !skipBtn.contains(e.target)) {
-            finishIntro(true);
+                    hideIntro();
+                }, 800);
+            }, 300);
         }
-    });
+    }, 200); // Fast intro (200ms per line)
 
-    // Start
-    document.body.style.overflow = 'hidden';
-    setTimeout(typeLine, 500);
+    // Skip button
+    skipButton.addEventListener('click', () => {
+        localStorage.setItem('owl-skip-intro', 'true');
+        clearInterval(interval);
+        hideIntro();
+    });
+}
+
+function hideIntro() {
+    const overlay = document.getElementById('introOverlay');
+    if (overlay) {
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 500);
+    }
 }
