@@ -214,6 +214,7 @@ select:focus-visible {
   text-align: center;
   max-width: 1200px;
   width: 100%;
+  padding-bottom: var(--spacing-xxl); /* Prevent overlap with scroll indicator */
 }
 
 .hero-logo {
@@ -280,12 +281,14 @@ select:focus-visible {
   padding: var(--spacing-md);
   text-align: center;
   transition: all var(--transition);
+  cursor: default;
 }
 
 .hero-stat:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--cyan);
   box-shadow: var(--glow-cyan);
+  background: rgba(6, 182, 212, 0.05);
 }
 
 .hero-stat-value {
@@ -317,13 +320,21 @@ select:focus-visible {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 3s ease-in-out infinite;
   box-shadow: var(--glow-red);
+  display: inline-block;
+  margin-top: var(--spacing-lg);
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 10px var(--red-glow); }
-  50% { box-shadow: 0 0 30px var(--red-glow); }
+  0%, 100% {
+    box-shadow: 0 0 10px var(--red-glow);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--red-glow), inset 0 0 15px var(--red-glow);
+    transform: scale(1.02);
+  }
 }
 
 /* Scroll Indicator */
@@ -953,12 +964,31 @@ select:focus-visible {
   padding: var(--spacing-md);
   transition: all var(--transition);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.evidence-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--cyan);
+  opacity: 0.5;
+  transition: opacity var(--transition);
 }
 
 .evidence-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-md), 0 0 15px rgba(6, 182, 212, 0.15);
   border-color: var(--cyan);
+}
+
+.evidence-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 8px var(--cyan);
 }
 
 .classification-badge {
