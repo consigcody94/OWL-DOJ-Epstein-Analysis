@@ -861,3 +861,51 @@ main > section,
   font-size: clamp(1rem, 1.22vw, 1.14rem) !important;
   max-width: 900px !important;
 }
+
+/* Dossier bubble sizing fix: prevent Maxwell/featured dossier pills and quote bubbles from clipping. */
+.person-card.featured {
+  overflow: visible !important;
+  align-items: stretch !important;
+}
+.person-card.featured .person-info {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.72rem !important;
+}
+.person-card.featured .person-badges,
+.person-card .person-badges {
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  overflow: visible !important;
+}
+.person-card.featured .badge,
+.person-card .badge {
+  max-width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  text-align: left !important;
+  line-height: 1.25 !important;
+}
+.person-card.featured .person-quote,
+.person-card.featured .person-source-note {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: fit-content !important;
+}
+.person-card.featured .doc-count {
+  margin: 0.15rem 0 !important;
+}
+@media (max-width: 720px) {
+  .person-card.featured {
+    gap: 1rem !important;
+  }
+  .person-card.featured .person-info {
+    gap: 0.8rem !important;
+  }
+}
