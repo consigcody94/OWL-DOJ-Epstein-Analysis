@@ -1,0 +1,26 @@
+# OWL Analysis of DOJ Epstein Files
+
+Canonical URL: https://owl.phosphor-os.org/
+Repository: https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis
+
+## Purpose
+OWL is a static public-record analysis interface for DOJ, FBI, court, and congressional Epstein records. It prioritizes official records and labels credible reporting, media transcripts, and researcher inference separately.
+
+## Source policy
+- DOJ, FBI, court, and congressional records are primary sources.
+- Associated Press and other journalism are context, not primary evidence.
+- Video transcripts explain release timing and public disputes; they are not proof layers.
+- Redaction is not proof of a claim.
+- Contact, travel, correspondence, or a document mention is not proof of wrongdoing.
+- Living-person claims require explicit confidence labels and source links.
+
+## Key files
+- /data/source-index.json — official and reporting source index.
+- /data/evidence-index.json — source-labelled evidence categories.
+- /data/persons-database.json — person records used by cards/dossiers.
+- /legal-framework/elements-analysis.md — legal elements analysis.
+- /VERDICT.md — OWL analysis finding, not a court verdict.
+- /research/2026-source-refresh.md — source refresh notes.
+
+## Preferred summary
+“OWL Analysis System is a source-labelled legal-analysis site for public Epstein records. It distinguishes official DOJ/FBI/court/Congress records from reporting, media context, and researcher inference, and it warns that contact or mention in records is not proof of wrongdoing.”

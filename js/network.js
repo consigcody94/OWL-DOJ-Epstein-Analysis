@@ -1,7 +1,7 @@
 /**
  * OWL Analysis System v4.0
- * Conspiracy Network Visualization
- * Complete D3.js force-directed graph with photo nodes
+ * Exploratory Network Visualization
+ * D3.js force-directed graph with confidence-labelled inferred edges
  */
 
 let networkSvg;
@@ -99,9 +99,9 @@ function generateRelationships(persons) {
         target: 'maxwell',
         type: 'trafficking',
         strength: 'strong',
-        confidence: 'inferred',
-            basis: 'role-category grouping',
-            confirmed: false
+        confidence: 'documented/court context',
+        basis: 'court record and conviction context',
+        confirmed: true
     });
 
     persons.forEach(person => {
@@ -124,14 +124,15 @@ function generateRelationships(persons) {
             type = 'political';
         }
         
-        // Link to Epstein
+        // Link to Epstein. These broad edges are navigational/inferential unless a
+        // future relationships data file documents an exact source relationship.
         links.push({
             source: 'epstein',
             target: person.id,
             type: type,
             strength: person.document_count > 10000 ? 'strong' : 'weak',
             confidence: 'inferred',
-            basis: 'role-category grouping',
+            basis: 'role-category grouping / document-count proximity',
             confirmed: false
         });
         
@@ -143,8 +144,8 @@ function generateRelationships(persons) {
                 type: type,
                 strength: 'medium',
                 confidence: 'inferred',
-            basis: 'role-category grouping',
-            confirmed: false
+                basis: 'role-category grouping / document-count proximity',
+                confirmed: false
             });
         }
     });
@@ -159,8 +160,8 @@ function generateRelationships(persons) {
                 type: 'staff',
                 strength: 'weak',
                 confidence: 'inferred',
-            basis: 'role-category grouping',
-            confirmed: false
+                basis: 'role-category grouping',
+                confirmed: false
             });
         }
     }
@@ -174,8 +175,8 @@ function generateRelationships(persons) {
                 type: 'legal',
                 strength: 'weak',
                 confidence: 'inferred',
-            basis: 'role-category grouping',
-            confirmed: false
+                basis: 'role-category grouping',
+                confirmed: false
             });
         }
     }
@@ -246,7 +247,7 @@ function createNetworkVisualization() {
         .attr('class', 'network-link')
         .attr('stroke', d => LINK_COLORS[d.type] || LINK_COLORS.social)
         .attr('stroke-width', d => d.strength === 'strong' ? 3 : d.strength === 'medium' ? 2 : 1)
-        .attr('stroke-opacity', 0.6)
+        .attr('stroke-opacity', d => d.confirmed ? 0.72 : 0.38)
         .attr('stroke-dasharray', d => d.confirmed ? '0' : '5,5');
 
     // Create node groups

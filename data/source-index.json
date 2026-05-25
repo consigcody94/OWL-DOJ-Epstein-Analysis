@@ -2,7 +2,8 @@
   "metadata": {
     "version": "2026-05-source-refresh",
     "updated": "2026-05-25",
-    "methodology": "Official records first. Credible journalism is used only for context and labelled separately from court/DOJ/FBI records."
+    "methodology": "Official records first. Credible journalism and video transcripts are context only and labelled separately from court/DOJ/FBI/Congress records. Redactions and contact records are not treated as proof of wrongdoing.",
+    "as_of": "2026-05-25 EDT"
   },
   "official_sources": [
     {
@@ -56,6 +57,16 @@
         "https://drive.google.com/drive/folders/1TrGxDGQLDLZu1vvvZDBAh-e7wN3y6Hoz?usp=sharing",
         "https://www.dropbox.com/scl/fo/98fthv8otekjk28lcrnc5/AIn3egnE58MYe4Bn4fliVBw?rlkey=m7p8e9omml96fgxl13kr2nuyt&st=0xvm0p08&dl=0"
       ]
+    },
+    {
+      "id": "doj-35m-pages-release",
+      "title": "DOJ publishes 3.5 million responsive pages in compliance with EFTA",
+      "agency": "U.S. Department of Justice",
+      "source_type": "official DOJ update",
+      "url": "https://www.justice.gov/epstein/doj-disclosures",
+      "published": "2026-01-30",
+      "last_checked": "2026-05-25",
+      "summary": "DOJ disclosure index links the January 30, 2026 letter to Congress and publication of 3.5 million responsive pages. Use as corpus-size/source-context; exact claims still require document-level verification."
     }
   ],
   "credible_reporting": [
@@ -141,6 +152,12 @@
       "event": "DOJ Epstein Library checked as current source hub",
       "source_id": "doj-epstein-library",
       "confidence": "source verification"
+    },
+    {
+      "date": "2026-04-03",
+      "event": "DOJ disclosure index showed April 2026 modification date during source refresh checks",
+      "source_id": "doj-disclosures",
+      "confidence": "official DOJ page metadata"
     }
   ],
   "fbi_foia_sample_files": [

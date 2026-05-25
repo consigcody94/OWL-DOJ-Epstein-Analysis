@@ -3,7 +3,7 @@
 # 🦉 OWL Analysis of DOJ Epstein Files v3.5
 
 ### Objective Witness & Legal System
-**Comprehensive Analysis of United States v. Jeffrey Epstein**
+**Source-Labelled Analysis of United States v. Jeffrey Epstein**
 **Source Refresh: May 25, 2026 — DOJ/FBI/Congress records + transcript-backed media context**
 
 <br>
@@ -26,6 +26,8 @@
 </div>
 
 ---
+
+> **Source policy:** Official DOJ/FBI/court/Congress records are primary. Reporting and media transcripts are context only. Contact, travel, redaction, or document mentions are not proof of wrongdoing; living-person claims require confidence labels and source links.
 
 ## 📖 Table of Contents
 

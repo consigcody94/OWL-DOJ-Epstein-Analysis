@@ -17,11 +17,15 @@ function initCommandPalette() {
         return;
     }
 
-    // Keyboard shortcut (Cmd/Ctrl + K)
+    // Keyboard shortcuts: Cmd/Ctrl+K and '/' when not typing in a form field.
     document.addEventListener('keydown', (e) => {
-        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        const isTyping = e.target.matches('input, textarea, select, [contenteditable="true"]');
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
             e.preventDefault();
             toggleCommandPalette();
+        } else if (!isTyping && e.key === '/') {
+            e.preventDefault();
+            openCommandPalette();
         }
     });
 
@@ -72,17 +76,21 @@ function initCommandPalette() {
     });
 }
 
-function toggleCommandPalette() {
+function openCommandPalette() {
     const palette = document.getElementById('commandPalette');
     const input = document.getElementById('commandInput');
-    
+    palette.classList.add('active');
+    input.focus();
+    input.value = '';
+    searchCommands('', document.getElementById('commandResults'));
+}
+
+function toggleCommandPalette() {
+    const palette = document.getElementById('commandPalette');
     if (palette.classList.contains('active')) {
         closeCommandPalette();
     } else {
-        palette.classList.add('active');
-        input.focus();
-        input.value = '';
-        searchCommands('', document.getElementById('commandResults'));
+        openCommandPalette();
     }
 }
 
@@ -137,8 +145,8 @@ async function searchCommands(query, resultsContainer) {
         if (index === 0) result.classList.add('selected');
         
         result.innerHTML = `
-            <div class="command-result-title"><span class="command-result-type">${item.type}</span> ${item.title}</div>
-            <div class="command-result-description">${item.description}</div>
+            <div class="command-result-title"><span class="command-result-type">${commandEscape(item.type)}</span> ${commandEscape(item.title)}</div>
+            <div class="command-result-description">${commandEscape(item.description)}</div>
         `;
         
         result.addEventListener('click', () => {
@@ -200,6 +208,16 @@ function formatNumber(num) {
     return num.toString();
 }
 
+function commandEscape(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 // Make functions globally available
+window.openCommandPalette = openCommandPalette;
 window.toggleCommandPalette = toggleCommandPalette;
 window.closeCommandPalette = closeCommandPalette;

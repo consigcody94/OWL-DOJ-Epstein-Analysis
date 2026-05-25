@@ -22,3 +22,6 @@ Thumbs.db
 # Private notes
 /private/
 *.private.md
+
+# Local code-understanding/tool metadata (regenerate locally; do not deploy)
+/.understand-anything/

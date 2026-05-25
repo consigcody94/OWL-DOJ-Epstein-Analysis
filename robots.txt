@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://owl.phosphor-os.org/sitemap.xml

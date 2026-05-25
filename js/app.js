@@ -265,17 +265,34 @@ function createPersonCard(person) {
     card.className = `person-card ${isFeatured ? 'featured' : ''}`;
     card.setAttribute('data-role', getRoleCategory(person.role));
     card.setAttribute('data-id', person.id);
-    
+
+    const safeId = escapeHtml(person.id);
+    const safeName = escapeHtml(person.name);
+    const safeRole = escapeHtml(person.role);
+    const safePhoto = escapeHtml(person.photo || '');
+    const firstEvidence = person.key_evidence?.[0]?.quote;
+    const firstRevelation = person['2026_revelations']?.[0];
+    const quoteHtml = firstEvidence
+        ? `<blockquote class="person-quote">&ldquo;${escapeHtml(firstEvidence)}&rdquo;</blockquote>`
+        : firstRevelation
+            ? `<div class="person-quote">${escapeHtml(firstRevelation)}</div>`
+            : '';
+    const sourceLabel = getPersonSourceLabel(person);
+    const cautionNote = getPersonCautionNote(person);
+    const sourcePill = `<span class="badge source-confidence-badge">${escapeHtml(sourceLabel)}</span>`;
+    const cautionHtml = cautionNote ? `<p class="person-source-note">${escapeHtml(cautionNote)}</p>` : '';
+
     if (isFeatured) {
         card.innerHTML = `
-            <img class="person-photo" src="${person.photo || ''}" alt="${person.name}" 
+            <img class="person-photo" src="${safePhoto}" alt="${safeName}"
                  onerror="this.outerHTML='<div class=&quot;person-photo no-photo&quot;>👤</div>'">
             <div class="person-info">
-                <h3 class="person-name">${person.name}</h3>
-                <div class="person-role">${person.role}</div>
+                <h3 class="person-name">${safeName}</h3>
+                <div class="person-role">${safeRole}</div>
                 <div class="person-badges">
                     ${getStatusBadge(person.status)}
-                    ${person.sentence ? `<span class="badge" style="background: rgba(168, 85, 247, 0.2); color: var(--purple); border: 1px solid var(--purple);">${person.sentence}</span>` : ''}
+                    ${sourcePill}
+                    ${person.sentence ? `<span class="badge sentence-badge">${escapeHtml(person.sentence)}</span>` : ''}
                 </div>
                 <div class="doc-count">
                     <div class="doc-count-label">${formatNumber(person.document_count)} Documents</div>
@@ -283,10 +300,9 @@ function createPersonCard(person) {
                         <div class="doc-count-fill" style="width: ${getDocCountPercentage(person.document_count)}%"></div>
                     </div>
                 </div>
-                ${person.key_evidence && person.key_evidence[0] ? `
-                    <blockquote class="person-quote">"${person.key_evidence[0].quote}"</blockquote>
-                ` : ''}
-                <a href="#" class="view-dossier" onclick="openDossier('${person.id}'); return false;">
+                ${quoteHtml}
+                ${cautionHtml}
+                <a href="#" class="view-dossier" data-person-id="${safeId}">
                     View Dossier →
                 </a>
             </div>
@@ -295,14 +311,15 @@ function createPersonCard(person) {
         card.innerHTML = `
             <div class="person-header">
                 <div class="person-photo-wrapper">
-                    <img class="person-photo" src="${person.photo || ''}" alt="${person.name}" 
+                    <img class="person-photo" src="${safePhoto}" alt="${safeName}"
                          onerror="this.outerHTML='<div class=&quot;person-photo no-photo&quot;>👤</div>'">
                 </div>
                 <div class="person-details">
-                    <h3 class="person-name">${person.name}</h3>
-                    <div class="person-role">${person.role}</div>
+                    <h3 class="person-name">${safeName}</h3>
+                    <div class="person-role">${safeRole}</div>
                     <div class="person-badges">
                         ${getStatusBadge(person.status)}
+                        ${sourcePill}
                     </div>
                 </div>
             </div>
@@ -312,24 +329,45 @@ function createPersonCard(person) {
                     <div class="doc-count-fill" style="width: ${getDocCountPercentage(person.document_count)}%"></div>
                 </div>
             </div>
-            ${person.key_evidence && person.key_evidence[0] ? `
-                <blockquote class="person-quote">"${person.key_evidence[0].quote}"</blockquote>
-            ` : person['2026_revelations'] && person['2026_revelations'][0] ? `
-                <div class="person-quote">${person['2026_revelations'][0]}</div>
-            ` : ''}
-            <a href="#" class="view-dossier" onclick="openDossier('${person.id}'); return false;">
+            ${quoteHtml}
+            ${cautionHtml}
+            <a href="#" class="view-dossier" data-person-id="${safeId}">
                 View Dossier →
             </a>
         `;
     }
 
     card.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('view-dossier')) {
-            openDossier(person.id);
-        }
+        const dossierLink = e.target.closest('.view-dossier');
+        if (dossierLink) e.preventDefault();
+        openDossier(person.id);
     });
 
     return card;
+}
+
+function getPersonSourceLabel(person) {
+    const role = (person.role || '').toLowerCase();
+    const status = (person.status || '').toLowerCase();
+    if (person.id === 'epstein') return 'court / DOJ record';
+    if (person.id === 'maxwell' || status.includes('incarcerated') || role.includes('convicted')) return 'court-proven conviction';
+    if (role.includes('victim')) return 'privacy-protected record';
+    if (role.includes('attorney') || role.includes('prosecutor') || role.includes('pilot') || role.includes('staff')) return 'documented role/context';
+    return 'reported contact/context';
+}
+
+function getPersonCautionNote(person) {
+    const status = (person.status || '').toLowerCase();
+    const role = (person.role || '').toLowerCase();
+    if (person.id === 'epstein' || person.id === 'maxwell') return '';
+    if (status.includes('living') || status === '') {
+        if (person.notes) return `Context note: ${person.notes} Contact, mention, or appearance in records is not proof of wrongdoing.`;
+        return 'Presence in records, travel logs, correspondence, or reporting is not proof of wrongdoing. Review the dossier/source record before drawing conclusions.';
+    }
+    if (role.includes('defense') || role.includes('prosecutor')) {
+        return 'Legal-system participant; listed for case context, not as an allegation of criminal conduct.';
+    }
+    return '';
 }
 
 function getRoleCategory(role) {
@@ -519,20 +557,6 @@ function setupEventListeners() {
         }
     });
 
-    // Cmd/Ctrl + K for command palette
-    document.addEventListener('keydown', (e) => {
-        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-            e.preventDefault();
-            openCommandPalette();
-        }
-    });
-
-    // G key for glossary
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'g' && !e.metaKey && !e.ctrlKey && !e.target.matches('input, textarea')) {
-            toggleGlossary();
-        }
-    });
 
     // Accordion cards
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -579,6 +603,7 @@ function openDossier(personId) {
     // Set photo
     if (person.photo) {
         photo.src = person.photo;
+        photo.alt = person.name || 'Person dossier photo';
         photo.classList.remove('no-photo');
         photo.onerror = () => {
             photo.outerHTML = '<div id="dossierPhoto" class="dossier-photo no-photo">👤</div>';
@@ -588,8 +613,8 @@ function openDossier(personId) {
     }
 
     // Set name and role
-    name.textContent = person.name;
-    role.textContent = person.role;
+    name.textContent = person.name || '';
+    role.textContent = person.role || '';
 
     // Set badges
     badges.innerHTML = getStatusBadge(person.status);
@@ -631,11 +656,12 @@ function populateDossierOverview(person) {
 
     let html = '<div style="display: flex; flex-direction: column; gap: 1.5rem;">';
 
-    // Document count
+    // Document count and source posture
     html += `
         <div>
             <h3 style="color: var(--cyan); margin-bottom: 0.5rem;">Document References</h3>
             <p style="font-size: 2rem; font-weight: 700;">${formatNumber(person.document_count)}</p>
+            <p class="dossier-source-note"><strong>Source posture:</strong> ${escapeHtml(getPersonSourceLabel(person))}. ${escapeHtml(getPersonCautionNote(person) || 'Primary allegations are tied to court/DOJ records where available; inferences remain labelled.')}</p>
         </div>
     `;
 
@@ -645,7 +671,7 @@ function populateDossierOverview(person) {
             <div>
                 <h3 style="color: var(--cyan); margin-bottom: 0.5rem;">Charges</h3>
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-                    ${person.charges.map(charge => `<li style="padding-left: 1rem; border-left: 2px solid var(--red);">${charge}</li>`).join('')}
+                    ${person.charges.map(charge => `<li style="padding-left: 1rem; border-left: 2px solid var(--red);">${escapeHtml(charge)}</li>`).join('')}
                 </ul>
             </div>
         `;
@@ -658,8 +684,8 @@ function populateDossierOverview(person) {
                 <h3 style="color: var(--cyan); margin-bottom: 0.5rem;">Key Evidence</h3>
                 ${person.key_evidence.map(evidence => `
                     <blockquote style="margin: 1rem 0; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-left: 3px solid var(--cyan); border-radius: 8px;">
-                        <p style="font-style: italic; margin-bottom: 0.5rem;">"${evidence.quote}"</p>
-                        <cite style="font-size: 0.875rem; color: var(--text-secondary);">${evidence.source}</cite>
+                        <p style="font-style: italic; margin-bottom: 0.5rem;">&ldquo;${escapeHtml(evidence.quote)}&rdquo;</p>
+                        <cite style="font-size: 0.875rem; color: var(--text-secondary);">${escapeHtml(evidence.source)}</cite>
                     </blockquote>
                 `).join('')}
             </div>
@@ -674,7 +700,7 @@ function populateDossierOverview(person) {
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
                     ${person['2026_revelations'].map(rev => `
                         <li style="padding: 0.75rem; background: rgba(245, 158, 11, 0.1); border-left: 3px solid var(--amber); border-radius: 8px;">
-                            ${rev}
+                            ${escapeHtml(rev)}
                         </li>
                     `).join('')}
                 </ul>

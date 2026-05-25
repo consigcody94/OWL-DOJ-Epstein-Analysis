@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://owl.phosphor-os.org/</loc><lastmod>2026-05-25</lastmod><priority>1.0</priority></url>
+  <url><loc>https://owl.phosphor-os.org/VERDICT.md</loc><lastmod>2026-05-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://owl.phosphor-os.org/evidence/flight-records.md</loc><lastmod>2026-05-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://owl.phosphor-os.org/evidence/victim-testimony.md</loc><lastmod>2026-05-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://owl.phosphor-os.org/legal-framework/elements-analysis.md</loc><lastmod>2026-05-25</lastmod><priority>0.7</priority></url>
+  <url><loc>https://owl.phosphor-os.org/research/2026-source-refresh.md</loc><lastmod>2026-05-25</lastmod><priority>0.6</priority></url>
+</urlset>
