@@ -1,0 +1,77 @@
+/* Final layout polish: tighten verdict → dossiers transition and improve badge readability */
+.verdict-section {
+  margin-bottom: 0.45rem !important;
+  padding-bottom: clamp(1.35rem, 2.6vw, 2.1rem) !important;
+}
+
+.verdict-section + .persons-section,
+.persons-section {
+  margin-top: 0 !important;
+}
+
+.verdict-section + .persons-section {
+  padding-top: clamp(1.35rem, 2.8vw, 2.2rem) !important;
+}
+
+.verdict-description {
+  margin-bottom: 1.1rem !important;
+}
+
+.charges-grid {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 980px) {
+  .verdict-section {
+    padding-top: 1.65rem !important;
+    padding-bottom: 1.35rem !important;
+  }
+
+  .charges-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  .charge-card {
+    padding: 1rem !important;
+    min-height: 0 !important;
+  }
+
+  .charge-name {
+    font-size: 1rem !important;
+    line-height: 1.18 !important;
+  }
+}
+
+.persons-section .section-header {
+  margin-bottom: 0.85rem !important;
+}
+
+.persons-section .section-title {
+  margin-bottom: 0 !important;
+}
+
+.filter-bar {
+  margin-top: 0.75rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.person-badges {
+  gap: 0.35rem 0.45rem !important;
+}
+
+.person-badges .badge,
+.person-badges .source-confidence-badge,
+.badge.source-confidence-badge {
+  display: inline-flex !important;
+  margin: 0.1rem 0.15rem 0.1rem 0 !important;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+.owl-seal,
+.nav-logo,
+.intro-emblem {
+  image-rendering: auto;
+}
