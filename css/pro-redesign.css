@@ -53,6 +53,10 @@ body {
   letter-spacing: -0.011em;
 }
 
+body.intro-active {
+  overflow: hidden;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -75,10 +79,262 @@ body::after {
   background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.48) 100%);
 }
 
-/* Make it feel like a serious product, not a hacker splash screen. */
-.intro-overlay,
+/* Premium launch animation replaces the legacy hacker splash. */
 .loading-overlay {
   display: none !important;
+}
+
+
+/* Cinematic Apple-Metal intro */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 26%, rgba(142,167,255,0.24), transparent 28rem),
+    radial-gradient(circle at 18% 78%, rgba(215,180,106,0.12), transparent 22rem),
+    linear-gradient(180deg, #020308 0%, #070914 52%, #020308 100%);
+  opacity: 1;
+  transition: opacity 640ms cubic-bezier(.2,.8,.2,1), filter 640ms cubic-bezier(.2,.8,.2,1);
+}
+
+.intro-overlay.hidden {
+  opacity: 0;
+  filter: blur(12px) saturate(80%);
+  pointer-events: none;
+}
+
+.intro-aurora {
+  position: absolute;
+  inset: -20%;
+  background:
+    conic-gradient(from 180deg at 50% 50%, transparent, rgba(142,167,255,0.16), transparent, rgba(215,180,106,0.10), transparent),
+    linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.06), transparent 58%);
+  filter: blur(44px);
+  animation: introAurora 5s linear infinite;
+}
+
+.intro-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 68px 68px;
+  mask-image: radial-gradient(circle at 50% 42%, black 0%, transparent 70%);
+}
+
+.intro-content {
+  position: relative;
+  width: min(680px, calc(100vw - 2rem));
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.085), rgba(255,255,255,0.028));
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08) inset, 0 40px 120px rgba(0,0,0,0.55);
+  text-align: center;
+  backdrop-filter: blur(28px) saturate(150%);
+}
+
+.intro-emblem-wrap {
+  position: relative;
+  width: clamp(138px, 24vw, 196px);
+  height: clamp(138px, 24vw, 196px);
+  margin: 0 auto 1.25rem;
+  display: grid;
+  place-items: center;
+}
+
+.intro-emblem {
+  position: relative;
+  z-index: 2;
+  width: 68%;
+  height: 68%;
+  border-radius: 31%;
+  filter: drop-shadow(0 28px 46px rgba(0,0,0,0.55)) drop-shadow(0 0 24px rgba(142,167,255,0.28));
+  animation: introLogoIn 900ms cubic-bezier(.2,.8,.2,1) both, introFloat 3.8s ease-in-out 900ms infinite;
+}
+
+.intro-orbit {
+  position: absolute;
+  inset: 3%;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 0 42px rgba(142,167,255,0.14) inset;
+}
+
+.intro-orbit-one { animation: introSpin 7s linear infinite; }
+.intro-orbit-two {
+  inset: 14%;
+  border-color: rgba(215,180,106,0.16);
+  transform: rotateX(66deg) rotateZ(20deg);
+  animation: introSpinReverse 5.5s linear infinite;
+}
+
+.intro-orbit-one::after,
+.intro-orbit-two::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f4f7ff;
+  box-shadow: 0 0 18px rgba(142,167,255,0.85);
+}
+
+.intro-kicker {
+  margin: 0 0 0.45rem;
+  color: #c7d2ff;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro-copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+  font-weight: 650;
+}
+
+.intro-subtitle {
+  max-width: 440px;
+  margin: 0.85rem auto 1.25rem;
+  color: rgba(246,247,251,0.66);
+  line-height: 1.5;
+}
+
+.intro-terminal {
+  min-height: 116px;
+  padding: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.22);
+  text-align: left;
+}
+
+.terminal-output {
+  display: grid;
+  gap: 0.38rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(246,247,251,0.68);
+}
+
+.intro-line {
+  display: flex;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.intro-line.visible { opacity: 1; transform: translateY(0); }
+.intro-line span { color: #d7b46a; }
+
+.loading-bar-container {
+  height: 6px;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.loading-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #d7b46a, #f4f7ff, #8ea7ff);
+  box-shadow: 0 0 30px rgba(142,167,255,0.45);
+  transition: width 260ms cubic-bezier(.2,.8,.2,1);
+}
+
+.access-text {
+  margin-top: 0.85rem;
+  color: #f4f7ff;
+  opacity: 0;
+  transform: translateY(6px);
+  font-weight: 650;
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.access-text.show { opacity: 1; transform: translateY(0); }
+
+.skip-intro {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  min-height: 42px;
+  padding: 0 0.95rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  color: rgba(246,247,251,0.74);
+  background: rgba(255,255,255,0.045);
+  font: inherit;
+  cursor: pointer;
+}
+.skip-intro:hover { color: #07080c; background: #f4f7ff; }
+
+@media (max-width: 640px) {
+  .intro-content {
+    width: calc(100vw - 1.25rem);
+    padding: 1.15rem;
+    border-radius: 26px;
+  }
+  .intro-emblem-wrap {
+    width: 138px;
+    height: 138px;
+    margin-bottom: 0.85rem;
+  }
+  .intro-copy h2 {
+    font-size: clamp(2.15rem, 12vw, 3.15rem);
+    line-height: 1;
+  }
+  .intro-subtitle {
+    margin: 0.65rem auto 0.9rem;
+    font-size: 0.95rem;
+  }
+  .intro-terminal {
+    min-height: auto;
+    padding: 0.75rem;
+  }
+  .terminal-output {
+    font-size: 0.68rem;
+    gap: 0.28rem;
+  }
+  .skip-intro {
+    right: 0.8rem;
+    bottom: 0.8rem;
+  }
+}
+
+
+/* Hard overrides against legacy intro styles */
+.intro-overlay .intro-content { max-height: calc(100vh - 2rem); overflow: hidden; }
+.intro-overlay .intro-terminal,
+.intro-overlay .loading-bar-container,
+.intro-overlay .access-text { margin: 0; }
+.intro-overlay .loading-bar-container { margin-top: 1rem; }
+.intro-overlay .access-text { margin-top: 0.85rem; font-size: 0.95rem; line-height: 1.35; text-transform: none; letter-spacing: -0.01em; }
+.intro-overlay .typing-cursor { display: none; }
+
+@keyframes introAurora { to { transform: rotate(360deg); } }
+@keyframes introSpin { to { transform: rotate(360deg); } }
+@keyframes introSpinReverse { to { transform: rotateX(66deg) rotateZ(-340deg); } }
+@keyframes introLogoIn {
+  from { opacity: 0; transform: scale(0.82) translateY(14px); filter: blur(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes introFloat {
+  0%, 100% { transform: translateY(0) rotate(0.001deg); }
+  50% { transform: translateY(-8px) rotate(0.001deg); }
 }
 
 /* Premium command bar navigation */
@@ -109,6 +365,13 @@ body::after {
   letter-spacing: -0.02em;
   background: rgba(255,255,255,0.045);
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  box-shadow: 0 0 18px rgba(142,167,255,0.22);
 }
 
 .mission-nav-links a,

@@ -9,13 +9,13 @@
     <title>OWL Analysis System | DOJ Epstein Files</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/owl-logo.png">
+    <link rel="icon" type="image/svg+xml" href="assets/owl-metal-logo.svg">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="OWL Analysis System | DOJ Epstein Files">
     <meta property="og:description" content="Source-labelled legal analysis of DOJ/FBI/court/Congress Epstein records. Official records first; reporting and inferences clearly separated.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/consigcody94/OWL-DOJ-Epstein-Analysis/main/assets/owl-logo.png">
+    <meta property="og:image" content="https://raw.githubusercontent.com/consigcody94/OWL-DOJ-Epstein-Analysis/master/assets/owl-logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://owl.phosphor-os.org/">
 
@@ -47,7 +47,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css?v=20260525-4352b81">
-    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-redesign-1">
+    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-redesign-2">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
 
     <!-- Mission Navigation -->
     <nav class="mission-nav" aria-label="Primary investigation navigation">
-        <a href="#hero" class="mission-nav-brand">🦉 OWL</a>
+        <a href="#hero" class="mission-nav-brand"><img src="assets/owl-metal-logo.svg" alt="" class="nav-logo"> OWL</a>
         <div class="mission-nav-links">
             <a href="#source-dashboard">Sources</a>
             <a href="#verdict">Analysis</a>
@@ -70,18 +70,28 @@
     </nav>
 
     <!-- Intro Overlay -->
-    <div id="introOverlay" class="intro-overlay">
+    <div id="introOverlay" class="intro-overlay" aria-label="OWL Analysis intro animation">
+        <div class="intro-aurora" aria-hidden="true"></div>
         <div class="intro-content">
+            <div class="intro-emblem-wrap" aria-hidden="true">
+                <div class="intro-orbit intro-orbit-one"></div>
+                <div class="intro-orbit intro-orbit-two"></div>
+                <img src="assets/owl-metal-logo.svg" alt="" class="intro-emblem">
+            </div>
+            <div class="intro-copy">
+                <p class="intro-kicker">OWL Analysis System</p>
+                <h2>Official records first.</h2>
+                <p class="intro-subtitle">Initializing source-labeled public-record intelligence workspace.</p>
+            </div>
             <div class="intro-terminal">
                 <div id="terminalOutput" class="terminal-output"></div>
-                <div class="typing-cursor">_</div>
             </div>
-            <div class="loading-bar-container">
+            <div class="loading-bar-container" aria-hidden="true">
                 <div id="introProgress" class="loading-bar"></div>
             </div>
-            <div id="accessGranted" class="access-text">ACCESS GRANTED</div>
+            <div id="accessGranted" class="access-text">Workspace ready</div>
         </div>
-        <button id="skipIntro" class="skip-intro">Skip Intro</button>
+        <button id="skipIntro" class="skip-intro" type="button">Skip</button>
     </div>
 
     <!-- Loading Overlay -->
@@ -98,7 +108,7 @@
             <div class="hero-layout">
                 <div class="hero-copy">
                     <div class="hero-eyebrow">Public-record intelligence desk</div>
-                    <div class="hero-logo"><img src="assets/owl-logo.png" alt="OWL Analysis System" class="owl-seal"></div>
+                    <div class="hero-logo"><img src="assets/owl-metal-logo.svg" alt="OWL Analysis System" class="owl-seal"></div>
                     <h1 class="hero-title">OWL Analysis System</h1>
                     <p class="hero-subtitle">A source-labeled legal analysis interface for DOJ, FBI, court, and congressional Epstein records — built for careful review, not rumor.</p>
                     <div class="hero-actions" aria-label="Primary actions">

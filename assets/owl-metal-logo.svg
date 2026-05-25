@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">OWL Analysis System metal emblem</title>
+  <desc id="desc">A premium metallic owl head emblem with blue optical eyes.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#28324a"/>
+      <stop offset="42%" stop-color="#080a12"/>
+      <stop offset="100%" stop-color="#010103"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="80" x2="424" y1="52" y2="454" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.08" stop-color="#b8c0ce"/>
+      <stop offset="0.2" stop-color="#f5f7fb"/>
+      <stop offset="0.34" stop-color="#6f7888"/>
+      <stop offset="0.5" stop-color="#e9edf4"/>
+      <stop offset="0.64" stop-color="#3c4350"/>
+      <stop offset="0.82" stop-color="#c9d1df"/>
+      <stop offset="1" stop-color="#151923"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="106" x2="406" y1="80" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d7b46a"/>
+      <stop offset="0.4" stop-color="#8ea7ff"/>
+      <stop offset="1" stop-color="#f4f7ff"/>
+    </linearGradient>
+    <radialGradient id="eye" cx="50%" cy="46%" r="58%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#cce1ff"/>
+      <stop offset="0.55" stop-color="#6395ff"/>
+      <stop offset="1" stop-color="#162a63"/>
+    </radialGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity="0.58"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#8ea7ff" flood-opacity="0.24"/>
+    </filter>
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.56 0 0 0 0 0.65 0 0 0 0 1 0 0 0 .7 0" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="circle"><circle cx="256" cy="256" r="230"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <g clip-path="url(#circle)">
+    <path d="M-20 150 C120 95 178 165 255 62 C335 168 392 96 532 150" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="36"/>
+    <path d="M-10 380 C110 318 176 386 256 292 C334 385 402 316 522 380" fill="none" stroke="#8ea7ff" stroke-opacity="0.055" stroke-width="28"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <path d="M256 56 C218 107 170 88 102 74 C123 133 119 190 80 246 C124 252 144 273 142 318 C164 304 187 305 207 321 C211 369 229 408 256 450 C283 408 301 369 305 321 C325 305 348 304 370 318 C368 273 388 252 432 246 C393 190 389 133 410 74 C342 88 294 107 256 56Z" fill="url(#metal)" stroke="url(#edge)" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M256 94 C228 142 197 160 151 160 C168 202 184 233 213 260 C229 275 244 287 256 307 C268 287 283 275 299 260 C328 233 344 202 361 160 C315 160 284 142 256 94Z" fill="#070a11" fill-opacity="0.72" stroke="#ffffff" stroke-opacity="0.11" stroke-width="3"/>
+    <path d="M141 173 C178 170 207 183 231 211 C206 223 183 240 159 264 C151 235 144 205 141 173Z" fill="#0c1019" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3"/>
+    <path d="M371 173 C334 170 305 183 281 211 C306 223 329 240 353 264 C361 235 368 205 371 173Z" fill="#0c1019" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3"/>
+    <path d="M212 213 C190 199 169 196 147 205 C165 228 188 239 219 234 C222 226 220 219 212 213Z" fill="url(#eye)" filter="url(#innerGlow)"/>
+    <path d="M300 213 C322 199 343 196 365 205 C347 228 324 239 293 234 C290 226 292 219 300 213Z" fill="url(#eye)" filter="url(#innerGlow)"/>
+    <path d="M256 216 L283 271 L256 292 L229 271 Z" fill="url(#edge)" stroke="#050609" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M176 126 L226 180 M336 126 L286 180 M181 306 C217 326 232 363 256 420 C280 363 295 326 331 306" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <circle cx="256" cy="256" r="226" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+  <circle cx="256" cy="256" r="205" fill="none" stroke="#8ea7ff" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="6 16"/>
+</svg>
