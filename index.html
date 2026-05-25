@@ -47,9 +47,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css?v=20260525-brand-fonts">
-    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-redesign-2">
+    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-cinematic-osint">
     <link rel="stylesheet" href="css/linkability.css?v=20260525-links">
-    <link rel="stylesheet" href="css/layout-fixes.css?v=20260525-brand-clipping">
+    <link rel="stylesheet" href="css/layout-fixes.css?v=20260525-cinematic-osint">
 </head>
 <body>
 
@@ -73,6 +73,9 @@
 
     <!-- Intro Overlay -->
     <div id="introOverlay" class="intro-overlay" aria-label="OWL Analysis intro animation">
+        <video class="intro-bg-video" aria-hidden="true" muted playsinline autoplay preload="auto" poster="assets/owl-cinematic-poster.jpg?v=20260525-video">
+            <source src="assets/owl-cinematic-logo.mp4?v=20260525-video" type="video/mp4">
+        </video>
         <div class="intro-aurora" aria-hidden="true"></div>
         <div class="intro-content">
             <div class="intro-emblem-wrap" aria-hidden="true">
@@ -106,13 +109,21 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
+        <video class="hero-bg-video" aria-hidden="true" muted playsinline autoplay preload="metadata" poster="assets/owl-cinematic-poster.jpg?v=20260525-video">
+            <source src="assets/owl-cinematic-logo.mp4?v=20260525-video" type="video/mp4">
+        </video>
+        <div class="hero-video-scrim" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-layout">
                 <div class="hero-copy">
-                    <div class="hero-eyebrow">Public-record intelligence desk</div>
-                    <div class="hero-logo"><img src="assets/owl-logo-static.jpg?v=20260525-static-logo" alt="OWL Analysis System" class="owl-seal owl-seal-static"></div>
-                    <h1 class="hero-title">OWL Analysis System</h1>
-                    <p class="hero-subtitle">A source-labeled legal analysis interface for DOJ, FBI, court, and congressional Epstein records — built for careful review, not rumor.</p>
+                    <div class="hero-eyebrow">Public-record intelligence desk · OSINT portal</div>
+                    <div class="hero-logo hero-logo-video">
+                        <video class="owl-seal-video" muted playsinline autoplay preload="metadata" poster="assets/owl-cinematic-poster.jpg?v=20260525-video" aria-label="OWL Analysis System cinematic mark">
+                            <source src="assets/owl-cinematic-logo.mp4?v=20260525-video" type="video/mp4">
+                        </video>
+                    </div>
+                    <h1 class="hero-title">OWL OSINT Portal</h1>
+                    <p class="hero-subtitle">A source-labeled public-record intelligence interface for DOJ, FBI, court, congressional, and independent Epstein-document archives — built for careful review, not rumor.</p>
                     <div class="hero-actions" aria-label="Primary actions">
                         <a href="#source-dashboard" class="hero-action hero-action-primary">Review sources</a>
                         <a href="#persons" class="hero-action hero-action-secondary">Open dossiers</a>
@@ -121,28 +132,28 @@
                 <div class="hero-command-card" aria-label="Methodology summary">
                     <div class="hero-command-topline"><span></span><span></span><span></span></div>
                     <p class="hero-command-label">CURRENT METHODOLOGY</p>
-                    <h2>Official records first</h2>
+                    <h2>OSINT, not speculation</h2>
                     <ul>
                         <li>DOJ/FBI/Congress records are primary.</li>
-                        <li>Media transcripts are context only.</li>
+                        <li>Epstein Archive entries expand discovery and cross-reference coverage.</li>
                         <li>Contact or mention is not proof of wrongdoing.</li>
                     </ul>
-                    <div class="hero-command-footer">Updated May 2026 · confidence labeled</div>
+                    <div class="hero-command-footer">Updated May 2026 · confidence labeled · archive-linked</div>
                 </div>
             </div>
             
             <div class="hero-stats" id="heroStats">
                 <div class="hero-stat">
-                    <span class="hero-stat-value" data-target="3500000">0</span>
-                    <span class="hero-stat-label">Pages</span>
+                    <span class="hero-stat-value" data-target="3500000" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Official Pages</span>
                 </div>
                 <div class="hero-stat">
-                    <span class="hero-stat-value" data-target="180000">0</span>
+                    <span class="hero-stat-value" data-target="8184">0</span>
+                    <span class="hero-stat-label">Archive Entries</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value" data-target="180000" data-suffix="+">0</span>
                     <span class="hero-stat-label">Images</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-value" data-target="2000">0</span>
-                    <span class="hero-stat-label">Videos</span>
                 </div>
                 <div class="hero-stat">
                     <span class="hero-stat-value" data-target="100">0</span>
@@ -184,7 +195,7 @@
                 <h2 class="section-title">Official Records First. Claims Labeled by Confidence.</h2>
                 <p class="section-subtitle">
                     The updated OWL interface separates DOJ/FBI/Congress records, court-proven facts,
-                    credible reporting, and researcher inference. Media transcripts are context only — not primary evidence.
+                    independent archive entries, credible reporting, and researcher inference. Media transcripts are context only — not primary evidence.
                 </p>
             </div>
 
@@ -201,6 +212,13 @@
                     <div><span>Context</span><strong>Reporting / transcript</strong></div>
                     <div><span>Output</span><strong>Labeled analysis</strong></div>
                 </div>
+            </div>
+
+            <div class="osint-manifesto" aria-label="OWL OSINT position statement">
+                <p class="source-radar-label">21st-century OSINT reality</p>
+                <h3>Data does not lie — but raw data still needs disciplined interpretation.</h3>
+                <p>You fear companies like Palantir, but do not realize everything about you is already out there: in one server or another. Welcome to the 21st century. OWL turns public records into transparent source trails, confidence labels, and audit-ready links instead of rumor loops.</p>
+                <a href="https://epstein-docs.github.io/all-documents/" target="_blank" rel="noopener noreferrer">Open Epstein Archive document index →</a>
             </div>
 
             <div class="methodology-grid">
@@ -2494,9 +2512,9 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 
     <!-- Application Scripts -->
-    <script src="js/intro.js?v=20260525-4352b81"></script>
+    <script src="js/intro.js?v=20260525-cinematic-osint"></script>
     <script src="js/hud.js?v=20260525-4352b81"></script>
-    <script src="js/app.js?v=20260525-links"></script>
+    <script src="js/app.js?v=20260525-cinematic-osint"></script>
     <script src="js/network.js?v=20260525-4352b81"></script>
     <script src="js/dossier.js?v=20260525-4352b81"></script>
     <script src="js/command-palette.js?v=20260525-4352b81"></script>

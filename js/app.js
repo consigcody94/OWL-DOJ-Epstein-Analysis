@@ -42,6 +42,12 @@ const ROLE_COLORS = {
 // ===========================================
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
+    document.querySelectorAll('.hero-bg-video, .owl-seal-video').forEach(video => {
+        video.loop = false;
+        video.muted = true;
+        video.playsInline = true;
+        video.addEventListener('ended', () => video.classList.add('has-ended'), { once: true });
+    });
     renderHeroStats();
     renderSourceDashboard();
     renderVideoBriefing();
@@ -99,11 +105,11 @@ function renderHeroStats() {
     
     statElements.forEach(el => {
         const target = parseInt(el.getAttribute('data-target'));
-        animateCounter(el, target);
+        animateCounter(el, target, el.dataset.suffix || '');
     });
 }
 
-function animateCounter(element, target) {
+function animateCounter(element, target, suffix = '') {
     const duration = 2000;
     const steps = 60;
     const increment = target / steps;
@@ -115,7 +121,7 @@ function animateCounter(element, target) {
             current = target;
             clearInterval(timer);
         }
-        element.textContent = formatNumber(Math.floor(current));
+        element.textContent = formatNumber(Math.floor(current)) + suffix;
     }, duration / steps);
 }
 
@@ -522,7 +528,8 @@ function renderTimeline() {
         { year: 'Jul 2, 2020', title: 'Maxwell Arrested', description: 'Ghislaine Maxwell arrested in Bradford, New Hampshire after months in hiding.', type: 'arrest' },
         { year: 'Dec 29, 2021', title: 'Maxwell Convicted', description: 'Guilty on 5 of 6 federal counts including sex trafficking of a minor. Sentenced to 20 years.', type: 'conviction' },
         { year: 'Nov 19, 2025', title: 'Transparency Act Signed', description: 'Epstein Files Transparency Act becomes law, mandating release of all DOJ documents within 90 days.', type: 'event' },
-        { year: 'Dec–Jan 2026', title: 'DOJ Document Releases', description: '5 waves of releases: Dec 19, 20, 22, 23, and final release Jan 30. Total: 3.5 million pages, 180,000 images, 2,000+ videos.', type: 'event' },
+        { year: 'Dec–Jan 2026', title: 'DOJ Document Releases', description: '5 waves of releases: Dec 19, 20, 22, 23, and Jan 30. Public corpus baseline: 3.5M+ official pages, plus archive/index surfaces that continue expanding practical OSINT review.', type: 'event' },
+        { year: 'May 25, 2026', title: 'Independent Archive Linked', description: 'OWL adds the Epstein Archive all-documents index observed with 8,184 document entries for discovery and cross-reference coverage.', type: 'event' },
         { year: 'Feb 2026', title: '6 Names Unredacted', description: 'Congressional pressure forces unredaction of 6 previously hidden names. FBI labels Wexner "co-conspirator." Bin Sulayem resigns from DP World.', type: 'arrest' },
         { year: 'Feb 18, 2026', title: 'Wexner Deposition', description: 'Leslie Wexner deposed. FBI labeled him co-conspirator at least 4 times. Gave Epstein power of attorney and $77M NYC townhouse.', type: 'arrest' }
     ];

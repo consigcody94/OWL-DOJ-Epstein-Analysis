@@ -60,13 +60,23 @@
     },
     {
       "id": "doj-35m-pages-release",
-      "title": "DOJ publishes 3.5 million responsive pages in compliance with EFTA",
+      "title": "DOJ publishes 3.5 million+ responsive pages in compliance with EFTA",
       "agency": "U.S. Department of Justice",
       "source_type": "official DOJ update",
       "url": "https://www.justice.gov/epstein/doj-disclosures",
       "published": "2026-01-30",
       "last_checked": "2026-05-25",
-      "summary": "DOJ disclosure index links the January 30, 2026 letter to Congress and publication of 3.5 million responsive pages. Use as corpus-size/source-context; exact claims still require document-level verification."
+      "summary": "DOJ disclosure index links the January 30, 2026 letter to Congress and publication of at least 3.5 million responsive pages. Treat this as a floor/corpus-size context because later redactions, supplemental files, archive entries, and third-party document indexes can expand the practical research surface."
+    },
+    {
+      "id": "epstein-archive-all-documents",
+      "title": "Epstein Archive: all documents index",
+      "agency": "Epstein Archive / public-document index",
+      "source_type": "independent archive index",
+      "url": "https://epstein-docs.github.io/all-documents/",
+      "last_checked": "2026-05-25",
+      "indexed_entries_observed": 8184,
+      "summary": "Independent public-document index observed with 8,184 document links during the May 25 refresh. OWL links it for discovery/cross-reference coverage while keeping official DOJ/FBI/Congress records and court records as primary sources for claims."
     }
   ],
   "credible_reporting": [

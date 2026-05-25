@@ -36,6 +36,17 @@
         overlay.classList.add('is-running');
         sessionStorage.setItem(INTRO_SESSION_KEY, 'true');
 
+        overlay.querySelectorAll('video').forEach(video => {
+            video.loop = false;
+            video.muted = true;
+            video.playsInline = true;
+            video.addEventListener('ended', () => video.classList.add('has-ended'), { once: true });
+            const attempt = video.play();
+            if (attempt && typeof attempt.catch === 'function') {
+                attempt.catch(() => video.classList.add('video-fallback'));
+            }
+        });
+
         const messages = [
             'Mounting DOJ / FBI / court source index',
             'Applying confidence labels',

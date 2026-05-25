@@ -74,7 +74,7 @@ function loadDocumentsPanel() {
     
     panel.innerHTML = `
         <div style="text-align: center; padding: 2rem; color: var(--text-secondary);">
-            <p>Document references for ${personName} are embedded throughout the 3.5M page corpus.</p>
+            <p>Document references for ${personName} are embedded throughout the 3.5M+ official-page corpus and linked archive indexes.</p>
             <p style="margin-top: 1rem;">Key documents are listed in the Overview tab.</p>
         </div>
     `;

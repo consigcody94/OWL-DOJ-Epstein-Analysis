@@ -1218,3 +1218,129 @@ main > section > *,
 }
 .scroll-indicator::after { content: none !important; }
 .scroll-indicator:hover { color: rgba(246,247,251,0.82) !important; }
+
+/* Cinematic OWL video integration */
+.intro-bg-video,
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.intro-bg-video {
+  z-index: 0;
+  opacity: 0.34;
+  filter: saturate(0.82) contrast(1.08) brightness(0.74);
+}
+
+.intro-bg-video.has-ended,
+.hero-bg-video.has-ended,
+.owl-seal-video.has-ended {
+  animation-play-state: paused;
+}
+
+.intro-content,
+.skip-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.intro-aurora {
+  z-index: 1;
+}
+
+.hero {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-bg-video {
+  z-index: 0;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  filter: saturate(0.72) contrast(1.2) brightness(0.58) blur(0.2px);
+  transform: scale(1.04);
+}
+
+.hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 47% 28%, rgba(7,8,12,0.1), rgba(7,8,12,0.64) 45%, rgba(7,8,12,0.93) 78%),
+    linear-gradient(90deg, rgba(7,8,12,0.94), rgba(7,8,12,0.52) 46%, rgba(7,8,12,0.96));
+}
+
+.hero-content,
+.scroll-indicator {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo-video {
+  width: min(640px, 92vw);
+  max-width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 34px 100px rgba(0,0,0,0.42), 0 0 60px rgba(142,167,255,0.12);
+  background: rgba(0,0,0,0.28);
+}
+
+.owl-seal-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.osint-manifesto {
+  margin: 1.2rem 0 1.5rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  border: 1px solid rgba(215,180,106,0.2);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(215,180,106,0.13), rgba(142,167,255,0.07)),
+    rgba(10,12,18,0.72);
+  box-shadow: var(--shadow-md);
+}
+
+.osint-manifesto h3 {
+  max-width: 920px;
+  margin: 0.25rem 0 0.65rem;
+  color: var(--ink-1);
+  font-size: clamp(1.7rem, 3.2vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 620;
+}
+
+.osint-manifesto p {
+  max-width: 900px;
+  margin: 0;
+  color: rgba(246,247,251,0.72);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.osint-manifesto a {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #f4f7ff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(215,180,106,0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-bg-video,
+  .hero-bg-video,
+  .owl-seal-video {
+    display: none;
+  }
+}

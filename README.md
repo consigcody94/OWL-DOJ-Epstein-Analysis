@@ -10,7 +10,7 @@
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Analysis Status](https://img.shields.io/badge/Analysis-Complete-success?style=for-the-badge&logo=checkmarx&logoColor=white)](https://github.com/consigcody94/OWL-DOJ-Epstein-Analysis)
-[![Documents](https://img.shields.io/badge/Pages-3.5M-blue?style=for-the-badge&logo=files&logoColor=white)](#-statistics)
+[![Documents](https://img.shields.io/badge/Pages-3.5M%2B-blue?style=for-the-badge&logo=files&logoColor=white)](#-statistics)
 [![Images](https://img.shields.io/badge/Images-180K-purple?style=for-the-badge&logo=image&logoColor=white)](#-statistics)
 [![Videos](https://img.shields.io/badge/Videos-2K+-orange?style=for-the-badge&logo=video&logoColor=white)](#-statistics)
 [![Verdict](https://img.shields.io/badge/Verdict-GUILTY-red?style=for-the-badge&logo=scale&logoColor=white)](#%EF%B8%8F-verdict)
@@ -48,9 +48,9 @@
 
 ## 🎯 Executive Summary
 
-**May 25, 2026 refresh:** the interactive site now adds a source dashboard for the DOJ Epstein Library, DOJ disclosure index, FBI FOIA records, FBI Vault linkout, and House Oversight records; a release/disclosure timeline; transcript-backed recent media context; a source-labelled evidence vault; safer confidence labels; and an exploratory-network disclaimer.
+**May 25, 2026 refresh:** the interactive site now adds a source dashboard for the DOJ Epstein Library, DOJ disclosure index, FBI FOIA records, FBI Vault linkout, House Oversight records, and the Epstein Archive all-documents index; a release/disclosure timeline; transcript-backed recent media context; a source-labelled evidence vault; safer confidence labels; and an exploratory-network disclaimer.
 
-This repository contains a **comprehensive legal analysis** of **3.5 million pages** of DOJ documents released under the **Epstein Files Transparency Act** (signed November 19, 2025), conducted by the **OWL (Objective Witness & Legal)** autonomous analysis system.
+This repository contains a **comprehensive legal analysis** of **3.5 million+ official pages** of DOJ documents released under the **Epstein Files Transparency Act** (signed November 19, 2025), conducted by the **OWL (Objective Witness & Legal)** autonomous analysis system.
 
 The final DOJ release (January 30, 2026) includes **180,000 images** and **2,000+ videos** from five primary sources:
 - Florida and New York cases against Epstein
@@ -107,7 +107,7 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 | 📄 Documents | 🖼️ Images | 👥 Victims | ✈️ Aircraft | 🏢 Shell Companies |
 |:---:|:---:|:---:|:---:|:---:|
-| **3.5M** | **180,000** | **30+** | **6** | **4+** |
+| **3.5M+ official pages / 8,184 archive entries observed** | **180,000+** | **30+** | **6** | **4+** |
 
 </div>
 
@@ -118,7 +118,7 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 | Metric | Value | Description |
 |--------|-------|-------------|
-| Total Documents | 3.5M | PDFs converted to searchable text |
+| Total public-record corpus | 3.5M+ official pages + 8,184 observed Epstein Archive document links | DOJ baseline plus independent archive discovery surface |
 | Images Extracted | 180,000 | Organized by source document |
 | Maxwell References | 11,464 | Mentions across all documents |
 | Flight Documents | 333 | Aircraft and manifest records |
@@ -179,7 +179,7 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 
 | Category | Person | Documents | Status |
 |:--------:|:-------|:---------:|:------:|
-| 🔴 **Principal** | [Jeffrey Epstein](#jeffrey-epstein) | 3.5M | Deceased |
+| 🔴 **Principal** | [Jeffrey Epstein](#jeffrey-epstein) | 3.5M+ | Deceased |
 | 🟣 **Convicted** | [Ghislaine Maxwell](#ghislaine-maxwell) | 11,464 | 20 Years |
 | 🟢 **Prosecutor** | [Alexander Acosta](#alexander-acosta) | 150 | NPA Signatory |
 | 🔵 **Defense** | [Alan Dershowitz](#alan-dershowitz) | 45 | Attorney |
@@ -201,7 +201,7 @@ The analysis applies **U.S. federal criminal law standards** to evaluate the evi
 | Field | Value |
 |-------|-------|
 | **Status** | Deceased (August 10, 2019) |
-| **Documents** | 3.5M |
+| **Documents** | 3.5M+ official-page baseline plus archive indexes |
 | **Charges** | 4 Federal Counts |
 | **Verdict** | GUILTY - All Counts |
 
@@ -588,7 +588,7 @@ OWL-DOJ-Epstein-Analysis/
 - Ghislaine Maxwell Case Documents (2020-2021)
 
 ### Analysis Framework
-1. **Document Extraction**: PDF to text conversion (3.5M files)
+1. **Document Extraction**: PDF/text and archive-link review (3.5M+ official-page baseline plus linked public indexes)
 2. **Image Extraction**: 180,000 images organized by source document
 3. **Pattern Recognition**: Named entity extraction, phone numbers, tail numbers
 4. **Legal Analysis**: Application of federal criminal statutes
@@ -631,7 +631,7 @@ OWL-DOJ-Epstein-Analysis/
 
 **OWL Analysis System v3.0** | February 2026
 
-*Analysis of 3.5M DOJ documents • 180,000 images extracted • Verdict: GUILTY on all counts*
+*Analysis of 3.5M+ DOJ/EFTA baseline pages • Epstein Archive index linked • Verdict: GUILTY on all counts*
 
 **🌐 Live:** [owl.phosphor-os.org](https://owl.phosphor-os.org) — Auto-deployed from this repo via Netlify
 
