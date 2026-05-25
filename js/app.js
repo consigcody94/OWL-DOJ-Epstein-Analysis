@@ -42,7 +42,7 @@ const ROLE_COLORS = {
 // ===========================================
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
-    document.querySelectorAll('.hero-bg-video, .owl-seal-video').forEach(video => {
+    document.querySelectorAll('.hero-bg-video').forEach(video => {
         video.loop = false;
         video.muted = true;
         video.playsInline = true;

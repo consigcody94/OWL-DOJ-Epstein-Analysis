@@ -1344,3 +1344,15 @@ main > section > *,
     display: none;
   }
 }
+
+/* Remove standalone picture-logo treatment; keep the cinematic video as atmosphere only. */
+.hero-logo-video,
+.owl-seal-video,
+.intro-emblem-wrap,
+.intro-emblem-static {
+  display: none !important;
+}
+
+.hero-copy .hero-eyebrow {
+  margin-bottom: 1.25rem;
+}
