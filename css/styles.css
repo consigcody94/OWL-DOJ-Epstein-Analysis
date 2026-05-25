@@ -31,7 +31,9 @@
   --pink: #ec4899;
   
   /* Typography */
-  --font-display: 'Inter', sans-serif;
+  --font-display: 'Orbitron', 'Rajdhani', 'Inter', sans-serif;
+  --font-body: 'Inter', 'Rajdhani', system-ui, sans-serif;
+  --font-ui: 'Rajdhani', 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   
   /* Border Radius */
@@ -74,7 +76,7 @@ html {
 }
 
 body {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;

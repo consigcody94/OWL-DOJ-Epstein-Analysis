@@ -75,3 +75,167 @@
 .intro-emblem {
   image-rendering: auto;
 }
+
+
+/* OWL brand + readability pass: target static mark, stronger fonts, no clipped panels */
+body {
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif) !important;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  text-rendering: geometricPrecision;
+}
+
+h1, h2, h3,
+.section-title,
+.verdict-heading,
+.hero-title,
+.term-word,
+.accordion-header h3,
+.hierarchy-title,
+.mission-nav-brand,
+.verdict-banner,
+.intro-kicker,
+.intro-copy h2 {
+  font-family: var(--font-display, 'Orbitron', 'Rajdhani', sans-serif) !important;
+  letter-spacing: 0.075em;
+}
+
+p, li, .term-meaning, .term-example, .accordion-item, .source-card, .method-card, .person-quote {
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif) !important;
+}
+
+.hero-stat-label,
+.mission-nav-links a,
+.nav-command-hint,
+.filter-tab,
+.category-filter-btn,
+.source-link,
+.efta-source,
+.badge,
+.confidence-pill,
+.source-agency,
+.hero-eyebrow,
+.hero-action {
+  font-family: var(--font-ui, 'Rajdhani', 'Inter', sans-serif) !important;
+  font-weight: 700;
+}
+
+.mission-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  color: #d7dde6 !important;
+  text-shadow: 0 0 14px rgba(148, 163, 184, 0.45);
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  min-width: 3.25rem;
+  padding: 0.22rem 0.55rem;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 0.45rem;
+  background: linear-gradient(180deg, rgba(229, 231, 235, 0.09), rgba(15, 23, 42, 0.25));
+  box-shadow: inset 0 0 18px rgba(255,255,255,0.05), 0 0 18px rgba(148, 163, 184, 0.16);
+}
+
+.hero-logo { margin-bottom: clamp(1rem, 3vw, 1.75rem) !important; }
+.owl-seal-static {
+  width: min(640px, 92vw) !important;
+  height: auto !important;
+  max-height: 350px !important;
+  aspect-ratio: 1280 / 698;
+  border-radius: 18px;
+  object-fit: contain;
+  background: radial-gradient(ellipse at center, rgba(71, 85, 105, 0.35), rgba(7, 8, 12, 0.05) 62%);
+  filter: drop-shadow(0 0 22px rgba(148, 163, 184, 0.35)) drop-shadow(0 0 60px rgba(15, 23, 42, 0.9));
+  opacity: 0.97;
+  image-rendering: auto;
+}
+.intro-emblem-static {
+  width: min(640px, 92vw) !important;
+  max-width: 640px !important;
+  height: auto !important;
+  max-height: 350px !important;
+  object-fit: contain !important;
+  border-radius: 18px;
+}
+.hero-title {
+  color: #d8dde5 !important;
+  background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 38%, #64748b 70%, #111827 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Opened accordions/dropdowns must grow to content height, not crop at an animated max-height. */
+.accordion-card,
+.sub-accordion,
+.accordion-card.active,
+.sub-accordion.active { overflow: visible !important; }
+.accordion-body { overflow: hidden; max-height: 0; }
+.accordion-card.active .accordion-body {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  padding: 0 var(--spacing-md) var(--spacing-md) !important;
+}
+.sub-accordion-body { overflow: hidden; max-height: 0; }
+.sub-accordion-body.active {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+  padding: var(--spacing-md) !important;
+  padding-top: var(--spacing-sm) !important;
+}
+
+.person-quote,
+.vault-card-description,
+.evidence-description,
+.source-card p,
+.video-card p,
+.method-card p,
+.accordion-item p,
+.accordion-item li,
+.term-meaning,
+.term-example,
+.hierarchy-title,
+.hierarchy-subtitle {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+.power-hierarchy { gap: 0.4rem !important; overflow: visible !important; }
+.hierarchy-box {
+  min-height: 0 !important;
+  height: auto !important;
+  max-width: min(660px, 100%) !important;
+  padding: clamp(0.85rem, 2.2vw, 1.35rem) !important;
+}
+.hierarchy-title {
+  font-size: clamp(0.95rem, 2.2vw, 1.18rem) !important;
+  line-height: 1.35 !important;
+  text-transform: none !important;
+}
+.hierarchy-subtitle {
+  font-size: clamp(0.82rem, 1.7vw, 0.95rem) !important;
+  line-height: 1.45 !important;
+}
+.efta-source,
+.source-link { max-width: 100%; white-space: normal !important; overflow-wrap: anywhere; }
+
+@media (max-width: 768px) {
+  .owl-seal-static, .intro-emblem-static {
+    width: min(94vw, 520px) !important;
+    max-height: none !important;
+    border-radius: 14px;
+  }
+  .hero-title { font-size: clamp(1.8rem, 8vw, 2.55rem) !important; letter-spacing: 0.055em; }
+  .coded-terms-grid { grid-template-columns: 1fr !important; }
+}
