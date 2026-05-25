@@ -61,8 +61,10 @@ function evidenceEscape(value) {
 
 function createEvidenceCard(evidence) {
     const card = document.createElement('article');
-    card.className = 'evidence-card source-evidence-card';
+    card.className = 'evidence-card source-evidence-card clickable-source-card';
     card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', `Open referenced evidence source: ${evidence.title || 'evidence item'}`);
     
     card.innerHTML = `
         <div class="classification-badge classification-confidential">${evidenceEscape(evidence.confidence)}</div>
@@ -75,11 +77,21 @@ function createEvidenceCard(evidence) {
             ${evidence.source_url ? `<a href="${evidenceEscape(evidence.source_url)}" target="_blank" rel="noopener noreferrer" class="source-link">Official source ↗</a>` : ''}
         </div>
     `;
+
+    const openPrimaryLink = () => {
+        const primaryLink = card.querySelector('a[target="_blank"]') || card.querySelector('a');
+        if (primaryLink) primaryLink.click();
+    };
+
+    card.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+        openPrimaryLink();
+    });
     
     card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            const firstLink = card.querySelector('a');
-            if (firstLink) firstLink.click();
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openPrimaryLink();
         }
     });
     

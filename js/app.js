@@ -138,6 +138,42 @@ function escapeHtml(value) {
         .replace(/'/g, '&#039;');
 }
 
+function getSourceIndexById() {
+    const official = state.sourceIndex.official_sources || [];
+    const reporting = state.sourceIndex.credible_reporting || [];
+    return [...official, ...reporting].reduce((index, source) => {
+        if (source.id) index[source.id] = source;
+        return index;
+    }, {});
+}
+
+function getSourceUrlById(sourceId) {
+    return getSourceIndexById()[sourceId]?.url || '';
+}
+
+function resolveDocumentUrl(documentId) {
+    const id = String(documentId || '').trim();
+    if (!id || id.toLowerCase() === 'various') return getSourceUrlById('doj-disclosures') || 'https://www.justice.gov/epstein/doj-disclosures';
+    if (/^https?:\/\//i.test(id)) return id;
+
+    const sample = (state.sourceIndex.fbi_foia_sample_files || []).find(file => file.file_id === id);
+    if (sample?.url) return sample.url;
+
+    // Exact DOJ/FBI PDF paths vary by disclosure category. When the data only carries an
+    // EFTA ID, link to the official DOJ disclosure hub instead of inventing a brittle URL.
+    if (/^EFTA\d+/i.test(id) || /^EFTA\[/i.test(id) || id === 'NPA') {
+        return getSourceUrlById('doj-disclosures') || 'https://www.justice.gov/epstein/doj-disclosures';
+    }
+
+    return getSourceUrlById('doj-epstein-library') || 'https://www.justice.gov/epstein';
+}
+
+function renderDocumentLink(documentId, label = documentId) {
+    const url = resolveDocumentUrl(documentId);
+    if (!url) return escapeHtml(label);
+    return `<a class="document-ref-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="Open referenced source for ${escapeHtml(documentId)}">${escapeHtml(label)} ↗</a>`;
+}
+
 // ===========================================
 // SOURCE DASHBOARD / MEDIA BRIEFING
 // ===========================================
@@ -152,7 +188,7 @@ function renderSourceDashboard() {
     }
 
     grid.innerHTML = sources.map(source => `
-        <article class="source-card">
+        <a class="source-card clickable-source-card" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open source: ${escapeHtml(source.title)}">
             <div class="source-card-topline">
                 <span class="source-agency">${escapeHtml(source.agency)}</span>
                 <span class="confidence-pill">${escapeHtml(source.source_type)}</span>
@@ -165,9 +201,18 @@ function renderSourceDashboard() {
                 ${source.last_modified ? `<span>Modified: ${escapeHtml(source.last_modified)}</span>` : ''}
                 ${source.last_checked ? `<span>Checked: ${escapeHtml(source.last_checked)}</span>` : ''}
             </div>
-            <a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>
-        </article>
+            ${source.mirrors?.length ? `<div class="source-meta"><span>Mirrors: ${source.mirrors.map((mirror, index) => `<span class="source-mirror-link" data-url="${escapeHtml(mirror)}">Mirror ${index + 1}</span>`).join(' · ')}</span></div>` : ''}
+            <span class="source-link">Open source ↗</span>
+        </a>
     `).join('');
+
+    grid.querySelectorAll('.source-mirror-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            window.open(link.dataset.url, '_blank', 'noopener,noreferrer');
+        });
+    });
 }
 
 function renderVideoBriefing() {
@@ -181,7 +226,7 @@ function renderVideoBriefing() {
     }
 
     grid.innerHTML = videos.map(video => `
-        <article class="video-card">
+        <a class="video-card clickable-source-card" href="${escapeHtml(video.url)}" target="_blank" rel="noopener noreferrer" aria-label="Watch or verify: ${escapeHtml(video.title)}">
             <div class="video-thumb" aria-hidden="true">▶</div>
             <div class="video-body">
                 <span class="confidence-pill media-pill">${escapeHtml(video.source_type)}</span>
@@ -191,9 +236,9 @@ function renderVideoBriefing() {
                     <span>Uploaded: ${escapeHtml(video.upload_date)}</span>
                     <span>Transcript: ${escapeHtml(video.transcript_path)}</span>
                 </div>
-                <a class="source-link" href="${escapeHtml(video.url)}" target="_blank" rel="noopener noreferrer">Watch / verify ↗</a>
+                <span class="source-link">Watch / verify ↗</span>
             </div>
-        </article>
+        </a>
     `).join('');
 }
 
@@ -207,15 +252,20 @@ function renderReleaseTimeline() {
         return;
     }
 
-    timeline.innerHTML = events.map(event => `
-        <article class="release-event">
-            <time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time>
-            <div>
-                <h3>${escapeHtml(event.event)}</h3>
-                <p>${escapeHtml(event.confidence)} · source: ${escapeHtml(event.source_id)}</p>
-            </div>
-        </article>
-    `).join('');
+    timeline.innerHTML = events.map(event => {
+        const sourceUrl = getSourceUrlById(event.source_id);
+        const tag = sourceUrl ? 'a' : 'article';
+        const hrefAttrs = sourceUrl ? ` href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open timeline source: ${escapeHtml(event.source_id)}"` : '';
+        return `
+            <${tag} class="release-event clickable-source-card"${hrefAttrs}>
+                <time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time>
+                <div>
+                    <h3>${escapeHtml(event.event)}</h3>
+                    <p>${escapeHtml(event.confidence)} · source: ${escapeHtml(event.source_id)} ${sourceUrl ? '↗' : ''}</p>
+                </div>
+            </${tag}>
+        `;
+    }).join('');
 }
 
 // ===========================================
@@ -685,9 +735,30 @@ function populateDossierOverview(person) {
                 ${person.key_evidence.map(evidence => `
                     <blockquote style="margin: 1rem 0; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-left: 3px solid var(--cyan); border-radius: 8px;">
                         <p style="font-style: italic; margin-bottom: 0.5rem;">&ldquo;${escapeHtml(evidence.quote)}&rdquo;</p>
-                        <cite style="font-size: 0.875rem; color: var(--text-secondary);">${escapeHtml(evidence.source)}</cite>
+                        <cite style="font-size: 0.875rem; color: var(--text-secondary);">
+                            ${escapeHtml(evidence.source)}
+                            ${evidence.document_id ? ` · ${renderDocumentLink(evidence.document_id, evidence.document_id)}` : ''}
+                        </cite>
                     </blockquote>
                 `).join('')}
+            </div>
+        `;
+    }
+
+    // Referenced Documents
+    if (person.key_documents && person.key_documents.length > 0) {
+        html += `
+            <div>
+                <h3 style="color: var(--cyan); margin-bottom: 0.5rem;">Referenced Documents</h3>
+                <ul class="dossier-document-list">
+                    ${person.key_documents.map(doc => `
+                        <li>
+                            <span>${escapeHtml(doc.title || doc.id)}</span>
+                            <small>${escapeHtml(doc.type || 'source')}</small>
+                            ${renderDocumentLink(doc.url || doc.source_url || doc.id, doc.id || 'Open source')}
+                        </li>
+                    `).join('')}
+                </ul>
             </div>
         `;
     }
