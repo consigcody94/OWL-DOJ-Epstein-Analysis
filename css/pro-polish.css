@@ -685,3 +685,179 @@ main > section,
     height: 220px !important;
   }
 }
+
+/* Private investigation advertisement positioning */
+.capability-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.2rem 0 1rem;
+}
+.capability-strip div {
+  border: 1px solid var(--owl-border);
+  border-radius: 18px;
+  padding: 0.92rem 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.026));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.055);
+}
+.capability-strip strong {
+  display: block;
+  color: var(--owl-text);
+  font-size: 0.92rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.25rem;
+}
+.capability-strip span {
+  display: block;
+  color: rgba(208,214,224,0.68);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.capabilities-section {
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 4rem) !important;
+}
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.capability-card {
+  position: relative;
+  min-height: 260px;
+  padding: clamp(1.2rem, 2.2vw, 1.8rem);
+  border-radius: var(--owl-radius-lg);
+  border: 1px solid var(--owl-border);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(154,167,255,0.12), transparent 14rem),
+    linear-gradient(180deg, rgba(255,255,255,0.058), rgba(255,255,255,0.024));
+  box-shadow: 0 1px 0 rgba(255,255,255,0.055) inset, 0 18px 58px rgba(0,0,0,0.20);
+  overflow: hidden;
+  transition: transform 320ms var(--owl-ease), border-color 320ms var(--owl-ease), box-shadow 320ms var(--owl-ease), background 320ms var(--owl-ease);
+}
+.capability-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(154,167,255,0.28);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.075) inset, 0 28px 86px rgba(0,0,0,0.30), 0 0 54px rgba(113,112,255,0.09);
+}
+.capability-card-featured {
+  grid-column: span 2;
+  min-height: 320px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(215,180,106,0.14), transparent 18rem),
+    radial-gradient(circle at 100% 10%, rgba(154,167,255,0.16), transparent 20rem),
+    linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.03));
+}
+.capability-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(154,167,255,0.22);
+  border-radius: 999px;
+  background: rgba(154,167,255,0.09);
+  color: rgba(214,222,255,0.92);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-bottom: 1.25rem;
+}
+.capability-card h3,
+.investigation-cta-panel h3 {
+  margin: 0 0 0.75rem;
+  color: var(--owl-text);
+  font-family: var(--font-display);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.02;
+}
+.capability-card p,
+.investigation-cta-panel p {
+  color: rgba(208,214,224,0.74);
+  line-height: 1.62;
+  margin: 0;
+}
+.capability-card ul {
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+.capability-card li {
+  color: rgba(247,248,248,0.78);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding-left: 1.35rem;
+  position: relative;
+}
+.capability-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--owl-indigo-2), var(--owl-gold));
+  box-shadow: 0 0 18px rgba(154,167,255,0.35);
+}
+.investigation-cta-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid rgba(215,180,106,0.18);
+  border-radius: var(--owl-radius-lg);
+  background:
+    radial-gradient(circle at 0% 50%, rgba(215,180,106,0.12), transparent 22rem),
+    linear-gradient(180deg, rgba(255,255,255,0.058), rgba(255,255,255,0.024));
+}
+.investigation-cta-panel .hero-action {
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .capability-strip,
+  .capabilities-grid,
+  .investigation-cta-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+  .capability-card-featured,
+  .investigation-cta-panel {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .capability-strip,
+  .capabilities-grid,
+  .investigation-cta-panel {
+    grid-template-columns: 1fr;
+  }
+  .capability-card,
+  .capability-card-featured {
+    min-height: auto;
+  }
+  .investigation-cta-panel .hero-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Readability bump for the advertisement pass */
+.hero-subtitle {
+  font-size: clamp(1.14rem, 1.65vw, 1.42rem) !important;
+  color: rgba(232,235,242,0.86) !important;
+}
+.hero-action {
+  font-size: 0.92rem !important;
+  min-height: 46px !important;
+}
+.section-subtitle {
+  font-size: clamp(1rem, 1.22vw, 1.14rem) !important;
+  max-width: 900px !important;
+}

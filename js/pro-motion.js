@@ -3,6 +3,7 @@
   const motionSelectors = [
     '.hero-copy', '.hero-video-card', '.hero-command-card', '.hero-stat',
     '.source-radar', '.osint-manifesto', '.source-status-grid > *',
+    '.capability-strip > *', '.capability-card', '.investigation-cta-panel',
     '.source-card', '.video-card', '.release-event', '.charge-card',
     '.person-card', '.evidence-card', '.timeline-card', '.coded-term-card',
     '.accordion-card', '.scandal-card'
