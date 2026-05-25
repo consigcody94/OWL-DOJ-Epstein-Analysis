@@ -108,39 +108,86 @@ async function searchCommands(query, resultsContainer) {
         }
     }
 
-    // Filter persons by query
-    const filtered = persons.filter(person => {
-        if (!query) return true; // Show all if no query
-        
-        const name = (person.name || '').toLowerCase();
-        const role = (person.role || '').toLowerCase();
-        const evidence = person.key_evidence?.map(e => (e.quote || '').toLowerCase()).join(' ') || '';
-        
-        return name.includes(query) || role.includes(query) || evidence.includes(query);
-    }).slice(0, 10); // Limit to 10 results
+    const searchableItems = [
+        ...persons.map(person => ({
+            type: 'Person',
+            title: person.name,
+            description: `${person.role} • ${formatNumber(person.document_count)} documents`,
+            text: `${person.name} ${person.role} ${(person.key_evidence || []).map(e => e.quote || '').join(' ')}`,
+            action: () => openDossier(person.id)
+        })),
+        ...buildStaticSearchItems()
+    ];
+
+    const filtered = searchableItems.filter(item => {
+        if (!query) return true;
+        return item.text.toLowerCase().includes(query) ||
+               item.title.toLowerCase().includes(query) ||
+               item.description.toLowerCase().includes(query);
+    }).slice(0, 14);
 
     if (filtered.length === 0) {
         resultsContainer.innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--text-muted);">No results found</div>';
         return;
     }
 
-    filtered.forEach((person, index) => {
+    filtered.forEach((item, index) => {
         const result = document.createElement('div');
         result.className = 'command-result';
         if (index === 0) result.classList.add('selected');
         
         result.innerHTML = `
-            <div class="command-result-title">${person.name}</div>
-            <div class="command-result-description">${person.role} • ${formatNumber(person.document_count)} documents</div>
+            <div class="command-result-title"><span class="command-result-type">${item.type}</span> ${item.title}</div>
+            <div class="command-result-description">${item.description}</div>
         `;
         
         result.addEventListener('click', () => {
             closeCommandPalette();
-            openDossier(person.id);
+            item.action();
         });
         
         resultsContainer.appendChild(result);
     });
+}
+
+function buildStaticSearchItems() {
+    const sections = [
+        ['Section', 'Official source dashboard', 'DOJ, FBI, Congress, redactions, confidence labels', '#source-dashboard'],
+        ['Section', 'Analysis finding', 'Verdict, statutes, charges, legal analysis', '#verdict'],
+        ['Section', 'Persons of interest', 'People, filters, dossiers, document counts', '#persons'],
+        ['Section', 'Network graph', 'Relationship visualization with inference caution', '#network'],
+        ['Section', 'Evidence vault', 'Flight, payment, testimony, physical evidence', '#evidence'],
+        ['Section', 'Media briefing', 'YouTube transcripts, AP, CNN, ABC, release videos', '#media-briefing'],
+        ['Section', 'Release timeline', 'DOJ library, House Oversight, FBI FOIA, AP updates', '#release-timeline']
+    ];
+
+    const officialSources = (window.state?.sourceIndex?.official_sources || []).map(source => ({
+        type: 'Official Source',
+        title: source.title,
+        description: `${source.agency} • ${source.source_type}`,
+        text: `${source.title} ${source.agency} ${source.source_type} ${source.summary}`,
+        action: () => window.open(source.url, '_blank', 'noopener')
+    }));
+
+    const videos = (window.state?.videoIndex?.videos || []).map(video => ({
+        type: 'Video',
+        title: video.title,
+        description: video.why_it_matters,
+        text: `${video.title} ${video.why_it_matters}`,
+        action: () => window.open(video.url, '_blank', 'noopener')
+    }));
+
+    return [
+        ...sections.map(([type, title, description, hash]) => ({
+            type,
+            title,
+            description,
+            text: `${title} ${description}`,
+            action: () => document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
+        })),
+        ...officialSources,
+        ...videos
+    ];
 }
 
 function formatNumber(num) {

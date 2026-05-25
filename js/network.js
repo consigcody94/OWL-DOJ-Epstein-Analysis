@@ -69,7 +69,7 @@ function buildNetworkData(persons) {
     }));
 
     // Create links (relationships)
-    // This is a sample network - in a real scenario, this would come from relationship data
+    // Exploratory graph: links are generated from role/category metadata unless a future data/relationships.json source marks them documented.
     networkData.links = generateRelationships(persons);
 }
 
@@ -99,7 +99,9 @@ function generateRelationships(persons) {
         target: 'maxwell',
         type: 'trafficking',
         strength: 'strong',
-        confirmed: true
+        confidence: 'inferred',
+            basis: 'role-category grouping',
+            confirmed: false
     });
 
     persons.forEach(person => {
@@ -128,7 +130,9 @@ function generateRelationships(persons) {
             target: person.id,
             type: type,
             strength: person.document_count > 10000 ? 'strong' : 'weak',
-            confirmed: true
+            confidence: 'inferred',
+            basis: 'role-category grouping',
+            confirmed: false
         });
         
         // Some also link to Maxwell
@@ -138,7 +142,9 @@ function generateRelationships(persons) {
                 target: person.id,
                 type: type,
                 strength: 'medium',
-                confirmed: true
+                confidence: 'inferred',
+            basis: 'role-category grouping',
+            confirmed: false
             });
         }
     });
@@ -152,7 +158,9 @@ function generateRelationships(persons) {
                 target: staff[i + 1].id,
                 type: 'staff',
                 strength: 'weak',
-                confirmed: true
+                confidence: 'inferred',
+            basis: 'role-category grouping',
+            confirmed: false
             });
         }
     }
@@ -165,7 +173,9 @@ function generateRelationships(persons) {
                 target: defense[i + 1].id,
                 type: 'legal',
                 strength: 'weak',
-                confirmed: true
+                confidence: 'inferred',
+            basis: 'role-category grouping',
+            confirmed: false
             });
         }
     }

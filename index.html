@@ -37,6 +37,21 @@
     <!-- Skip Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Mission Navigation -->
+    <nav class="mission-nav" aria-label="Primary investigation navigation">
+        <a href="#hero" class="mission-nav-brand">🦉 OWL</a>
+        <div class="mission-nav-links">
+            <a href="#source-dashboard">Sources</a>
+            <a href="#verdict">Analysis</a>
+            <a href="#persons">Persons</a>
+            <a href="#network">Network</a>
+            <a href="#evidence">Evidence</a>
+            <a href="#media-briefing">Media</a>
+            <a href="#timeline">Timeline</a>
+        </div>
+        <button class="nav-command-hint" type="button" onclick="toggleCommandPalette()" aria-label="Open command palette">⌘K Search</button>
+    </nav>
+
     <!-- Intro Overlay -->
     <div id="introOverlay" class="intro-overlay">
         <div class="intro-content">
@@ -94,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="verdict-banner">VERDICT: GUILTY ON ALL COUNTS</div>
+            <div class="verdict-banner">OWL ANALYSIS FINDING: GUILTY ON ALL COUNTS</div>
         </div>
         <div class="scroll-indicator">Scroll to explore</div>
     </section>
@@ -102,12 +117,52 @@
     <!-- MAIN CONTENT -->
     <main id="main-content">
 
+        <!-- SOURCE DASHBOARD SECTION -->
+        <section id="source-dashboard" class="source-dashboard-section">
+            <div class="section-header">
+                <div class="eyebrow">2026 Source Refresh</div>
+                <h2 class="section-title">Official Records First. Claims Labeled by Confidence.</h2>
+                <p class="section-subtitle">
+                    The updated OWL interface separates DOJ/FBI/Congress records, court-proven facts,
+                    credible reporting, and researcher inference. Media transcripts are context only — not primary evidence.
+                </p>
+            </div>
+
+            <div class="methodology-grid">
+                <article class="method-card official">
+                    <span class="method-kicker">Primary</span>
+                    <h3>DOJ / FBI / Congress</h3>
+                    <p>Official release hubs, FBI FOIA PDFs, House Oversight disclosures, and court/document IDs are prioritized.</p>
+                </article>
+                <article class="method-card court">
+                    <span class="method-kicker">Legal</span>
+                    <h3>Fact vs. Allegation</h3>
+                    <p>Living persons and sensitive allegations are labeled as court-proven, documented contact, reported, unverified, or no-allegation-of-wrongdoing.</p>
+                </article>
+                <article class="method-card redaction">
+                    <span class="method-kicker">Limits</span>
+                    <h3>Redactions Matter</h3>
+                    <p>Redactions may protect victims, private individuals, CSAM, grand-jury material, or protected records. Redaction is not treated as proof of a claim.</p>
+                </article>
+                <article class="method-card media">
+                    <span class="method-kicker">Context</span>
+                    <h3>Video & Reporting</h3>
+                    <p>Recent news transcripts and AP reporting are used to explain release timing, disputes, and public-record changes.</p>
+                </article>
+            </div>
+
+            <div id="officialSourcesGrid" class="source-grid" aria-live="polite">
+                <div class="loading-card">Loading official source index...</div>
+            </div>
+        </section>
+
         <!-- VERDICT SECTION -->
         <section id="verdict" class="verdict-section">
-            <h2 class="verdict-heading">GUILTY ON ALL COUNTS</h2>
+            <h2 class="verdict-heading">OWL ANALYSIS FINDING: GUILTY ON ALL COUNTS</h2>
             <p class="verdict-description">
-                Based on comprehensive analysis of 3.5 million DOJ pages released under the Epstein Files Transparency Act,
-                application of federal criminal law, and evaluation from both prosecution and defense perspectives.
+                This is an independent legal-analysis finding based on the public corpus, not a new court verdict.
+                It applies federal criminal-law standards to DOJ/EFTA materials while separating official records,
+                court-proven facts, credible reporting, and researcher inference.
             </p>
             <div class="charges-grid">
                 <article class="charge-card">
@@ -2188,7 +2243,11 @@
         <!-- CONSPIRACY NETWORK SECTION -->
         <section id="network" class="network-section">
             <div class="section-header">
-                <h2 class="section-title">Conspiracy Network</h2>
+                <h2 class="section-title">Exploratory Network Graph</h2>
+                <p class="section-subtitle network-disclaimer">
+                    Edges are generated from role/category metadata unless a source explicitly documents the relationship.
+                    Treat this as a navigation map, not a legal finding.
+                </p>
             </div>
             <div class="network-container">
                 <svg id="networkGraph"></svg>
@@ -2229,6 +2288,33 @@
             </div>
         </section>
 
+        <!-- MEDIA BRIEFING SECTION -->
+        <section id="media-briefing" class="media-briefing-section">
+            <div class="section-header">
+                <div class="eyebrow">Recent Video Context</div>
+                <h2 class="section-title">Transcript-backed Media Briefing</h2>
+                <p class="section-subtitle">
+                    A GitHub copy of <code>youtube-transcript-api</code> was used to pull recent transcripts.
+                    These clips explain timing, public criticism, and release mechanics; they are not primary evidence.
+                </p>
+            </div>
+            <div id="videoBriefingGrid" class="video-grid" aria-live="polite">
+                <div class="loading-card">Loading video briefing index...</div>
+            </div>
+        </section>
+
+        <!-- RELEASE TIMELINE SECTION -->
+        <section id="release-timeline" class="release-timeline-section">
+            <div class="section-header">
+                <div class="eyebrow">Public Record Timeline</div>
+                <h2 class="section-title">Release / Disclosure Timeline</h2>
+                <p class="section-subtitle">Key public-record events from House Oversight, DOJ, and credible reporting.</p>
+            </div>
+            <div id="releaseTimelineGrid" class="release-timeline" aria-live="polite">
+                <div class="loading-card">Loading release timeline...</div>
+            </div>
+        </section>
+
         <!-- TIMELINE SECTION -->
         <section id="timeline" class="timeline-section">
             <div class="section-header">
@@ -2256,9 +2342,9 @@
                     <h3>Legal Framework</h3>
                     <ul class="footer-links">
                         <li><a href="VERDICT.md">Full Verdict Analysis</a></li>
-                        <li><a href="legal-framework/18-USC-1591.md">18 U.S.C. § 1591</a></li>
-                        <li><a href="legal-framework/18-USC-2423.md">18 U.S.C. § 2423</a></li>
-                        <li><a href="legal-framework/18-USC-371.md">18 U.S.C. § 371</a></li>
+                        <li><a href="legal-framework/applicable-statutes.md">Applicable Federal Statutes</a></li>
+                        <li><a href="legal-framework/elements-analysis.md">Elements Analysis</a></li>
+                        <li><a href="legal-framework/case-law.md">Case Law</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -2272,8 +2358,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p><span class="footer-version">OWL Analysis System v4.0</span> | Analysis of 3.5M DOJ Documents</p>
-                <p>&copy; 2026 | Released under Epstein Files Transparency Act (Signed Nov 19, 2025)</p>
+                <p><span class="footer-version">OWL Analysis System v4.1</span> | Source-refreshed analysis of DOJ/FBI/Congress records</p>
+                <p>&copy; 2026 | Independent analysis; official records and allegations are labeled by source confidence</p>
             </div>
         </footer>
 

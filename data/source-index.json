@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "version": "2026-05-source-refresh",
+    "updated": "2026-05-25",
+    "methodology": "Official records first. Credible journalism is used only for context and labelled separately from court/DOJ/FBI records."
+  },
+  "official_sources": [
+    {
+      "id": "doj-epstein-library",
+      "title": "DOJ Epstein Library",
+      "agency": "U.S. Department of Justice",
+      "source_type": "official portal",
+      "url": "https://www.justice.gov/epstein",
+      "published": "2025-11-28",
+      "last_checked": "2026-05-25",
+      "summary": "Central DOJ portal for Epstein Files Transparency Act materials. DOJ notes privacy, victim-protection, and sensitive-material redactions and states the portal may be updated if additional records are identified."
+    },
+    {
+      "id": "doj-disclosures",
+      "title": "DOJ Disclosures: Epstein Files Transparency Act",
+      "agency": "U.S. Department of Justice",
+      "source_type": "official release index",
+      "url": "https://www.justice.gov/epstein/doj-disclosures",
+      "published": "2025-11-28",
+      "last_modified": "2026-04-03",
+      "summary": "Release index covering data sets, court records, FOIA categories, the first phase of declassified files, BOP footage, Maxwell proffer materials, and memoranda/correspondence."
+    },
+    {
+      "id": "doj-fbi-foia",
+      "title": "FOIA: Federal Bureau of Investigation (FBI)",
+      "agency": "U.S. Department of Justice / FBI",
+      "source_type": "official FOIA file list",
+      "url": "https://www.justice.gov/epstein/doj-disclosures/foia-federal-bureau-investigation-fbi",
+      "last_checked": "2026-05-25",
+      "summary": "DOJ-hosted FBI FOIA records with file IDs EFTA02849279 through EFTA02850658. These are linked for independent verification rather than mirrored wholesale."
+    },
+    {
+      "id": "fbi-vault-epstein",
+      "title": "FBI Vault: Jeffrey Epstein",
+      "agency": "Federal Bureau of Investigation",
+      "source_type": "official legacy archive",
+      "url": "https://vault.fbi.gov/jeffrey-epstein",
+      "last_checked": "2026-05-25",
+      "access_note": "Automated probe received a Cloudflare/403 response, but the URL is the official FBI Vault collection link.",
+      "summary": "Legacy FBI Vault public-record collection. Presented as a linkout source; not treated as exhaustive or identical to newer DOJ/EFTA releases."
+    },
+    {
+      "id": "house-oversight-release",
+      "title": "House Oversight Committee release of DOJ-provided Epstein records",
+      "agency": "U.S. House Committee on Oversight and Accountability",
+      "source_type": "congressional release",
+      "url": "https://oversight.house.gov/release/oversight-committee-releases-epstein-records-provided-by-the-department-of-justice/",
+      "published": "2025-09-02",
+      "summary": "Committee stated it released 33,295 pages of Epstein-related records provided by DOJ, with redactions for victim identities and child sexual abuse material.",
+      "mirrors": [
+        "https://drive.google.com/drive/folders/1TrGxDGQLDLZu1vvvZDBAh-e7wN3y6Hoz?usp=sharing",
+        "https://www.dropbox.com/scl/fo/98fthv8otekjk28lcrnc5/AIn3egnE58MYe4Bn4fliVBw?rlkey=m7p8e9omml96fgxl13kr2nuyt&st=0xvm0p08&dl=0"
+      ]
+    }
+  ],
+  "credible_reporting": [
+    {
+      "id": "ap-client-list",
+      "outlet": "Associated Press",
+      "title": "DOJ/FBI say no Epstein client list was found",
+      "url": "https://apnews.com/article/jeffrey-epstein-justice-department-pam-bondi-03fbcd024f631440f7ed62b3c6927db3",
+      "published": "2025-07-07",
+      "updated": "2025-07-14",
+      "use": "Claim-check module. Treat as reporting about DOJ/FBI statements, not as an independent audit of all records."
+    },
+    {
+      "id": "ap-large-batch",
+      "outlet": "Associated Press",
+      "title": "Large DOJ release / roughly 3 million pages context",
+      "url": "https://apnews.com/article/epstein-files-justice-department-trump-ed743598c320b94bd9d91631618678d9",
+      "published": "2026-01-30",
+      "updated": "2026-02-01",
+      "use": "Release timeline and corpus-size context."
+    },
+    {
+      "id": "ap-unredacted-congress",
+      "outlet": "Associated Press",
+      "title": "DOJ allowed lawmakers to review unredacted files",
+      "url": "https://apnews.com/article/epstein-files-congress-unredacted-justice-department-5219f89459e80a141b84e1aa2551b0d2",
+      "published": "2026-02-06",
+      "updated": "2026-02-07",
+      "use": "Redactions and controlled congressional access explainer."
+    },
+    {
+      "id": "ap-fbi-records",
+      "outlet": "Associated Press",
+      "title": "FBI records and sex-trafficking conclusions context",
+      "url": "https://apnews.com/article/jeffrey-epstein-client-list-sex-trafficking-049c96080a2ca2c12c84ac506437e50b",
+      "published": "2026-02-08",
+      "updated": "2026-02-08",
+      "use": "Evidence-vs-allegation caution layer."
+    },
+    {
+      "id": "ap-supplemental",
+      "outlet": "Associated Press",
+      "title": "DOJ published additional mistakenly withheld files involving uncorroborated claim",
+      "url": "https://apnews.com/article/epstein-files-missing-release-doj-trump-f9cb1358a649c61f4bb7793bf358393b",
+      "published": "2026-03-05",
+      "updated": "2026-03-06",
+      "use": "Supplemental releases/corrections log with uncorroborated-label language."
+    }
+  ],
+  "release_timeline": [
+    {
+      "date": "2025-09-02",
+      "event": "House Oversight released 33,295 pages of DOJ-provided records",
+      "source_id": "house-oversight-release",
+      "confidence": "official congressional release"
+    },
+    {
+      "date": "2025-11-28",
+      "event": "DOJ Epstein Library published",
+      "source_id": "doj-epstein-library",
+      "confidence": "official DOJ portal"
+    },
+    {
+      "date": "2026-01-30",
+      "event": "Large DOJ batch reported; corpus described around 3 million pages",
+      "source_id": "ap-large-batch",
+      "confidence": "credible reporting / DOJ context"
+    },
+    {
+      "date": "2026-02-06",
+      "event": "Members of Congress allowed controlled review of unredacted files",
+      "source_id": "ap-unredacted-congress",
+      "confidence": "credible reporting"
+    },
+    {
+      "date": "2026-03-05",
+      "event": "DOJ supplemental publication of files previously omitted by mistake, with allegations labelled uncorroborated in reporting",
+      "source_id": "ap-supplemental",
+      "confidence": "credible reporting"
+    },
+    {
+      "date": "2026-05-25",
+      "event": "DOJ Epstein Library checked as current source hub",
+      "source_id": "doj-epstein-library",
+      "confidence": "source verification"
+    }
+  ],
+  "fbi_foia_sample_files": [
+    {
+      "file_id": "EFTA02849279",
+      "url": "https://www.justice.gov/epstein/files/Freedom%20of%20Information%20Act%20%28FOIA%29/Federal%20Bureau%20of%20Investigation%20%28FBI%29/EFTA02849279.pdf"
+    },
+    {
+      "file_id": "EFTA02850658",
+      "url": "https://www.justice.gov/epstein/files/Freedom%20of%20Information%20Act%20%28FOIA%29/Federal%20Bureau%20of%20Investigation%20%28FBI%29/EFTA02850658.pdf"
+    }
+  ]
+}

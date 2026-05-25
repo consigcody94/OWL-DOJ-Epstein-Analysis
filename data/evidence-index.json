@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "updated": "2026-05-25",
+    "note": "Evidence index uses source/confidence labels. Items link to existing local summaries and official source hubs when exact PDFs need independent verification."
+  },
+  "categories": {
+    "flight": [
+      {
+        "confidence": "documented / source-linked",
+        "title": "Flight Logs and Manifests",
+        "date": "1990s-2019",
+        "excerpt": "Flight evidence is linked to local flight-record analysis and official DOJ release hubs for independent verification. Passenger presence is not, by itself, proof of wrongdoing.",
+        "local_path": "evidence/flight-records.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures",
+        "document_ids": [
+          "EFTA release corpus"
+        ]
+      },
+      {
+        "confidence": "court/testimony context",
+        "title": "Pilot Testimony Context",
+        "date": "2021",
+        "excerpt": "Pilot testimony is used to contextualize aircraft operations, routes, and known passengers while separating documented travel from allegations.",
+        "local_path": "docs/pilots.html",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures"
+      }
+    ],
+    "phone": [
+      {
+        "confidence": "documented / source-linked",
+        "title": "Phone and Contact Records",
+        "date": "2001-2005",
+        "excerpt": "Phone/contact records are summarized with caution: contact frequency may support investigative context but requires source-specific interpretation.",
+        "local_path": "evidence/phone-records.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures/foia-federal-bureau-investigation-fbi"
+      },
+      {
+        "confidence": "reported/documentary context",
+        "title": "Black Book / Contact Lists",
+        "date": "2004",
+        "excerpt": "Contact lists establish entries and associations, not criminal culpability. Cards and dossiers should label no-allegation status where applicable.",
+        "local_path": "appendices/persons-of-interest.md",
+        "source_url": "https://www.justice.gov/epstein"
+      }
+    ],
+    "testimony": [
+      {
+        "confidence": "court / official record",
+        "title": "Victim Testimony Summary",
+        "date": "2007-2021",
+        "excerpt": "Victim testimony is treated as core evidence where present in court or DOJ records, with privacy-preserving redactions retained.",
+        "local_path": "evidence/victim-testimony.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures"
+      },
+      {
+        "confidence": "court / official record",
+        "title": "Maxwell Proffer and Related Records",
+        "date": "2007-2021",
+        "excerpt": "Maxwell-related records are separated from broader inference and linked to DOJ disclosure categories for verification.",
+        "local_path": "docs/sarah-kellen.html",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures"
+      }
+    ],
+    "financial": [
+      {
+        "confidence": "documented / source-linked",
+        "title": "Financial Records and Corporate Entities",
+        "date": "1990-2019",
+        "excerpt": "Financial records are organized around documented entities, payments, and asset structures; allegation status is kept separate from corporate-record presence.",
+        "local_path": "evidence/financial-records.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures"
+      },
+      {
+        "confidence": "analysis / local appendix",
+        "title": "Corporate Entity Appendix",
+        "date": "1990-2019",
+        "excerpt": "Static appendix for entity names, roles, and research notes. Use as an index into official records rather than a standalone proof layer.",
+        "local_path": "appendices/corporate-entities.md",
+        "source_url": "https://www.justice.gov/epstein"
+      }
+    ],
+    "physical": [
+      {
+        "confidence": "court / official record",
+        "title": "Search Warrant and Physical Evidence Summaries",
+        "date": "2005-2019",
+        "excerpt": "Physical-evidence summaries link to local records and official release hubs. Sensitive material descriptions remain high-level.",
+        "local_path": "evidence/physical-evidence.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures"
+      },
+      {
+        "confidence": "official release index",
+        "title": "FBI FOIA Files",
+        "date": "2025-2026",
+        "excerpt": "DOJ-hosted FBI FOIA PDFs are indexed as primary public-record sources. The browser links out instead of mirroring sensitive files.",
+        "local_path": "research/2026-source-refresh.md",
+        "source_url": "https://www.justice.gov/epstein/doj-disclosures/foia-federal-bureau-investigation-fbi",
+        "document_ids": [
+          "EFTA02849279\u2013EFTA02850658"
+        ]
+      }
+    ]
+  }
+}

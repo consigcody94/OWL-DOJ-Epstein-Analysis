@@ -4,7 +4,7 @@
 
 ### Objective Witness & Legal System
 **Comprehensive Analysis of United States v. Jeffrey Epstein**
-**Updated February 15, 2026 with Final Release Data**
+**Source Refresh: May 25, 2026 — DOJ/FBI/Congress records + transcript-backed media context**
 
 <br>
 
@@ -45,6 +45,8 @@
 ---
 
 ## 🎯 Executive Summary
+
+**May 25, 2026 refresh:** the interactive site now adds a source dashboard for the DOJ Epstein Library, DOJ disclosure index, FBI FOIA records, FBI Vault linkout, and House Oversight records; a release/disclosure timeline; transcript-backed recent media context; a source-labelled evidence vault; safer confidence labels; and an exploratory-network disclaimer.
 
 This repository contains a **comprehensive legal analysis** of **3.5 million pages** of DOJ documents released under the **Epstein Files Transparency Act** (signed November 19, 2025), conducted by the **OWL (Objective Witness & Legal)** autonomous analysis system.
 

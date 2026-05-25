@@ -9,11 +9,16 @@
 const state = {
     persons: [],
     statistics: {},
+    sourceIndex: {},
+    videoIndex: {},
     filteredPersons: [],
     currentFilter: 'all',
     searchQuery: '',
     networkData: null
 };
+
+// Share state across modules (command palette, network, vault) without duplicate fetches.
+window.state = state;
 
 // ===========================================
 // ROLE COLOR MAPPING
@@ -38,6 +43,9 @@ const ROLE_COLORS = {
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
     renderHeroStats();
+    renderSourceDashboard();
+    renderVideoBriefing();
+    renderReleaseTimeline();
     renderPersons();
     renderTimeline();
     animateEvidenceBars();
@@ -59,6 +67,23 @@ async function loadData() {
         // Load statistics
         const statsResponse = await fetch('data/statistics.json');
         state.statistics = await statsResponse.json();
+
+        // Load current source / media indexes. These fail soft so the core explorer still runs.
+        try {
+            const sourceResponse = await fetch('data/source-index.json');
+            state.sourceIndex = await sourceResponse.json();
+        } catch (sourceError) {
+            console.warn('Source index unavailable:', sourceError);
+            state.sourceIndex = {};
+        }
+
+        try {
+            const videoResponse = await fetch('data/video-index.json');
+            state.videoIndex = await videoResponse.json();
+        } catch (videoError) {
+            console.warn('Video index unavailable:', videoError);
+            state.videoIndex = {};
+        }
 
         console.log(`Loaded ${state.persons.length} persons`);
     } catch (error) {
@@ -102,6 +127,95 @@ function formatNumber(num) {
         return (num / 1000).toFixed(0) + 'K';
     }
     return num.toString();
+}
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+// ===========================================
+// SOURCE DASHBOARD / MEDIA BRIEFING
+// ===========================================
+function renderSourceDashboard() {
+    const grid = document.getElementById('officialSourcesGrid');
+    if (!grid) return;
+
+    const sources = state.sourceIndex.official_sources || [];
+    if (!sources.length) {
+        grid.innerHTML = '<div class="loading-card">Source index unavailable.</div>';
+        return;
+    }
+
+    grid.innerHTML = sources.map(source => `
+        <article class="source-card">
+            <div class="source-card-topline">
+                <span class="source-agency">${escapeHtml(source.agency)}</span>
+                <span class="confidence-pill">${escapeHtml(source.source_type)}</span>
+            </div>
+            <h3>${escapeHtml(source.title)}</h3>
+            <p>${escapeHtml(source.summary)}</p>
+            ${source.access_note ? `<p class="source-note">${escapeHtml(source.access_note)}</p>` : ''}
+            <div class="source-meta">
+                ${source.published ? `<span>Published: ${escapeHtml(source.published)}</span>` : ''}
+                ${source.last_modified ? `<span>Modified: ${escapeHtml(source.last_modified)}</span>` : ''}
+                ${source.last_checked ? `<span>Checked: ${escapeHtml(source.last_checked)}</span>` : ''}
+            </div>
+            <a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a>
+        </article>
+    `).join('');
+}
+
+function renderVideoBriefing() {
+    const grid = document.getElementById('videoBriefingGrid');
+    if (!grid) return;
+
+    const videos = state.videoIndex.videos || [];
+    if (!videos.length) {
+        grid.innerHTML = '<div class="loading-card">Video briefing index unavailable.</div>';
+        return;
+    }
+
+    grid.innerHTML = videos.map(video => `
+        <article class="video-card">
+            <div class="video-thumb" aria-hidden="true">▶</div>
+            <div class="video-body">
+                <span class="confidence-pill media-pill">${escapeHtml(video.source_type)}</span>
+                <h3>${escapeHtml(video.title)}</h3>
+                <p>${escapeHtml(video.why_it_matters)}</p>
+                <div class="source-meta">
+                    <span>Uploaded: ${escapeHtml(video.upload_date)}</span>
+                    <span>Transcript: ${escapeHtml(video.transcript_path)}</span>
+                </div>
+                <a class="source-link" href="${escapeHtml(video.url)}" target="_blank" rel="noopener noreferrer">Watch / verify ↗</a>
+            </div>
+        </article>
+    `).join('');
+}
+
+function renderReleaseTimeline() {
+    const timeline = document.getElementById('releaseTimelineGrid');
+    if (!timeline) return;
+
+    const events = state.sourceIndex.release_timeline || [];
+    if (!events.length) {
+        timeline.innerHTML = '<div class="loading-card">Release timeline unavailable.</div>';
+        return;
+    }
+
+    timeline.innerHTML = events.map(event => `
+        <article class="release-event">
+            <time datetime="${escapeHtml(event.date)}">${escapeHtml(event.date)}</time>
+            <div>
+                <h3>${escapeHtml(event.event)}</h3>
+                <p>${escapeHtml(event.confidence)} · source: ${escapeHtml(event.source_id)}</p>
+            </div>
+        </article>
+    `).join('');
 }
 
 // ===========================================

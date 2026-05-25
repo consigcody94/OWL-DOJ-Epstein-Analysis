@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "updated": "2026-05-25",
+    "transcriber": "youtube-transcript-api cloned from https://github.com/jdepoix/youtube-transcript-api into /Users/cody/tools/youtube-transcript-api",
+    "note": "Transcripts are used as contextual media summaries, not primary evidence."
+  },
+  "videos": [
+    {
+      "id": "yAgcKZ5MYHA",
+      "title": "CNN: DOJ withheld more Epstein files than law requires",
+      "url": "https://www.youtube.com/watch?v=yAgcKZ5MYHA",
+      "upload_date": "2025-12-20",
+      "transcript_path": "research/transcripts/yAgcKZ5MYHA.txt",
+      "why_it_matters": "Redaction and withholding debate around the EFTA release process.",
+      "source_type": "media transcript"
+    },
+    {
+      "id": "VmeGX0-R54I",
+      "title": "AP explains DOJ deadline to release Epstein files",
+      "url": "https://www.youtube.com/watch?v=VmeGX0-R54I",
+      "upload_date": "2025-12-19",
+      "transcript_path": "research/transcripts/VmeGX0-R54I.txt",
+      "why_it_matters": "Authoritative short explainer around the statutory deadline.",
+      "source_type": "media transcript"
+    },
+    {
+      "id": "ougk5liAA30",
+      "title": "CNN: DOJ deadline to release Epstein files",
+      "url": "https://www.youtube.com/watch?v=ougk5liAA30",
+      "upload_date": "2025-12-19",
+      "transcript_path": "research/transcripts/ougk5liAA30.txt",
+      "why_it_matters": "Context on release timing, scope, and public expectations.",
+      "source_type": "media transcript"
+    },
+    {
+      "id": "MwIX3njcTOs",
+      "title": "ABC News: DOJ to release several hundred thousand Epstein file documents",
+      "url": "https://www.youtube.com/watch?v=MwIX3njcTOs",
+      "upload_date": "2025-12-19",
+      "transcript_path": "research/transcripts/MwIX3njcTOs.txt",
+      "why_it_matters": "Mainstream coverage of expected document volume.",
+      "source_type": "media transcript"
+    },
+    {
+      "id": "uaVfiXJ8yl4",
+      "title": "ABC10: DOJ releases thousands of new documents from Epstein investigation",
+      "url": "https://www.youtube.com/watch?v=uaVfiXJ8yl4",
+      "upload_date": "2025-12-24",
+      "transcript_path": "research/transcripts/uaVfiXJ8yl4.txt",
+      "why_it_matters": "Secondary coverage after initial release period.",
+      "source_type": "media transcript"
+    }
+  ]
+}
