@@ -42,12 +42,6 @@ const ROLE_COLORS = {
 // ===========================================
 document.addEventListener('DOMContentLoaded', async () => {
     await loadData();
-    document.querySelectorAll('.hero-bg-video').forEach(video => {
-        video.loop = false;
-        video.muted = true;
-        video.playsInline = true;
-        video.addEventListener('ended', () => video.classList.add('has-ended'), { once: true });
-    });
     renderHeroStats();
     renderSourceDashboard();
     renderVideoBriefing();

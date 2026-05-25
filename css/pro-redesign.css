@@ -1356,3 +1356,47 @@ main > section > *,
 .hero-copy .hero-eyebrow {
   margin-bottom: 1.25rem;
 }
+
+/* Clean-layout pass: no picture/video layers behind or over text. */
+.intro-bg-video,
+.hero-bg-video,
+.hero-video-scrim,
+.hero-logo-video,
+.owl-seal-video,
+.intro-emblem-wrap,
+.intro-emblem-static {
+  display: none !important;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 28% 10%, rgba(142,167,255,0.18), transparent 24rem),
+    radial-gradient(circle at 86% 24%, rgba(215,180,106,0.10), transparent 22rem),
+    linear-gradient(180deg, rgba(255,255,255,0.018), transparent 42%),
+    #07080c !important;
+}
+
+.hero::before {
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.source-dashboard-section,
+.verdict-section,
+.persons-section,
+.network-section,
+.evidence-section,
+.timeline-section {
+  opacity: 1 !important;
+  transform: none !important;
+}
