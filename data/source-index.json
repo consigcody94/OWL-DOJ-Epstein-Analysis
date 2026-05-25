@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "2026-05-source-refresh",
-    "updated": "2026-05-25",
+    "version": "2026-05-source-refresh-deep-audit",
+    "updated": "2026-05-25T19:34:36-04:00",
     "methodology": "Official records first. Credible journalism and video transcripts are context only and labelled separately from court/DOJ/FBI/Congress records. Redactions and contact records are not treated as proof of wrongdoing.",
     "as_of": "2026-05-25 EDT"
   },
@@ -60,13 +60,13 @@
     },
     {
       "id": "doj-35m-pages-release",
-      "title": "DOJ publishes 3.5 million+ responsive pages in compliance with EFTA",
+      "title": "DOJ 3.5M+ responsive-page floor, with larger research surface tracked separately",
       "agency": "U.S. Department of Justice",
       "source_type": "official DOJ update",
       "url": "https://www.justice.gov/epstein/doj-disclosures",
       "published": "2026-01-30",
       "last_checked": "2026-05-25",
-      "summary": "DOJ disclosure index links the January 30, 2026 letter to Congress and publication of at least 3.5 million responsive pages. Treat this as a floor/corpus-size context because later redactions, supplemental files, archive entries, and third-party document indexes can expand the practical research surface."
+      "summary": "DOJ disclosure materials establish at least a 3.5M+ responsive-page floor. OWL no longer presents that as the whole corpus: the portal now separates official-page floor, House Oversight pages, independent archive document cards, redaction classes, and mirrored/source-ledger deltas."
     },
     {
       "id": "epstein-archive-all-documents",
@@ -75,8 +75,11 @@
       "source_type": "independent archive index",
       "url": "https://epstein-docs.github.io/all-documents/",
       "last_checked": "2026-05-25",
-      "indexed_entries_observed": 8184,
-      "summary": "Independent public-document index observed with 8,184 document links during the May 25 refresh. OWL links it for discovery/cross-reference coverage while keeping official DOJ/FBI/Congress records and court records as primary sources for claims."
+      "indexed_entries_observed": 8175,
+      "summary": "Independent public-document index observed with 8,175 document cards, 8,184 total links, and 29,439 pages summed from cards during the May 25 deep refresh. OWL links it for discovery/cross-reference coverage while keeping official DOJ/FBI/Congress records and court records as primary sources for claims.",
+      "hrefs_observed": 8184,
+      "page_sum_observed": 29439,
+      "folders_observed": 12
     }
   ],
   "credible_reporting": [
@@ -127,6 +130,12 @@
     }
   ],
   "release_timeline": [
+    {
+      "date": "2026-05-25",
+      "event": "Deep refresh parsed Epstein Archive all-documents index: 8,175 document cards, 29,439 pages, 12 folders, 1,464 emails, and redaction-sensitive categories surfaced on the homepage",
+      "source_id": "epstein-archive-all-documents",
+      "confidence": "generated source audit / independent archive index"
+    },
     {
       "date": "2025-09-02",
       "event": "House Oversight released 33,295 pages of DOJ-provided records",
@@ -179,5 +188,36 @@
       "file_id": "EFTA02850658",
       "url": "https://www.justice.gov/epstein/files/Freedom%20of%20Information%20Act%20%28FOIA%29/Federal%20Bureau%20of%20Investigation%20%28FBI%29/EFTA02850658.pdf"
     }
-  ]
+  ],
+  "corpus_metrics": {
+    "minimum_page_surface": 3533295,
+    "method": "DOJ 3.5M+ responsive-page floor plus separately surfaced House Oversight 33,295-page release; independent archive card page totals are tracked as a discovery index and not added to the official floor to avoid double counting.",
+    "doj_responsive_pages_floor": 3500000,
+    "house_oversight_pages": 33295,
+    "independent_archive": {
+      "source_url": "https://epstein-docs.github.io/all-documents/",
+      "reported_documents": 8175,
+      "hrefs_observed": 8184,
+      "page_sum_from_cards": 29439,
+      "folders_observed": 12,
+      "top_document_types": {
+        "Email": 1464,
+        "Court Filing": 1299,
+        "Report": 985,
+        "Unknown": 789,
+        "Financial Record": 655,
+        "Medical Record": 409,
+        "Log": 392,
+        "Flight Log": 241
+      }
+    },
+    "redaction_tracking": [
+      "Victim identities",
+      "Child sexual abuse material / CSAM exclusions",
+      "Grand-jury or protected criminal-process material",
+      "Sealed / protective-order filings",
+      "Privacy redactions and non-accused third-party identifiers"
+    ],
+    "access_caveat": "Do not repeatedly probe justice.gov after automated blocking; use source ledgers, mirrors, cached indexes, and low-rate user-agent-tagged checks."
+  }
 }

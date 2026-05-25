@@ -1524,6 +1524,61 @@ main > section,
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important;
 }
 
+.freshness-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.freshness-card {
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(142, 167, 255, 0.18);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(15, 19, 32, 0.88), rgba(8, 10, 16, 0.72));
+  box-shadow: var(--shadow-sm);
+}
+
+.freshness-card-featured {
+  grid-column: 1 / -1;
+  border-color: rgba(215, 180, 106, 0.32);
+  background:
+    radial-gradient(circle at top left, rgba(215, 180, 106, 0.18), transparent 36%),
+    linear-gradient(135deg, rgba(12, 15, 24, 0.96), rgba(8, 10, 16, 0.82));
+}
+
+.freshness-card h3 {
+  margin: 0.3rem 0 0.7rem;
+  color: var(--ink-1);
+  font-size: clamp(1.45rem, 2.4vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.freshness-card p,
+.freshness-card span {
+  display: block;
+  color: rgba(246, 247, 251, 0.72);
+  line-height: 1.55;
+}
+
+.freshness-card strong {
+  display: block;
+  color: #f5d58a;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+  margin-bottom: 0.65rem;
+}
+
+.freshness-card a {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #f4f7ff;
+  font-weight: 750;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(215, 180, 106, 0.55);
+}
+
 @media (min-width: 1200px) {
   .source-grid,
   .video-grid,
