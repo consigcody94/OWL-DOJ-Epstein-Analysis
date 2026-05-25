@@ -157,8 +157,19 @@
             </div>
 
             <div class="verdict-banner">OWL ANALYSIS FINDING: GUILTY ON ALL COUNTS</div>
+
+            <div class="hero-explore-map" aria-label="Explore investigation sections">
+                <a href="#source-dashboard"><span>01</span> Sources</a>
+                <a href="#verdict"><span>02</span> Legal finding</a>
+                <a href="#persons"><span>03</span> Dossiers</a>
+                <a href="#network"><span>04</span> Network</a>
+                <a href="#evidence"><span>05</span> Evidence vault</a>
+            </div>
         </div>
-        <div class="scroll-indicator">Scroll to explore</div>
+        <a class="scroll-indicator" href="#source-dashboard" aria-label="Scroll to official source dashboard">
+            <span class="scroll-indicator-text">Scroll to explore</span>
+            <span class="scroll-indicator-rail" aria-hidden="true"><span></span></span>
+        </a>
     </section>
 
     <!-- MAIN CONTENT -->
@@ -173,6 +184,21 @@
                     The updated OWL interface separates DOJ/FBI/Congress records, court-proven facts,
                     credible reporting, and researcher inference. Media transcripts are context only — not primary evidence.
                 </p>
+            </div>
+
+            <div class="source-radar" aria-label="Source confidence pipeline overview">
+                <div class="source-radar-orb" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="source-radar-copy">
+                    <p class="source-radar-label">Verification pipeline</p>
+                    <h3>Every claim moves through source class, legal posture, and confidence state before it reaches the interface.</h3>
+                </div>
+                <div class="source-radar-steps">
+                    <div><span>Primary</span><strong>Official records</strong></div>
+                    <div><span>Context</span><strong>Reporting / transcript</strong></div>
+                    <div><span>Output</span><strong>Labeled analysis</strong></div>
+                </div>
             </div>
 
             <div class="methodology-grid">
