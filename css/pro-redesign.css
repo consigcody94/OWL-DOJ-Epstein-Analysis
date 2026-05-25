@@ -1400,3 +1400,136 @@ section {
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* Restore the video as contained content and open up cramped report sections. */
+.hero-side-stack {
+  display: grid;
+  gap: 1rem;
+  align-self: stretch;
+}
+
+.hero-video-card {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 26px;
+  background: rgba(7,8,12,0.72);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+}
+
+.hero-contained-video {
+  display: block !important;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  opacity: 0.94;
+  background: #05060a;
+}
+
+.hero-side-stack .hero-command-card {
+  max-width: none;
+}
+
+main > section,
+.source-dashboard-section,
+.verdict-section,
+.persons-section,
+.network-section,
+.map-section,
+.vault-section,
+.timeline-section,
+.media-briefing-section,
+.release-timeline-section,
+.secret-societies-section,
+.coded-language-section,
+.deep-dive-section,
+.document-analysis-section {
+  width: min(1400px, calc(100% - 2rem)) !important;
+  max-width: 1400px !important;
+  padding: clamp(2.25rem, 5vw, 5rem) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem) !important;
+  overflow: visible !important;
+}
+
+.source-grid,
+.video-grid,
+.methodology-grid,
+.persons-grid,
+.vault-grid,
+.charges-grid {
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+.source-radar,
+.osint-manifesto,
+.source-status-grid,
+.source-grid,
+.release-timeline,
+.video-grid,
+.methodology-grid,
+.persons-grid,
+.vault-grid,
+.charges-grid,
+.timeline-container,
+.network-container,
+.map-container {
+  max-width: 100% !important;
+}
+
+@media (max-width: 1120px) {
+  .hero-side-stack {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 720px) {
+  main > section,
+  .source-dashboard-section,
+  .verdict-section,
+  .persons-section,
+  .network-section,
+  .map-section,
+  .vault-section,
+  .timeline-section,
+  .media-briefing-section,
+  .release-timeline-section,
+  .secret-societies-section,
+  .coded-language-section,
+  .deep-dive-section,
+  .document-analysis-section {
+    width: calc(100% - 0.75rem) !important;
+    padding: 1.25rem !important;
+    border-radius: 22px !important;
+  }
+}
+
+/* Less cramped card grids below the hero. */
+.source-grid,
+.video-grid,
+.methodology-grid,
+.vault-grid,
+.charges-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)) !important;
+}
+
+.persons-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)) !important;
+}
+
+.source-status-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important;
+}
+
+@media (min-width: 1200px) {
+  .source-grid,
+  .video-grid,
+  .methodology-grid,
+  .vault-grid,
+  .charges-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}

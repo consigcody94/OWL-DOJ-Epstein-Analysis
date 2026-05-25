@@ -47,9 +47,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css?v=20260525-brand-fonts">
-    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-clean-layout">
+    <link rel="stylesheet" href="css/pro-redesign.css?v=20260525-video-layout-fix">
     <link rel="stylesheet" href="css/linkability.css?v=20260525-links">
-    <link rel="stylesheet" href="css/layout-fixes.css?v=20260525-clean-layout">
+    <link rel="stylesheet" href="css/layout-fixes.css?v=20260525-video-layout-fix">
 </head>
 <body>
 
@@ -112,16 +112,23 @@
                         <a href="#persons" class="hero-action hero-action-secondary">Open dossiers</a>
                     </div>
                 </div>
-                <div class="hero-command-card" aria-label="Methodology summary">
-                    <div class="hero-command-topline"><span></span><span></span><span></span></div>
-                    <p class="hero-command-label">CURRENT METHODOLOGY</p>
-                    <h2>OSINT, not speculation</h2>
-                    <ul>
-                        <li>DOJ/FBI/Congress records are primary.</li>
-                        <li>Epstein Archive entries expand discovery and cross-reference coverage.</li>
-                        <li>Contact or mention is not proof of wrongdoing.</li>
-                    </ul>
-                    <div class="hero-command-footer">Updated May 2026 · confidence labeled · archive-linked</div>
+                <div class="hero-side-stack">
+                    <div class="hero-video-card" aria-label="OWL cinematic video">
+                        <video class="hero-contained-video" muted playsinline autoplay loop controls preload="metadata" poster="assets/owl-cinematic-poster.jpg?v=20260525-video">
+                            <source src="assets/owl-cinematic-logo.mp4?v=20260525-video" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-command-card" aria-label="Methodology summary">
+                        <div class="hero-command-topline"><span></span><span></span><span></span></div>
+                        <p class="hero-command-label">CURRENT METHODOLOGY</p>
+                        <h2>OSINT, not speculation</h2>
+                        <ul>
+                            <li>DOJ/FBI/Congress records are primary.</li>
+                            <li>Epstein Archive entries expand discovery and cross-reference coverage.</li>
+                            <li>Contact or mention is not proof of wrongdoing.</li>
+                        </ul>
+                        <div class="hero-command-footer">Updated May 2026 · confidence labeled · archive-linked</div>
+                    </div>
                 </div>
             </div>
             
@@ -2495,9 +2502,9 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 
     <!-- Application Scripts -->
-    <script src="js/intro.js?v=20260525-clean-layout"></script>
-    <script src="js/hud.js?v=20260525-clean-layout"></script>
-    <script src="js/app.js?v=20260525-clean-layout"></script>
+    <script src="js/intro.js?v=20260525-video-layout-fix"></script>
+    <script src="js/hud.js?v=20260525-video-layout-fix"></script>
+    <script src="js/app.js?v=20260525-video-layout-fix"></script>
     <script src="js/network.js?v=20260525-4352b81"></script>
     <script src="js/dossier.js?v=20260525-4352b81"></script>
     <script src="js/command-palette.js?v=20260525-4352b81"></script>
