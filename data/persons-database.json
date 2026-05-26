@@ -2,14 +2,16 @@
   "metadata": {
     "version": "3.6",
     "generated": "2026-02-15",
-    "total_pages_analyzed": 3500000,
+    "total_pages_analyzed": "3.5M+ page-surface floor; counts separated in source ledger",
     "total_images": 180000,
     "total_videos": 2000,
     "total_persons": 43,
     "source": "DOJ Epstein Files Transparency Act Release - Final (Jan 30, 2026) + Feb 2026 Wave 3 Additions",
     "act_signed": "2025-11-19",
     "final_release_date": "2026-01-30",
-    "wave_3_additions": "2026-02-15"
+    "wave_3_additions": "2026-02-15",
+    "mirror_document_cards": 8175,
+    "source_refresh": "2026-05-25 mirror/source-ledger refresh"
   },
   "persons": [
     {
@@ -21,7 +23,7 @@
         "principal",
         "deceased"
       ],
-      "document_count": 3500000,
+      "document_count": 8175,
       "charges": [
         "18 U.S.C. \u00a7 1591 - Sex Trafficking of Children",
         "18 U.S.C. \u00a7 2423 - Transportation of Minors",
@@ -85,7 +87,8 @@
         "Invested $1.5M in Israeli company Carbyne",
         "Anonymous FBI source alleged Mossad connections"
       ],
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Jeffrey_Epstein_mug_shot.jpg/330px-Jeffrey_Epstein_mug_shot.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Jeffrey_Epstein_mug_shot.jpg/330px-Jeffrey_Epstein_mug_shot.jpg",
+      "document_count_note": "Mirror document-card floor; full page-surface remains 3.5M+ under source-ledger refresh."
     },
     {
       "id": "maxwell",
@@ -980,7 +983,7 @@
         }
       ],
       "2026_revelations": [
-        "Subject: 'Got a fresh shipment' → Epstein responds 'me too' with redacted image",
+        "Subject: 'Got a fresh shipment' \u2192 Epstein responds 'me too' with redacted image",
         "Attia: 'Please tell me you found that picture online.' Epstein: 'Afraid not.'",
         "Attia: 'You know the biggest problem with becoming friends with you. The life you lead is so outrageous yet I can't tell a soul.'",
         "Attia: 'I go into Jeffrey Epstein withdrawal when I don't see him'",
@@ -988,8 +991,8 @@
         "July 11, 2017: Infant son had medical emergency; wife called from ambulance",
         "Stayed in NY for 'important work' instead of going home",
         "2 days later (July 13): coordinating with Epstein: 'Sure. What time?' '9:30' 'Sure, I can come earlier.'",
-        "Stayed in NY 10 days instead of going to family — some of that time with Epstein",
-        "December 2018 emails show Attia asking 'What's the fallout from the recent story?' after Miami Herald exposé"
+        "Stayed in NY 10 days instead of going to family \u2014 some of that time with Epstein",
+        "December 2018 emails show Attia asking 'What's the fallout from the recent story?' after Miami Herald expos\u00e9"
       ],
       "attia_response": {
         "claims": [
@@ -1003,7 +1006,7 @@
           "Continued contact after claimed awareness of crimes"
         ]
       },
-      "book_incident": "Author of 'Outlive' — July 2017 incident where he stayed in NY with Epstein rather than return to family during medical emergency documented in book",
+      "book_incident": "Author of 'Outlive' \u2014 July 2017 incident where he stayed in NY with Epstein rather than return to family during medical emergency documented in book",
       "context": "Longevity medicine doctor who maintained close relationship with Epstein despite 2008 conviction",
       "notes": "Attia's explanations for email content disputed by context and timing of communications."
     },
@@ -1036,7 +1039,7 @@
       "2026_revelations": [
         "EFTA 01992938: Epstein email Oct 20, 2011: 'Last night and this morning fun. Also met some cool people. There's a cool guy kid that you should meet, Christopher P. He is only 23.'",
         "Meeting date: October 20, 2011",
-        "/pol/ (Politically Incorrect board) created: October 23, 2011 — 3 DAYS LATER",
+        "/pol/ (Politically Incorrect board) created: October 23, 2011 \u2014 3 DAYS LATER",
         "Boris to Jeffrey: 'Yes, he is great. I had no clue who he was when we met. He'll be a friend.'",
         "Jeffrey: 'I like Moot a lot. I drove him home. He is very bright.'",
         "Defcon organizer (DarkTangent) clarified: Epstein approached for free badges, was warned away"

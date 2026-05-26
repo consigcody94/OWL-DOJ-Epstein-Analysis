@@ -1,0 +1,272 @@
+{
+  "source_url": "https://epstein-docs.github.io/all-documents/",
+  "last_checked_utc": "2026-05-26T03:03:25Z",
+  "mirror_document_cards": 8175,
+  "known_page_count_sum": 29439,
+  "documents_with_page_counts": 8175,
+  "redaction_text_hits": 2,
+  "top_types": [
+    [
+      "Email",
+      1464
+    ],
+    [
+      "Court Filing",
+      1299
+    ],
+    [
+      "Report",
+      985
+    ],
+    [
+      "Financial Record",
+      655
+    ],
+    [
+      "Letter",
+      413
+    ],
+    [
+      "Medical Record",
+      409
+    ],
+    [
+      "Log",
+      392
+    ],
+    [
+      "Exhibit",
+      348
+    ],
+    [
+      "Transcript",
+      300
+    ],
+    [
+      "Memorandum",
+      268
+    ],
+    [
+      "Flight Log",
+      241
+    ],
+    [
+      "Unknown",
+      230
+    ],
+    [
+      "Record",
+      126
+    ],
+    [
+      "Request",
+      123
+    ],
+    [
+      "News Article",
+      50
+    ],
+    [
+      "Contract",
+      36
+    ],
+    [
+      "List",
+      25
+    ],
+    [
+      "Roster",
+      23
+    ],
+    [
+      "Checklist",
+      22
+    ],
+    [
+      "Questionnaire",
+      20
+    ],
+    [
+      "Notice",
+      17
+    ],
+    [
+      "Affidavit",
+      15
+    ],
+    [
+      "Note",
+      15
+    ],
+    [
+      "Motion",
+      12
+    ],
+    [
+      "Form",
+      11
+    ]
+  ],
+  "top_folders": [
+    [
+      "IMAGES010",
+      1938
+    ],
+    [
+      "IMAGES009",
+      1816
+    ],
+    [
+      "IMAGES011",
+      773
+    ],
+    [
+      "IMAGES006",
+      676
+    ],
+    [
+      "IMAGES012",
+      669
+    ],
+    [
+      "IMAGES001",
+      587
+    ],
+    [
+      "IMAGES004",
+      587
+    ],
+    [
+      "IMAGES007",
+      425
+    ],
+    [
+      "IMAGES002",
+      356
+    ],
+    [
+      "IMAGES008",
+      313
+    ],
+    [
+      "IMAGES003",
+      297
+    ],
+    [
+      "IMAGES005",
+      36
+    ]
+  ],
+  "top_dates": [
+    [
+      "July 24, 2019",
+      267
+    ],
+    [
+      "042814",
+      252
+    ],
+    [
+      "August 10, 2019",
+      240
+    ],
+    [
+      "07/26/17",
+      179
+    ],
+    [
+      "July 23, 2019",
+      160
+    ],
+    [
+      "August 12, 2019",
+      151
+    ],
+    [
+      "August 19, 2019",
+      129
+    ],
+    [
+      "July 30, 2019",
+      100
+    ],
+    [
+      "July 25, 2019",
+      92
+    ],
+    [
+      "February 15, 2012",
+      89
+    ],
+    [
+      "July 9, 2019",
+      84
+    ],
+    [
+      "02/24/22",
+      79
+    ],
+    [
+      "July 26, 2019",
+      73
+    ],
+    [
+      "July 28, 2019",
+      68
+    ],
+    [
+      "August 11, 2019",
+      65
+    ],
+    [
+      "July 22, 2019",
+      59
+    ],
+    [
+      "02/04/21",
+      57
+    ],
+    [
+      "February 14, 2005",
+      55
+    ],
+    [
+      "04282014",
+      49
+    ],
+    [
+      "10/29/21",
+      47
+    ],
+    [
+      "11/12/21",
+      47
+    ],
+    [
+      "May 19, 2020",
+      46
+    ],
+    [
+      "August 13, 2019",
+      44
+    ],
+    [
+      "08/10/22",
+      40
+    ],
+    [
+      "November 14, 2005",
+      37
+    ]
+  ],
+  "sample_redacted_hits": [
+    {
+      "href": "/document/sdny-gm-00006067/",
+      "text": "Document SDNY_GM_00006067 | | Type: Financial Record | Date: 04/27/16 | Pages: 1 | Folder: IMAGES006 | | | People: | Larry Morrisson, DAVID RODGERS, MR. LARRY VISOSKI, Kirkley/Marsha, Berger/Sanford, Barnett/Richard, Kirsti Ferguson, Indyke, Darren K., Elisabeth Maxwell, DIANA COOK, ALEXIA WALLAERT, Sarah Kellen Vickers, DOJ Redaction, Cindy Lopez (Buklarewicz), Lewis/Shelly, Biddle/JohnScott, Gany, Eric, Ghislaine Noelle Marion Maxwell, Mackenzie/Jonitha, Simmonds/Nicholas, Komarova/Natalia, Karapetyan/Arthur, Alexander/Miles, Alexander/Catherine, Dennisonsarrar/Ni..., Preece/Dara, Perry Lang"
+    },
+    {
+      "href": "/document/17-295/",
+      "text": "Document 17-295 | | Type: Report | Date: JAN-19-2005 | Pages: 1498 | Folder: IMAGES011, IMAGES012 | | | People: | ROSA TARQUINO, EPSTEIN, JEFFREY EDWARD, Ghislaine Noelle Marion Maxwell, angel santos, Rush Limbaugh, Barry E. Krischer, Mr. Jack Goldberger, Professor Alan Dershowitz, Aileen Josephs, Mark L. Winans, Kathleen Parker, Lieberman, DALIAH H. WEISS, Ms [redacted], Haley Robson, Sarah, Det Sandman, Det Joe Recarey, My.F, U.N.F., Mr. J.F., Eric, MR EPSITI, JEANIFER, CHRISTIANSEN, MR EPSITIN, TATIAN, Carolyn Andrews, Mr. Kim, Jef, JEFF STALEY, SDETLANA, JAMIE/JOANNE, Joe, Natalie, Indyke,"
+    }
+  ]
+}

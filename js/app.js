@@ -200,6 +200,10 @@ function renderSourceDashboard() {
                 ${source.published ? `<span>Published: ${escapeHtml(source.published)}</span>` : ''}
                 ${source.last_modified ? `<span>Modified: ${escapeHtml(source.last_modified)}</span>` : ''}
                 ${source.last_checked ? `<span>Checked: ${escapeHtml(source.last_checked)}</span>` : ''}
+                ${source.indexed_entries_observed ? `<span>Indexed: ${formatNumber(source.indexed_entries_observed)}</span>` : ''}
+                ${source.hrefs_observed ? `<span>Links: ${formatNumber(source.hrefs_observed)}</span>` : ''}
+                ${source.page_sum_observed ? `<span>Pages parsed: ${formatNumber(source.page_sum_observed)}</span>` : ''}
+                ${source.folders_observed ? `<span>Folders: ${formatNumber(source.folders_observed)}</span>` : ''}
             </div>
             ${source.mirrors?.length ? `<div class="source-meta"><span>Mirrors: ${source.mirrors.map((mirror, index) => `<span class="source-mirror-link" data-url="${escapeHtml(mirror)}">Mirror ${index + 1}</span>`).join(' · ')}</span></div>` : ''}
             <span class="source-link">Open source ↗</span>
@@ -345,7 +349,7 @@ function createPersonCard(person) {
                     ${person.sentence ? `<span class="badge sentence-badge">${escapeHtml(person.sentence)}</span>` : ''}
                 </div>
                 <div class="doc-count">
-                    <div class="doc-count-label">${formatNumber(person.document_count)} Documents</div>
+                    <div class="doc-count-label">${formatNumber(person.document_count)} Source refs</div>
                     <div class="doc-count-bar">
                         <div class="doc-count-fill" style="width: ${getDocCountPercentage(person.document_count)}%"></div>
                     </div>
@@ -374,7 +378,7 @@ function createPersonCard(person) {
                 </div>
             </div>
             <div class="doc-count">
-                <div class="doc-count-label">${formatNumber(person.document_count)} Documents</div>
+                <div class="doc-count-label">${formatNumber(person.document_count)} Source refs</div>
                 <div class="doc-count-bar">
                     <div class="doc-count-fill" style="width: ${getDocCountPercentage(person.document_count)}%"></div>
                 </div>

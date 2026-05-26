@@ -2,10 +2,12 @@
   "metadata": {
     "version": "2.0",
     "generated": "2026-02",
-    "total_pages_analyzed": 3500000,
+    "total_pages_analyzed": "3.5M+ page-surface floor; counts separated in source ledger",
     "total_images": 180000,
     "total_videos": 2000,
-    "source": "DOJ Epstein Files Transparency Act Release (Jan 2026)"
+    "source": "DOJ Epstein Files Transparency Act Release (Jan 2026)",
+    "mirror_document_cards": 8175,
+    "source_refresh": "2026-05-25 mirror/source-ledger refresh"
   },
   "persons": [
     {
@@ -13,13 +15,16 @@
       "name": "Jeffrey Epstein",
       "role": "Principal Defendant",
       "status": "Deceased",
-      "tags": ["principal", "deceased"],
-      "document_count": 3500000,
+      "tags": [
+        "principal",
+        "deceased"
+      ],
+      "document_count": 8175,
       "charges": [
-        "18 U.S.C. § 1591 - Sex Trafficking of Children",
-        "18 U.S.C. § 2423 - Transportation of Minors",
-        "18 U.S.C. § 371 - Conspiracy",
-        "18 U.S.C. § 2422 - Enticement of Minor"
+        "18 U.S.C. \u00a7 1591 - Sex Trafficking of Children",
+        "18 U.S.C. \u00a7 2423 - Transportation of Minors",
+        "18 U.S.C. \u00a7 371 - Conspiracy",
+        "18 U.S.C. \u00a7 2422 - Enticement of Minor"
       ],
       "verdict": "GUILTY - All Counts",
       "key_evidence": [
@@ -37,11 +42,31 @@
         }
       ],
       "key_documents": [
-        {"id": "EFTA00009550", "title": "Grand Jury Testimony", "type": "testimony"},
-        {"id": "EFTA00009512", "title": "FBI Agent Statement", "type": "testimony"},
-        {"id": "EFTA00028785", "title": "SDNY Detention Memo", "type": "legal"},
-        {"id": "EFTA00009116", "title": "NPA Documents", "type": "legal"},
-        {"id": "EFTA00009586", "title": "Victim Grand Jury Testimony", "type": "testimony"}
+        {
+          "id": "EFTA00009550",
+          "title": "Grand Jury Testimony",
+          "type": "testimony"
+        },
+        {
+          "id": "EFTA00009512",
+          "title": "FBI Agent Statement",
+          "type": "testimony"
+        },
+        {
+          "id": "EFTA00028785",
+          "title": "SDNY Detention Memo",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00009116",
+          "title": "NPA Documents",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00009586",
+          "title": "Victim Grand Jury Testimony",
+          "type": "testimony"
+        }
       ],
       "timeline": {
         "birth": "1953-01-20",
@@ -50,14 +75,18 @@
         "npa_signed": "2007-09-24",
         "state_plea": "2008-06",
         "sdny_arrest": "2019-07-06"
-      }
+      },
+      "document_count_note": "Mirror document-card floor; full page-surface remains 3.5M+ under source-ledger refresh."
     },
     {
       "id": "maxwell",
       "name": "Ghislaine Maxwell",
       "role": "Co-Conspirator",
       "status": "Incarcerated",
-      "tags": ["convicted", "co-conspirator"],
+      "tags": [
+        "convicted",
+        "co-conspirator"
+      ],
       "document_count": 11464,
       "sentence": "20 years",
       "conviction_date": "2021-12-29",
@@ -77,9 +106,21 @@
         }
       ],
       "key_documents": [
-        {"id": "EFTA00027850", "title": "Maxwell Indictment Press Release", "type": "legal"},
-        {"id": "EFTA00020401", "title": "Superseding Indictment", "type": "legal"},
-        {"id": "EFTA00029004", "title": "Case Materials", "type": "legal"}
+        {
+          "id": "EFTA00027850",
+          "title": "Maxwell Indictment Press Release",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00020401",
+          "title": "Superseding Indictment",
+          "type": "legal"
+        },
+        {
+          "id": "EFTA00029004",
+          "title": "Case Materials",
+          "type": "legal"
+        }
       ],
       "role_in_enterprise": [
         "Recruited and groomed victims",
@@ -94,7 +135,10 @@
       "name": "R. Alexander Acosta",
       "role": "U.S. Attorney (SDFL 2005-2009)",
       "status": "Living",
-      "tags": ["prosecutor", "npa_signatory"],
+      "tags": [
+        "prosecutor",
+        "npa_signatory"
+      ],
       "document_count": 150,
       "key_actions": [
         "Approved Non-Prosecution Agreement (2007)",
@@ -103,8 +147,16 @@
         "Resigned amid Epstein scrutiny (2019)"
       ],
       "key_documents": [
-        {"id": "EFTA00009116", "title": "Acosta OPR Interview", "type": "testimony"},
-        {"id": "NPA", "title": "Non-Prosecution Agreement", "type": "legal"}
+        {
+          "id": "EFTA00009116",
+          "title": "Acosta OPR Interview",
+          "type": "testimony"
+        },
+        {
+          "id": "NPA",
+          "title": "Non-Prosecution Agreement",
+          "type": "legal"
+        }
       ]
     },
     {
@@ -112,12 +164,23 @@
       "name": "Alan Dershowitz",
       "role": "Defense Attorney",
       "status": "Living",
-      "tags": ["defense_team", "mentioned"],
+      "tags": [
+        "defense_team",
+        "mentioned"
+      ],
       "document_count": 45,
       "role_in_case": "Legal advisor to Epstein defense team during NPA negotiations",
       "key_documents": [
-        {"id": "various", "title": "NPA Negotiation Documents", "type": "legal"},
-        {"id": "various", "title": "OPR Investigation References", "type": "legal"}
+        {
+          "id": "various",
+          "title": "NPA Negotiation Documents",
+          "type": "legal"
+        },
+        {
+          "id": "various",
+          "title": "OPR Investigation References",
+          "type": "legal"
+        }
       ],
       "notes": "Has denied any wrongdoing. Involved in related civil litigation."
     },
@@ -127,11 +190,22 @@
       "full_name": "Prince Andrew, Duke of York",
       "role": "Associate",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 87,
       "key_documents": [
-        {"id": "various", "title": "Victim Depositions", "type": "testimony"},
-        {"id": "various", "title": "Flight Records", "type": "evidence"}
+        {
+          "id": "various",
+          "title": "Victim Depositions",
+          "type": "testimony"
+        },
+        {
+          "id": "various",
+          "title": "Flight Records",
+          "type": "evidence"
+        }
       ],
       "notes": "Settled civil lawsuit in 2022. Has denied all allegations."
     },
@@ -140,7 +214,10 @@
       "name": "Bill Clinton",
       "role": "Former U.S. President",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 66,
       "context": "Named in flight logs and various documents",
       "notes": "Spokesperson stated Clinton knew nothing of crimes and has not spoken to Epstein in over a decade."
@@ -150,7 +227,10 @@
       "name": "Donald Trump",
       "role": "Former U.S. President",
       "status": "Living",
-      "tags": ["associate", "mentioned"],
+      "tags": [
+        "associate",
+        "mentioned"
+      ],
       "document_count": 137,
       "context": "Named as former social acquaintance",
       "notes": "Publicly distanced himself from Epstein, stating he 'was not a fan.'"
@@ -160,7 +240,10 @@
       "name": "Les Wexner",
       "role": "Billionaire / L Brands Founder",
       "status": "Living",
-      "tags": ["financial", "mentioned"],
+      "tags": [
+        "financial",
+        "mentioned"
+      ],
       "document_count": 11,
       "significance": "Primary documented source of Epstein's wealth",
       "key_facts": [
@@ -175,7 +258,10 @@
       "also_known_as": "Sarah Kensington",
       "role": "Assistant/Scheduler",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 50,
       "role_in_enterprise": [
         "Scheduled victim appointments",
@@ -190,7 +276,10 @@
       "name": "Lesley Groff",
       "role": "Assistant",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 30,
       "role_in_enterprise": [
         "Administrative support",
@@ -204,7 +293,10 @@
       "name": "Nadia Marcinkova",
       "role": "Associate",
       "status": "Living",
-      "tags": ["staff", "npa_immunity"],
+      "tags": [
+        "staff",
+        "npa_immunity"
+      ],
       "document_count": 25,
       "allegations": "Alleged participation in abuse",
       "notes": "Named in NPA immunity provisions. Not charged."
@@ -214,7 +306,10 @@
       "name": "Jean-Luc Brunel",
       "role": "Modeling Agent",
       "status": "Deceased",
-      "tags": ["associate", "deceased"],
+      "tags": [
+        "associate",
+        "deceased"
+      ],
       "document_count": 22,
       "death_date": "2022-02",
       "context": "French modeling agent charged in France with rape of minors",
@@ -226,7 +321,10 @@
       "role": "Defense Attorney",
       "firm": "Kirkland & Ellis",
       "status": "Living",
-      "tags": ["defense_team", "npa_negotiator"],
+      "tags": [
+        "defense_team",
+        "npa_negotiator"
+      ],
       "document_count": 69,
       "key_actions": [
         "Lead negotiator for 2008 NPA",
@@ -238,7 +336,10 @@
       "name": "Ken Starr",
       "role": "Defense Attorney",
       "status": "Deceased",
-      "tags": ["defense_team", "deceased"],
+      "tags": [
+        "defense_team",
+        "deceased"
+      ],
       "document_count": 49,
       "death_date": "2022-09",
       "key_actions": [
@@ -252,7 +353,10 @@
       "name": "David Rodgers",
       "role": "Chief Pilot",
       "status": "Living",
-      "tags": ["witness", "staff"],
+      "tags": [
+        "witness",
+        "staff"
+      ],
       "document_count": 72,
       "testimony": [
         "Testified to grand jury",
@@ -265,7 +369,10 @@
       "name": "Larry Visoski",
       "role": "Pilot",
       "status": "Living",
-      "tags": ["witness", "staff"],
+      "tags": [
+        "witness",
+        "staff"
+      ],
       "document_count": 64,
       "testimony": [
         "Testified at Maxwell trial"
@@ -277,7 +384,10 @@
       "name": "Bill Richardson",
       "role": "Former Governor of New Mexico",
       "status": "Deceased",
-      "tags": ["associate", "deceased"],
+      "tags": [
+        "associate",
+        "deceased"
+      ],
       "document_count": 45,
       "death_date": "2023-09",
       "context": "Named in documents and depositions",
@@ -288,7 +398,9 @@
       "name": "Roy Black",
       "role": "Defense Attorney",
       "status": "Living",
-      "tags": ["defense_team"],
+      "tags": [
+        "defense_team"
+      ],
       "document_count": 404,
       "significance": "High-profile criminal defense attorney on Epstein team"
     },
@@ -297,15 +409,20 @@
       "name": "Audrey Strauss",
       "role": "Acting U.S. Attorney (SDNY)",
       "status": "Living",
-      "tags": ["prosecutor"],
+      "tags": [
+        "prosecutor"
+      ],
       "significance": "Led 2019 SDNY prosecution and Maxwell prosecution"
     },
     {
       "id": "shuliak",
       "name": "Karyna Shuliak",
-      "role": "Last Girlfriend / Fiancée",
+      "role": "Last Girlfriend / Fianc\u00e9e",
       "status": "Living",
-      "tags": ["associate", "beneficiary"],
+      "tags": [
+        "associate",
+        "beneficiary"
+      ],
       "document_count": 15000,
       "origin": "Belarus",
       "profession": "Dentist",
@@ -317,8 +434,16 @@
         "Stood to inherit $100 million and all properties (Manhattan, Paris, NM ranch, Virgin Islands)"
       ],
       "key_documents": [
-        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"},
-        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+        {
+          "id": "EFTA00099303",
+          "title": "The 1953 Trust",
+          "type": "financial"
+        },
+        {
+          "id": "EFTA00098341",
+          "title": "Jeffrey E. Epstein 2019 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "Relationship began circa 2010 when she was a dental student. Epstein funded her education. No allegations of wrongdoing."
     },
@@ -327,7 +452,10 @@
       "name": "Eva Andersson Dubin",
       "role": "Ex-Girlfriend",
       "status": "Living",
-      "tags": ["associate", "ex-girlfriend"],
+      "tags": [
+        "associate",
+        "ex-girlfriend"
+      ],
       "document_count": 8500,
       "profession": "Physician, former Miss Sweden",
       "spouse": "Glenn Dubin (hedge fund billionaire)",
@@ -338,7 +466,11 @@
         "Family says they were 'horrified' by his conduct"
       ],
       "key_documents": [
-        {"id": "EFTA00099303", "title": "The 1953 Trust", "type": "financial"}
+        {
+          "id": "EFTA00099303",
+          "title": "The 1953 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "No allegations of wrongdoing. Family has publicly condemned Epstein's behavior."
     },
@@ -347,7 +479,10 @@
       "name": "Celina Dubin",
       "role": "Associate (Dubin daughter)",
       "status": "Living",
-      "tags": ["associate", "beneficiary"],
+      "tags": [
+        "associate",
+        "beneficiary"
+      ],
       "document_count": 4200,
       "key_facts": [
         "Eldest daughter of Eva Andersson Dubin and Glenn Dubin",
@@ -356,15 +491,29 @@
         "Superseded by Karyna Shuliak in August 2019 trust"
       ],
       "key_documents": [
-        {"id": "EFTA00098341", "title": "Jeffrey E. Epstein 2019 Trust", "type": "financial"}
+        {
+          "id": "EFTA00098341",
+          "title": "Jeffrey E. Epstein 2019 Trust",
+          "type": "financial"
+        }
       ],
       "notes": "No allegations of wrongdoing."
     }
   ],
   "document_types": {
-    "grand_jury": ["EFTA00009550", "EFTA00009512", "EFTA00009586"],
-    "indictments": ["EFTA00020401", "EFTA00027850", "EFTA00028785"],
-    "npa_related": ["EFTA00009116"],
+    "grand_jury": [
+      "EFTA00009550",
+      "EFTA00009512",
+      "EFTA00009586"
+    ],
+    "indictments": [
+      "EFTA00020401",
+      "EFTA00027850",
+      "EFTA00028785"
+    ],
+    "npa_related": [
+      "EFTA00009116"
+    ],
     "flight_records": "Multiple documents in DataSet files",
     "phone_records": "Multiple documents in DataSet files"
   },
@@ -374,13 +523,20 @@
       "type": "Boeing 727-31",
       "nickname": "Lolita Express",
       "owner": "JEGE, Inc.",
-      "routes": ["PBI-TEB", "TEB-STT", "PBI-STT"]
+      "routes": [
+        "PBI-TEB",
+        "TEB-STT",
+        "PBI-STT"
+      ]
     },
     {
       "tail_number": "N909JE",
       "type": "Gulfstream IV",
       "owner": "Hyperion Air, Inc.",
-      "routes": ["PBI-TEB", "TEB-SAF"]
+      "routes": [
+        "PBI-TEB",
+        "TEB-SAF"
+      ]
     },
     {
       "tail_number": "N331JE",
@@ -449,7 +605,10 @@
     },
     {
       "name": "Hyperion Air LLC",
-      "assets": ["N331JE", "N722JE"],
+      "assets": [
+        "N331JE",
+        "N722JE"
+      ],
       "purpose": "Aircraft holding"
     },
     {

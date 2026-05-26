@@ -10,7 +10,7 @@
 | System | OWL (Objective Witness & Legal) Analysis System v1.0 |
 | Standard | Beyond Reasonable Doubt |
 | Jurisdiction | Federal (SDFL, SDNY) |
-| Documents Reviewed | 3.5M |
+| Corpus Reviewed | 3.5M+ page-surface floor plus current source-ledger/mirror refresh |
 | Analysis Date | December 2024 |
 
 ---
